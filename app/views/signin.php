@@ -1,3 +1,16 @@
+<?php
+$f3 = \Base::instance();
+echo "<pre>";
+var_dump($f3->get('error_permissions'));
+echo "</pre>";
+if(!empty($f3->get('error_permissions')) && $f3->get('error_permissions')):
+
+?>
+
+Attention, vous devez vous inscrire pour accéder à cette page
+
+<?php endif; ?>
+
 <h1>Signin</h1>
 <form action="#" method="post">
   <label for="name">Nom</label><input type="text" name="name">

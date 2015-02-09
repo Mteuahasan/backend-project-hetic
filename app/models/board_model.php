@@ -14,8 +14,8 @@ class board_model{
     $this->crypt = \Bcrypt::instance();
   }
 
-  function newBoard($data){
-    var_dump($data);
+
+  function newBoard($data, $filepath){
     $session = $this->f3->get('SESSION');
     if(isset($data) && !empty($data)){
       if(!empty($data['name'])){
@@ -25,10 +25,16 @@ class board_model{
           $board->description=$data['description'];
           $board->author=$session['name'];
           $board->user_id=$session['id'];
-          echo "<pre>";
-          var_dump($board);
-          echo "</pre>";
+          $board->filepath=$filepath;
+          $board->date=date("Y-m-d H:i:s");
+          $board->tags=$data['tags'];
           $board->save();
+          foreach ($data['categories'] as $categorie) {
+            $has_categories=$this->getHasCategoriesMapper();
+            $has_categories->boards_id = $board['id'];
+            $has_categories->categories_id = $categorie;
+            $has_categories->save();
+          }
           $this->f3->reroute('/');
         }
         else {
@@ -42,17 +48,113 @@ class board_model{
     }
   }
 
+
   function getBoards(){
     $boards = $this->getBoardsMapper()->select('*');
     return $boards;
   }
+
 
   function getBoard($data){
     $board = $this->getBoardsMapper()->select('*', 'id = "'.$data.'"');
     return $board;
   }
 
+
+  function getBoardCategories($data){
+    $categories_id = $this->getHasCategoriesMapper()->select('*', 'boards_id = "'.$data.'"');
+    $categories = array();
+    $request = '';
+
+    foreach($categories_id as $categorie){
+         $request = $request.'id = '.$categorie->categories_id.' OR ';
+    }
+
+    $request = substr($request, 0, -4);
+    return $categoriesMapper = $this->getCategoriesMapper()->select('*', $request);
+  }
+
+
+  function getAllCategories(){
+    $categories = $this->getCategoriesMapper()->select('*');
+    return $categories;
+  }
+
+
+  function likes($post, $params){
+    $SESSION = $this->f3->get('SESSION');
+    $canLike = "";
+    if(!empty($SESSION)){
+      $user_id = $this->f3->get('SESSION')['id'];
+      $hasLiked = $this->getHasLikesMapper()->select('*', 'users_id = "'.$user_id.'"');
+      foreach ($hasLiked as $key) {
+        if (intval($key['boards_id']) === intval($params['id'])){
+          $canLike = 0;
+        }
+      }
+      if($canLike !== 0){
+        if($post == '1'){
+          $board=$this->getBoardsMapper();
+          $board->load(array('id=?', $params['id']));
+          $likes = $board->get('likes');
+          $board->set('likes', $likes + 1);
+          $response = $likes + 1;
+          $board->update();
+          $hasLikedMapper = $this->getHasLikesMapper();
+          $hasLikedMapper->users_id = $user_id;
+          $hasLikedMapper->boards_id = $params['id'];
+          $hasLikedMapper->save();
+          return $response;
+        } else if ($post == '-1') {
+          $board=$this->getBoardsMapper();
+          $board->load(array('id=?', $params['id']));
+          $likes = $board->get('likes');
+          $board->set('likes', $likes + (-1));
+          $response = $likes - 1;
+          $board->save();
+          $hasLikedMapper = $this->getHasLikesMapper();
+          $hasLikedMapper->users_id = $user_id;
+          $hasLikedMapper->boards_id = $params['id'];
+          $hasLikedMapper->save();
+          return $response;
+        } else {
+          return 'error';
+        }
+      } else {
+        $error = 'Un seul vote authorisé';
+        return $error;
+      }
+    }
+    $error = 'Vous devez être loggué';
+    return $error;
+  }
+
+
+  function newComment($post, $params){
+    $commentsMapper = $this->getCommentsMapper();
+    $commentsMapper->content = $post;
+    $commentsMapper->author = $this->f3->get('SESSION')['name'];
+    $commentsMapper->date = date("Y-m-d H:i:s");
+    $commentsMapper->board_id = $params['id'];
+    $commentsMapper->save();
+    $response = array('content'=>$post, 'author'=>$this->f3->get('SESSION')['name'], 'date'=>date("Y-m-d H:i:s"));
+    echo json_encode($response);
+  }
+
+
   private function getBoardsMapper($table='boards'){
+    return new \DB\SQL\Mapper($this->dB,$table);
+  }
+  private function getCategoriesMapper($table='categories'){
+    return new \DB\SQL\Mapper($this->dB,$table);
+  }
+  private function getHasCategoriesMapper($table='boards_has_categories'){
+    return new \DB\SQL\Mapper($this->dB,$table);
+  }
+  private function getHasLikesMapper($table='users_has_likes'){
+    return new \DB\SQL\Mapper($this->dB,$table);
+  }
+  private function getCommentsMapper($table='comments'){
     return new \DB\SQL\Mapper($this->dB,$table);
   }
 }
