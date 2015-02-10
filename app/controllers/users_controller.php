@@ -6,10 +6,12 @@ class users_controller{
 
   private $tpl;
   private $model;
+  private $ajax = NULL;
 
   function __construct(){
     $this->model=new \APP\MODELS\users_model();
   }
+
 
   public function signin($f3){
     $this->tpl = 'signin.php';
@@ -17,6 +19,7 @@ class users_controller{
       $this->model->signin($f3->get('POST'));
     }
   }
+
 
   public function login($f3){
     $this->tpl = 'login.php';
@@ -35,14 +38,31 @@ class users_controller{
     }
   }
 
+
   public function logout($f3){
     session_start();
     session_destroy();
     $f3->reroute('/');
   }
 
+
+  public function verifName($f3){
+    $this->ajax = $f3->get('POST.ajax');
+    $response = $this->model->verifName($f3->get('POST.name'));
+  }
+
+
+  public function verifEmail($f3){
+    $this->ajax = $f3->get('POST.ajax');
+    $response = $this->model->verifEmail($f3->get('POST.email'));
+  }
+
   public function afterroute(){
-    echo \View::instance()->render($this->tpl);
+    if(!$this->ajax) {
+      echo \View::instance()->render($this->tpl);
+    } else {
+
+    }
   }
 }
 

@@ -12,6 +12,7 @@ class board_controller{
   private $boardCategories;
   private $web;
   private $filepath;
+  private $comments;
 
   function __construct(){
     $this->model=new \APP\MODELS\board_model();
@@ -41,8 +42,10 @@ class board_controller{
     $this->tpl              = 'single-board.php';
     $this->board            = $this->model->getBoard($params['id']);
     $this->boardCategories  = $this->model->getBoardCategories($params['id']);
+    $this->comments         = $this->model->getComments($params['id']);
     $f3->set('board', $this->board);
     $f3->set('boardCategories', $this->boardCategories);
+    $f3->set('comments', $this->comments);
     if($f3->get('VERB')=='POST'){
       $this->model->newBoard($f3->get('POST'));
     }

@@ -1,7 +1,7 @@
 var board = {
 
   init: function(){
-    this.setupListeners();
+    this.listeners();
   },
   ajax: function(verb,url,datas,callback){
     var self=this;
@@ -17,10 +17,7 @@ var board = {
     xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     xhr.send(datas);
   },
-  likes: function(){
-
-  },
-  setupListeners: function(){
+  listeners: function(){
     var self = this;
     var plus  = document.getElementsByClassName('plus')[0],
         minus = document.getElementsByClassName('minus')[0],
@@ -52,14 +49,40 @@ var board = {
       });
     });
     submitComment.addEventListener('click', function(e){
+      e.preventDefault();
       var data=new FormData(),
           contentComment = document.getElementById('comment-content').value;
       data.append('content',contentComment);
-      self.ajax('POST', 'board/'+board+'/new-comment', data, function(xhr){
-        var json = JSON.parse(xhr.response);
-        console.log(json.content);
-      });
-    e.preventDefault();
+      if(contentComment !== ''){
+        self.ajax('POST', 'board/'+board+'/new-comment', data, function(xhr){
+          var json = JSON.parse(xhr.response);
+          console.log(json.content);
+
+          var container = document.createElement("div");
+          var wrapper = document.getElementsByClassName('display-comments')[0];
+          var commentContentContainer = document.createElement("div");
+          var commentContent = document.createTextNode(json.content);
+          var commentDateContainer = document.createElement("div");
+          var commentDate = document.createTextNode(json.date);
+          var commentAuthorContainer = document.createElement("div");
+          var commentAuthor = document.createTextNode(json.author);
+
+          commentContentContainer.appendChild(commentContent);
+          commentDateContainer.appendChild(commentDate);
+          commentAuthorContainer.appendChild(commentAuthor);
+
+          container.appendChild(commentAuthorContainer);
+          container.appendChild(commentContentContainer);
+          container.appendChild(commentDateContainer);
+
+          container.classList.add('single-comment');
+
+          wrapper.insertBefore(container, wrapper.firstChild);
+        });
+      } else {
+        console.log('Empty comm');
+      }
+      document.getElementById('comment-content').value = "";
     });
   }
 }
