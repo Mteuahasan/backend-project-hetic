@@ -3,3 +3,4 @@ lib
 config/config.ini
 .sass-cache
 dist
+pumir.sql

@@ -35,11 +35,30 @@ class users_controller{
     }
   }
 
+  public function getUserPage($f3, $params) {
+    $this->tpl   = 'profil.php';
+    $this->userLike = $this->model->userLikes($params['id']);
+    $f3->set('boards', $this->userLike);
+
+
+    // if($f3->get('VERB')=='POST'){
+    //   $this->model->addWebsite($f3->get('POST'));
+    // }
+
+  }
+
+  // public function getLikes(){
+  //   $likes = $this->model->userLikes();
+  //   return $likes;
+  // }
+
   public function logout($f3){
     session_start();
     session_destroy();
     $f3->reroute('/');
   }
+
+
 
   public function afterroute(){
     echo \View::instance()->render($this->tpl);
