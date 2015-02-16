@@ -48,6 +48,26 @@ class users_model{
     }
   }
 
+  // public function addWebsite($data){
+  //   if(!empty($data['website'])){
+  //     $site=$this->getUsersMapper();
+  //     $site->website=$data['website'];
+  //     $site->save();
+  //   }
+  // }
+
+  // public function userLikes() {
+  //   $user_id = $this->f3->get('SESSION')['id'];
+  //   $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
+    
+  //   foreach($hasLiked as $key) {
+  //     $boardLiked = $this->getBoardsMapper()->select('*', 'id = "'.$key->boards_id.'"');
+  //     echo $key->boards_id;
+  //     return $boardLiked;
+           
+  //   }
+  // }
+
 
   public function verifName($post){
     $user = $this->getUsersMapper()->load(array('name=:name',':name'=>$post));
@@ -70,6 +90,14 @@ class users_model{
 
 
   private function getUsersMapper($table='users'){
+    return new \DB\SQL\Mapper($this->dB,$table);
+  }
+
+  private function getHasLikesMapper($table='users_has_likes'){
+    return new \DB\SQL\Mapper($this->dB,$table);
+  }
+
+  private function getBoardsMapper($table='boards'){
     return new \DB\SQL\Mapper($this->dB,$table);
   }
 
