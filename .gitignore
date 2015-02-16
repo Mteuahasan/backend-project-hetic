@@ -5,3 +5,4 @@ config/config.ini
 dist/assets/css
 pumir.sql
 .DS_Store
+/public/assets/*
