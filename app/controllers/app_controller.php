@@ -14,6 +14,10 @@ class app_controller{
     $this->boardsModel = new \APP\MODELS\board_model();
   }
 
+  public function landing($f3){
+    $this->tpl='landing.php';
+  }
+
   public function home($f3){
     $this->tpl = 'main.php';
     $this->boards = $this->boardsModel->getHomeBoards();

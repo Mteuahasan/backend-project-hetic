@@ -1,6 +1,15 @@
-html{
-  margin: 0;
-  body{
-    margin: 0;
-  }
-}
+// BASE
+// ============================================================================ */
+@import "generic/reset"; // http://www.cssreset.com/scripts/eric-meyer-reset-css/
+
+// GENERIC STYLES
+// ============================================================================ */
+@import "generic/colors";
+@import "generic/balises";
+@import "generic/fontfaces";
+@import "generic/images";
+@import "generic/buttons";
+
+// PARTIALS
+//============================================================================ */
+@import "partials/landing";
