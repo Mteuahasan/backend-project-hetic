@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Mission-script';
+    src: url('./fonts/mission-script-webfont.eot');
+    src: url('../fonts/mission-script-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mission-script-webfont.woff') format('woff'),
+         url('../fonts/mission-script-webfont.ttf') format('truetype'),
+         url('../fonts/mission-script-webfont.svg#mission-script') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+.logo {
+	font-family: 'Mission-script';
+	font-size: 6em;
+	color: $yellow;
+	padding-top: 5%;
+	text-shadow: 0 -2px #938944;
+}
+
+
+// TYPOGRAPHY
+//============================================================================ */
+$thin : 100;
+$light : 300;
+$normal : 400;
+$medium : 500;
+$bold: 700;
+$ultra-bold : 900;
