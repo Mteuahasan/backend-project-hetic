@@ -8,15 +8,13 @@
   <meta name="description" content="">
   <base href="<?php echo $BASE; ?>/" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Arapey" rel="stylesheet" type="text/css" />
-  <link href="public/stylesheet/style.css" rel="stylesheet" type="text/css" />
-  <link href="public/stylesheet/mfglabs_iconset.css" rel="stylesheet"  type="text/css" />
-  <link href="public/stylesheet/wtfay.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
   <header>
-
+  <form action="search/" method="post" id='search-form'>
+    <input type="text" name="name" placeholder="Recherche" autocomplete="off" id="search-content"/>
+  </form>
   </header>
   <section>
     <h1>Hello world</h1>

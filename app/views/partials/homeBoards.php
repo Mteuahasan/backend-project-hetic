@@ -18,7 +18,7 @@
 
   		echo $post;
   		$id = $board->id;
-  		echo '<a href="../board/'.$id.'">Voir plus</a>';
+  		echo '<a href="board/'.$id.'">Voir plus</a>';
 
 
   ?>

@@ -55,6 +55,33 @@ class board_model{
   }
 
 
+  function getHomeBoards(){
+    $boards = $this->getBoardsMapper()->select('*',NULL , array(
+      'group'=>NULL,
+      'order'=>'id DESC',
+      'limit'=>10,
+      'offset'=>0
+    ));
+    return $boards;
+  }
+
+
+  function getPageBoards($page){
+    $pagination = 10;
+    $offset = ($page - 1) * $pagination;
+    $boards = $this->getBoardsMapper()->select('*',NULL , array(
+      'group'=>NULL,
+      'order'=>'id DESC',
+      'limit'=>$pagination,
+      'offset'=>$offset
+    ));
+    echo "<pre>";
+    var_dump($boards);
+    echo "</pre>";
+    return $boards;
+  }
+
+
   function getBoard($data){
     $board = $this->getBoardsMapper()->select('*', 'id = "'.$data.'"');
     return $board;
@@ -139,6 +166,13 @@ class board_model{
     $commentsMapper->save();
     $response = array('content'=>$post, 'author'=>$this->f3->get('SESSION')['name'], 'date'=>date("Y-m-d H:i:s"));
     echo json_encode($response);
+  }
+
+
+  function getComments($param){
+    $commentsMapper = $this->getCommentsMapper();
+    $response = $commentsMapper->select('*', 'board_id = "'.$param.'"', array('order'=>'id DESC'));
+    return $response;
   }
 
 

@@ -54,14 +54,27 @@
   $session = $f3->get('SESSION');
   if(!empty($session)):
   ?>
-  <div class="comments">
-    <h2>Comments</h2>
-    <form enctype="multipart/form-data" action="board/<?php echo $board[0]->id ?>/new-comment" method="post">
-      <textarea name="description" id="comment-content" cols="30" rows="10"></textarea>
-      <input type="submit" value="Submit comment" class="submit-comment">
-    </form>
+    <div class="post-comments">
+      <h2>Comments</h2>
+      <form enctype="multipart/form-data" action="board/<?php echo $board[0]->id ?>/new-comment" method="post">
+        <textarea name="description" id="comment-content" cols="30" rows="10"></textarea>
+        <input type="submit" value="Submit comment" class="submit-comment">
+      </form>
+    </div>
+  <?php endif; ?>
+  <div class="display-comments">
+    <?php
+      foreach ($comments as $comment):
+    ?>
+      <div class="single-comment" style="border: 1px solid black; width: 100px; margin: 20px 20px">
+        <div class="author-comment"><?php echo $comment->author; ?></div>
+        <div class="content-comment"><?php echo $comment->content; ?></div>
+        <div class="date-comment"><?php echo $comment->date; ?></div>
+      </div>
+    <?php
+      endforeach;
+    ?>
   </div>
-<?php endif; ?>
 
   <script type="text/javascript" src="public/scripts/board.js"></script>
 </body>

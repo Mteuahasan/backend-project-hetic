@@ -14,6 +14,7 @@ class users_model{
     $this->crypt = \Bcrypt::instance();
   }
 
+
   public function signin($data){
     if(isset($data) && !empty($data)){
       $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
@@ -36,6 +37,7 @@ class users_model{
       }
     }
   }
+
 
   public function login($data){
     $user = $this->getUsersMapper()->load(array('email=:email',':email'=>$data['email']));
@@ -65,6 +67,26 @@ class users_model{
            
   //   }
   // }
+
+
+  public function verifName($post){
+    $user = $this->getUsersMapper()->load(array('name=:name',':name'=>$post));
+    if(!$user){
+      echo "1";
+    } else {
+      echo "0";
+    }
+  }
+
+
+  public function verifEmail($post){
+    $email = $this->getUsersMapper()->load(array('email=:email',':email'=>$post));
+    if(!$email){
+      echo "1";
+    } else {
+      echo "0";
+    }
+  }
 
 
   private function getUsersMapper($table='users'){
