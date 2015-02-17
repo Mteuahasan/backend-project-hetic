@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <div class="landing">
+  <div class="landing container">
   	<h1 class='logo'>Striply</h1>
   	<div class="content-landing">
   		<p class="subtitle">Comics creators have Their place now</p>
@@ -20,7 +20,7 @@
 
   		<a href="#" class="btn-members">
   			<div class="btn-members--content">Become a cartoonist member</div>
-  			<div class="btn-members--nbr">10 189</div>
+  			<div class="btn-members--nbr">5 710 189</div>
   		</a>
 
   		<a href="home" class="btn-start">Discover the site</a>
