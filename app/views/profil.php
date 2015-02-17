@@ -7,7 +7,7 @@ if(isset($SESSION) && !empty($SESSION)){
 
 $id = $SESSION['id'];
 
-// require('partials/homeBoards.php');
+require('partials/likedBoards.php');
 
 // foreach($boards as $board){
 // 	echo $board->name;
@@ -15,7 +15,7 @@ $id = $SESSION['id'];
 
 ?>
 
-<!-- <form action="#" method="post">
+<!-- <form action="../user/<?php echo $SESSION['id']; ?>" method="post">
   <label for="website">Your website :</label><input type="text" name="website">
   <input type="submit" value="Add">
 </form> -->

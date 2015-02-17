@@ -25,7 +25,6 @@ class users_model{
           $user->email=$data['email'];
           $user->password=$this->crypt->hash($data['password'], $this->f3->get('salt'));
           $user->save();
-          $this->f3->reroute('/');
         }
         else {
           $error = 'Passwords must be similar';
@@ -56,17 +55,19 @@ class users_model{
   //   }
   // }
 
-  // public function userLikes() {
-  //   $user_id = $this->f3->get('SESSION')['id'];
-  //   $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
+  public function userLikes() {
+    $user_id = $this->f3->get('SESSION')['id'];
+    $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
+    $likedBoards = array();
     
-  //   foreach($hasLiked as $key) {
-  //     $boardLiked = $this->getBoardsMapper()->select('*', 'id = "'.$key->boards_id.'"');
-  //     echo $key->boards_id;
-  //     return $boardLiked;
-           
-  //   }
-  // }
+    foreach($hasLiked as $key) {
+      $boardLiked = $this->getBoardsMapper()->select('*', 'id = "'.$key->boards_id.'"');
+      array_push($likedBoards, $boardLiked);
+    }
+
+    return $likedBoards;
+  }
+
 
 
   public function verifName($post){

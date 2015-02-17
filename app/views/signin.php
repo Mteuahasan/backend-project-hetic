@@ -30,7 +30,7 @@
   <?php endif; ?>
 
   <h1>Signin</h1>
-  <form action="#" method="post">
+  <form action="signin" method="POST">
     <label for="name">Nom</label><input type="text" name="name" id="signin-name">
     <label for="email">Email</label><input type="email" name="email" id="signin-email">
     <label for="password">Password</label><input type="password" name="password">

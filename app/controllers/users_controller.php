@@ -17,6 +17,7 @@ class users_controller{
     $this->tpl = 'signin.php';
     if($f3->get('VERB')=='POST'){
       $this->model->signin($f3->get('POST'));
+      $f3->reroute('/home');
     }
   }
 
@@ -31,7 +32,7 @@ class users_controller{
           'name'=> $auth->name,
         );
         $f3->set('SESSION', $user);
-        $f3->reroute('/');
+        $f3->reroute('/home');
       } else {
         echo $auth;
       }
@@ -40,13 +41,13 @@ class users_controller{
 
   public function getUserPage($f3, $params) {
     $this->tpl   = 'profil.php';
-    // $this->userLike = $this->model->userLikes($params['id']);
-    // $f3->set('boards', $this->userLike);
+    $this->userLike = $this->model->userLikes($params['id']);
+    $f3->set('boards', $this->userLike);
 
 
-    // if($f3->get('VERB')=='POST'){
-    //   $this->model->addWebsite($f3->get('POST'));
-    // }
+    if($f3->get('VERB')=='POST'){
+      $this->model->addWebsite($f3->get('POST'));
+    }
 
   }
 
@@ -56,13 +57,13 @@ class users_controller{
   // }
 
 
+
+
   public function logout($f3){
     session_start();
     session_destroy();
-    $f3->reroute('/');
+    $f3->reroute('/home');
   }
-
-
 
   public function verifName($f3){
     $this->ajax = $f3->get('POST.ajax');
