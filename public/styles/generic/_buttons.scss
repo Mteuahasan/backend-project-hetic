@@ -8,6 +8,10 @@
 	width: 485px;
 	color: $black;
 	overflow: hidden;
+	@media screen and (max-width: 480px) {
+    	width: 90%;
+    	font-size: .8em;
+  	} 
 
 	.btn-members--content {
 		background-color: $yellow;
@@ -15,6 +19,10 @@
 		padding: .9em;
 		// width: 50%;
 		width: 325px;
+		border-right: 1px solid #ebde6f;
+		@media screen and (max-width: 480px) {
+    		width: 60%;
+  		} 
 		
 	}
 	.btn-members--nbr {
@@ -22,16 +30,24 @@
 		float: left;
 		padding: .9em;
 		// width: 10%;
-		width: 90px;
+		width: 89px;
+		@media screen and (max-width: 480px) {
+    		width: 20%;
+  		} 
 	}
 }
 
 .btn-start {
 	display: block;
-	width: 13%;
+	width: 190px;
 	color: $yellow;
 	padding: 1em;
 	margin: 0 auto;
 	font-weight: $medium;
 	border: 1px solid rgba(245, 231, 116, .4);
+
+	@media screen and (max-width: 480px) {
+    width: 60%;
+  } 
 }
+
