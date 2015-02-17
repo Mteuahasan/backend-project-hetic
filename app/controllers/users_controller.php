@@ -43,11 +43,9 @@ class users_controller{
     $this->tpl   = 'profil.php';
     $this->userLike = $this->model->userLikes($params['id']);
     $f3->set('boards', $this->userLike);
+    $this->usersBoard = $this->model->usersBoards($params['id']);
+    $f3->set('added', $this->usersBoard);
 
-
-    if($f3->get('VERB')=='POST'){
-      $this->model->addWebsite($f3->get('POST'));
-    }
 
   }
 

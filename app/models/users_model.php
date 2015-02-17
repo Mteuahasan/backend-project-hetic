@@ -47,14 +47,6 @@ class users_model{
     }
   }
 
-  // public function addWebsite($data){
-  //   if(!empty($data['website'])){
-  //     $site=$this->getUsersMapper();
-  //     $site->website=$data['website'];
-  //     $site->save();
-  //   }
-  // }
-
   public function userLikes() {
     $user_id = $this->f3->get('SESSION')['id'];
     $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
@@ -64,8 +56,18 @@ class users_model{
       $boardLiked = $this->getBoardsMapper()->select('*', 'id = "'.$key->boards_id.'"');
       array_push($likedBoards, $boardLiked);
     }
+    if(empty($likedBoards)) {
+      echo 'You didn\'t like any boards';
+    }
 
     return $likedBoards;
+  }
+
+  public function usersBoards() {
+    $user_id = $this->f3->get('SESSION')['id'];
+    $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$user_id.'"');
+    
+    return $usersBoard;
   }
 
 

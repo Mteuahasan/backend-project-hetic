@@ -1,35 +1,35 @@
-<h1>Her are the boards you liked</h1>
+<h1>Her are the boards you added</h1>
 
-<?php foreach ($boards as $board): ?>
+<?php foreach ($added as $add): ?>
 
 
-<h3><?php echo $board[0]->name ?></h3>
+<h3><?php echo $add->name ?></h3>
 <div class="description">
 <?php 
-	$len = $board[0]->description;
+	$len = $add->description;
 	$tronc = 15;
 	$post = substr($len, $tronc, 1);
 		if($post !=" "){
 			while($post != " "){
 				$i = 1;
 				$tronc = $tronc + $i;
-				$len = $board[0]->description;
+				$len = $add->description;
 				$post = substr($len, $tronc, 1);
 			}
 		}
 		$post = substr($len, 0, $tronc);
 
 		echo $post;
-		$id = $board[0]->id;
+		$id = $add->id;
 		echo '<a href="board/'.$id.'">Voir plus</a>';
 
 
 ?>
 </div>
 
-<div class="author"><?php echo $board[0]->author ?></div>
+<div class="author"><?php echo $add->author ?></div>
 
-<span class="likes"><?php echo $board[0]->likes ?> likes</span>
+<span class="likes"><?php echo $add->likes ?> likes</span>
 
 
  
