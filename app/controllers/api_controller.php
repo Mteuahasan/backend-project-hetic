@@ -12,17 +12,14 @@ class api_controller{
     $this->model=new \APP\MODELS\api_model();
   }
 
-  public function getUserPage($f3, $params) {
+  public function getUser($f3, $params) {
     $user = $this->model->getUser($params['id']);
     echo $user;
-    // $this->userLike = $this->model->userLikes($params['id']);
-    // $f3->set('boards', $this->userLike);
+  }
 
-
-    // if($f3->get('VERB')=='POST'){
-    //   $this->model->addWebsite($f3->get('POST'));
-    // }
-
+  public function getBoard($f3, $params) {
+    $board = $this->model->getBoard($params['id']);
+    echo $board;
   }
 }
 

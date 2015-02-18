@@ -84,7 +84,11 @@ class board_model{
 
   function getBoard($data){
     $board = $this->getBoardsMapper()->select('*', 'id = "'.$data.'"');
-    return $board;
+    if(!empty($board)){
+      return $board;
+    } else {
+      $this->f3->error(404);
+    }
   }
 
 

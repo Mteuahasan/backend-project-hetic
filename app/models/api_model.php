@@ -24,8 +24,21 @@ class api_model{
     }
   }
 
+  function getBoard($id){
+    $boardTable = $this->getBoardsMapper()->select('*', 'id = "'.$id.'"');
+    if(!empty($boardTable)){
+      $board = array('id'=>$boardTable[0]->id, 'name'=>$boardTable[0]->name, 'description'=>$boardTable[0]->description, 'author'=>$boardTable[0]->author, 'likes'=>$boardTable[0]->likes, 'filepath'=>substr(__DIR__, 0, -10).$boardTable[0]->filepath, 'date'=>$boardTable[0]->date, 'tags'=>$boardTable[0]->tags);
+      return json_encode($board);
+    } else {
+      return 'An error occured the id must be invalid';
+    }
+  }
+
 
   private function getUsersMapper($table='users'){
+    return new \DB\SQL\Mapper($this->dB,$table);
+  }
+  private function getBoardsMapper($table='boards'){
     return new \DB\SQL\Mapper($this->dB,$table);
   }
 }
