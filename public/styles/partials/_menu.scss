@@ -2,9 +2,10 @@ nav {
 	float: left;
 	height: 100%;
 	display: block;
-	padding: 2.5em 4em 0 2.5em;
+	padding: 50px 48px 0 49px;
 	line-height: 30px;
 	background-color: $black;
+	position: fixed;
 
 	.logo {
 		font-size: 3em;

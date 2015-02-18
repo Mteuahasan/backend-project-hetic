@@ -11,7 +11,7 @@
 		@media screen and (max-width: 480px) {
 	    	width: 90%;
 	    	font-size: .8em;
-	  	} 
+	  	}
 
 	.btn-members--content {
 		background-color: $yellow;
@@ -22,18 +22,17 @@
 		border-right: 1px solid #ebde6f;
 			@media screen and (max-width: 480px) {
 	    		width: 60%;
-	  		} 
-		
+	  		}
+
 	}
 	.btn-members--nbr {
-		background-color: $yellow-light;
+		background-color: #f7ec90;
 		float: left;
-		padding: .9em;
-		// width: 10%;
-		width: 89px;
+		padding: 27px;
+		width: 158px;
 			@media screen and (max-width: 480px) {
 	    		width: 20%;
-	  		} 
+	  		}
 	}
 }
 
@@ -48,7 +47,7 @@
 
 		@media screen and (max-width: 480px) {
 	    	width: 60%;
-	  } 
+	  }
 }
 
 
@@ -59,7 +58,7 @@
 	padding: .5em 3em;
 	text-transform: uppercase;
 	background-color: $yellow;
-	@include border-radius(10px);
+	border-radius: 10px;
 	// @include border-radius(5px 0 0 5px);
 }
 

@@ -29,7 +29,6 @@
       <li><a href="#">Google +</a></li>
       <li><a href="#">RSS</a></li>
     </ul>
-
     <?php if(!isset($SESSION) || empty($SESSION)): ?>
         <ul>
           <li><a href="signin">Sign Up</a></li>
@@ -38,38 +37,63 @@
       <?php endif; ?>
 
   </nav>
-
-  <div class="content">
-    <header>
-      <form action="search/" method="post" id='search-form'>
-        <input type="text" name="name" placeholder="Recherche" autocomplete="off" id="search-content"/>
-      </form>
-    </header>
-    <section>
-      <h1>Hello world</h1>
-      <?php
-
-      $f3=\Base::instance();
-
-      if(isset($SESSION) && !empty($SESSION)){
-        echo "Salut ".$SESSION['name'];
-      }
-
-      ?>
-      <br/>
-
-      <?php if(isset($SESSION) && !empty($SESSION)): ?>
-        <a href="logout">Logout</a>
-        <a href="new-board">New Board</a>
-        <a href="user/<?php echo $f3->get('SESSION.id') ?>">View Profil</a>
-      <?php endif; ?>
-
-      
-
-      <?php require('partials/homeBoards.php'); ?>
+  <div class="main-container">
+    <section class="featured-event">
 
     </section>
 
+    <div class="wrapper-home-content">
+      <div class="filters">
+        <span>Categories</span>
+        <form action="search/" method="post" id='search-form'>
+            <input type="text" name="name" placeholder="Recherche" autocomplete="off" id="search-content"/>
+          </form>
+      </div>
+      <div class="top-content">
+        <section class="most-liked">
+          <h2>Most liked</h2>
+          <div class="boards-container-home">
+            <div class="single-board-home"></div>
+            <div class="single-board-home"></div>
+            <div class="single-board-home"></div>
+            <div class="single-board-home"></div>
+          </div>
+        </section>
+        <section class="most-liked">
+          <h2>Most commented</h2>
+          <div class="boards-container-home">
+            <div class="single-board-home"></div>
+            <div class="single-board-home"></div>
+            <div class="single-board-home"></div>
+            <div class="single-board-home"></div>
+          </div>
+        </section>
+          <h1>Hello world</h1>
+          <?php
+
+          $f3=\Base::instance();
+
+          if(isset($SESSION) && !empty($SESSION)){
+            echo "Salut ".$SESSION['name'];
+          }
+
+          ?>
+          <br/>
+
+          <?php if(isset($SESSION) && !empty($SESSION)): ?>
+            <a href="logout">Logout</a>
+            <a href="new-board">New Board</a>
+            <a href="user/<?php echo $f3->get('SESSION.id') ?>">View Profil</a>
+          <?php endif; ?>
+
+
+
+          <?php require('partials/homeBoards.php'); ?>
+
+        </section>
+
+      </div>
+    </div>
   </div>
   <script type="text/javascript" src="public/scripts/main.js"></script>
 </body>
