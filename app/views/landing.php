@@ -18,12 +18,12 @@
   		<p class="subtitle">Comics creators have Their place now</p>
   		<p class="title">Welcome to Striply</p>
 
-  		<a href="#" class="btn-members">
+  		<a href="signin" class="btn-members">
   			<div class="btn-members--content">Become a cartoonist member</div>
   			<div class="btn-members--nbr">5 710 189</div>
   		</a>
 
-  		<a href="home" class="btn-start">Discover the site</a>
+  		<a href="#" class="btn-start">Discover the site</a>
 
   	</div>
   </div>
