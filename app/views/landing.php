@@ -23,7 +23,7 @@
   			<div class="btn-members--nbr">5 710 189</div>
   		</a>
 
-  		<a href="#" class="btn-start">Discover the site</a>
+  		<a href="home" class="btn-start">Discover the site</a>
 
   	</div>
   </div>
