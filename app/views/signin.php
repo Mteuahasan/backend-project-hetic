@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Dpict</title>
+  <title>Striply</title>
   <meta name="description" content="">
   <base href="<?php echo $BASE; ?>/" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -30,7 +30,7 @@
   <?php endif; ?>
 
   <h1>Signin</h1>
-  <form action="#" method="post">
+  <form action="signin" method="POST">
     <label for="name">Nom</label><input type="text" name="name" id="signin-name">
     <label for="email">Email</label><input type="email" name="email" id="signin-email">
     <label for="password">Password</label><input type="password" name="password">

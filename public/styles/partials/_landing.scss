@@ -6,22 +6,31 @@
   	-o-background-size: cover; /* pour Opera */
   	background-size: cover; /* version standardisée */
   	text-align: center;
+	
+	.content-landing {
+		margin: 10em 0 0;
+		overflow: hidden;
+		text-transform: uppercase;
+	}
+
+	.subtitle {
+		color: $grey;
+		font-size: 1.5em;
+		margin: 0 0 1em;
+		@media screen and (max-width: 480px) {
+			font-size: 1.4em;
+		} 
+	}
+
+	.title {
+		color: $white;
+		font-size: 5em;
+		font-weight: $thin;
+		@media screen and (max-width: 480px) {
+			font-size: 4em;
+		} 
+	}
 }
 
-.content-landing {
-	margin: 10em 0 0;
-	overflow: hidden;
-	text-transform: uppercase;
-}
 
-.subtitle {
-	color: $grey;
-	font-size: 1.5em;
-}
-
-.title {
-	color: $white;
-	font-size: 5em;
-	font-weight: $thin;
-}
 

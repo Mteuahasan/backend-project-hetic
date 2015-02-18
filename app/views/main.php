@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Dpict</title>
+  <title>Striply</title>
   <meta name="description" content="">
   <base href="<?php echo $BASE; ?>/" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
