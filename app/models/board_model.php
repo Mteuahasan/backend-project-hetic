@@ -35,7 +35,7 @@ class board_model{
             $has_categories->categories_id = $categorie;
             $has_categories->save();
           }
-          $this->f3->reroute('/');
+          $this->f3->reroute('/home');
         }
         else {
           $error = 'La description doit être renseignée';
