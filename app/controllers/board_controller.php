@@ -26,13 +26,23 @@ class board_controller{
       if($f3->get('VERB')=='POST'){
         $this->web = \Web::instance();
         $files = $_FILES;
+        $maxsize = 5242880;
+        $canUpload = true;
         foreach ($files as $file) {
-          $files = $this->web->receive(function($file){
-            array_push($this->filepath, $file);
-            return true;
-          },true,true);
+          if($file['size'] <= $maxsize) {
+            $files = $this->web->receive(function($file){
+              array_push($this->filepath, $file);
+              return true;
+            },true,true);
+          } else {
+            $canUpload = false;
+          }
         }
-        $this->model->newBoard($f3->get('POST'), $this->filepath);
+        if($canUpload){
+          $this->model->newBoard($f3->get('POST'), $this->filepath);
+        } else {
+          echo "File's max weight is 5Mo";
+        }
       }
     } else {
       $f3->set('error_permissions', true);
