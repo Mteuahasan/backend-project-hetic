@@ -1,3 +1,10 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 // BASE
 // ============================================================================ */
 @import "generic/reset"; // http://www.cssreset.com/scripts/eric-meyer-reset-css/
@@ -9,7 +16,10 @@
 @import "generic/fontfaces";
 @import "generic/images";
 @import "generic/buttons";
+@import "generic/mixins";
 
 // PARTIALS
 //============================================================================ */
 @import "partials/landing";
+@import "partials/menu";
+@import "partials/home";

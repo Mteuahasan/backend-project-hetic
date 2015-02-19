@@ -80,8 +80,7 @@ class users_controller{
   public function afterroute(){
     if(!$this->ajax) {
       echo \View::instance()->render($this->tpl);
-    } else {
-
+    } else if(isset($_GET)){
     }
   }
 }

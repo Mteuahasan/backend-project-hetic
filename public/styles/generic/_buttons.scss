@@ -8,10 +8,10 @@
 	width: 485px;
 	color: $black;
 	overflow: hidden;
-	@media screen and (max-width: 480px) {
-    	width: 90%;
-    	font-size: .8em;
-  	} 
+		@media screen and (max-width: 480px) {
+	    	width: 90%;
+	    	font-size: .8em;
+	  	}
 
 	.btn-members--content {
 		background-color: $yellow;
@@ -20,20 +20,19 @@
 		// width: 50%;
 		width: 325px;
 		border-right: 1px solid #ebde6f;
-		@media screen and (max-width: 480px) {
-    		width: 60%;
-  		} 
-		
+			@media screen and (max-width: 480px) {
+	    		width: 60%;
+	  		}
+
 	}
 	.btn-members--nbr {
-		background-color: $yellow-light;
+		background-color: #f7ec90;
 		float: left;
-		padding: .9em;
-		// width: 10%;
-		width: 89px;
-		@media screen and (max-width: 480px) {
-    		width: 20%;
-  		} 
+		padding: 27px;
+		width: 158px;
+			@media screen and (max-width: 480px) {
+	    		width: 20%;
+	  		}
 	}
 }
 
@@ -46,8 +45,21 @@
 	font-weight: $medium;
 	border: 1px solid rgba(245, 231, 116, .4);
 
-	@media screen and (max-width: 480px) {
-    width: 60%;
-  } 
+		@media screen and (max-width: 480px) {
+	    	width: 60%;
+	  }
 }
+
+
+.btn-cta {
+	color: $black;
+	font-size: .8em;
+	font-weight: $bold;
+	padding: .5em 3em;
+	text-transform: uppercase;
+	background-color: $yellow;
+	border-radius: 10px;
+	// @include border-radius(5px 0 0 5px);
+}
+
 

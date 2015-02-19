@@ -1,0 +1,50 @@
+nav {
+	float: left;
+	height: 100%;
+	display: block;
+	padding: 50px 48px 0 49px;
+	line-height: 30px;
+	background-color: $black;
+	position: fixed;
+
+	.logo {
+		font-size: 3em;
+	}
+
+	.menu--active {
+		color: $yellow !important;
+	}
+
+	a {
+		color: $white;
+		@include transition(.3s);
+	}
+
+
+	.menu {
+		margin-top: 50%;
+		text-transform: uppercase;
+			a {
+				opacity: .7;
+					&:hover {
+						opacity: 1;
+					}
+			}
+	}
+
+	span {
+		width: 60px;
+		margin: 1em 0;
+		display: block;
+		border-bottom: 1px solid rgba(255, 255, 255, .3);
+	}
+
+	.menu--more {
+		a {
+			opacity: .3;
+				&:hover {
+					opacity: 1;
+				}
+		}
+	}
+}

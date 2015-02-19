@@ -35,7 +35,7 @@ class board_model{
             $has_categories->categories_id = $categorie;
             $has_categories->save();
           }
-          $this->f3->reroute('/');
+          $this->f3->reroute('/home');
         }
         else {
           $error = 'La description doit être renseignée';
@@ -84,7 +84,11 @@ class board_model{
 
   function getBoard($data){
     $board = $this->getBoardsMapper()->select('*', 'id = "'.$data.'"');
-    return $board;
+    if(!empty($board)){
+      return $board;
+    } else {
+      $this->f3->error(404);
+    }
   }
 
 
