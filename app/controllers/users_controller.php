@@ -40,21 +40,24 @@ class users_controller{
   }
 
   public function getUserPage($f3, $params) {
-    $this->tpl   = 'profil.php';
+    $this->tpl   = 'usersPage.php';
     $this->userLike = $this->model->userLikes($params['id']);
-    $f3->set('boards', $this->userLike);
+    $f3->set('boardsLiked', $this->userLike);
     $this->usersBoard = $this->model->usersBoards($params['id']);
-    $f3->set('added', $this->usersBoard);
-
+    $f3->set('boardsAdded', $this->usersBoard);
 
   }
 
-  // public function getLikes(){
-  //   $likes = $this->model->userLikes();
-  //   return $likes;
-  // }
+  public function getUserProfil($f3, $params) {
+    $this->tpl = 'usersProfil.php';
+    $this->userProfil = $this->model->userProfil($params['id']);
+    $f3->set('users', $this->userProfil);
 
-
+    if($f3->get('VERB')=='POST'){
+      $this->model->addurls($f3->get('POST'), $params);
+      $f3->reroute('/user/'.$params['id'].'/profil');
+    }
+  }
 
 
   public function logout($f3){

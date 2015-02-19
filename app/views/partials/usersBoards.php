@@ -1,6 +1,8 @@
 <h1>Her are the boards you added</h1>
 
-<?php foreach ($added as $add): ?>
+<?php $j = 0; ?>
+<?php foreach ($boardsAdded as $add): ?>
+<?php $j++; ?>
 
 
 <h3><?php echo $add->name ?></h3>
@@ -20,8 +22,8 @@
 		$post = substr($len, 0, $tronc);
 
 		echo $post;
-		$id = $add->id;
-		echo '<a href="board/'.$id.'">Voir plus</a>';
+		$board_id = $add->id;
+		echo '<a href="board/'.$board_id.'">See more</a>';
 
 
 ?>
@@ -33,5 +35,8 @@
 
 
  
- 
+
 <?php endforeach; ?>
+
+<div>You actualy have created <i><?php echo $j; ?></i> boards</div>
+

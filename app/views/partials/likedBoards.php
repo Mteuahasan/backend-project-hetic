@@ -1,6 +1,8 @@
 <h1>Her are the boards you liked</h1>
 
-<?php foreach ($boards as $board): ?>
+<?php $j = 0; ?>
+<?php foreach ($boardsLiked as $board): ?>
+<?php $j++; ?>
 
 
 <h3><?php echo $board[0]->name ?></h3>
@@ -20,8 +22,8 @@
 		$post = substr($len, 0, $tronc);
 
 		echo $post;
-		$id = $board[0]->id;
-		echo '<a href="board/'.$id.'">Voir plus</a>';
+		$board_id = $board[0]->id;
+		echo '<a href="board/'.$board_id.'">See more</a>';
 
 
 ?>
@@ -30,8 +32,6 @@
 <div class="author"><?php echo $board[0]->author ?></div>
 
 <span class="likes"><?php echo $board[0]->likes ?> likes</span>
-
-
- 
  
 <?php endforeach; ?>
+<div>You actualy have liked <i><?php echo $j; ?></i> boards</div>

@@ -66,9 +66,29 @@ class users_model{
   public function usersBoards() {
     $user_id = $this->f3->get('SESSION')['id'];
     $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$user_id.'"');
-    
+   
     return $usersBoard;
   }
+
+  public function userProfil() {
+    $user_id = $this->f3->get('SESSION')['id'];
+    $usersProfil = $this->getUsersMapper()->select('*', 'id = "'.$user_id.'"');
+
+    return $usersProfil;
+  }
+
+  public function addurls($data, $params) {
+      $addSite=$this->getUsersMapper();
+      $addSite->load(array('id=?', $params['id']));
+      $addSite->website=$data['site'];
+      $addSite->url_twitter=$data['twitter'];
+      $addSite->url_facebook=$data['facebook'];
+      $addSite->url_linkdin=$data['linkdin'];
+      $addSite->update();
+      
+
+    }
+    
 
 
 
