@@ -11,7 +11,7 @@ class board_controller{
   private $categories;
   private $boardCategories;
   private $web;
-  private $filepath;
+  private $filepath = array();
   private $comments;
 
   function __construct(){
@@ -25,11 +25,13 @@ class board_controller{
       $f3->set('categories', $this->categories);
       if($f3->get('VERB')=='POST'){
         $this->web = \Web::instance();
-        $file = $_FILES;
-        $files = $this->web->receive(function($file){
-          $this->filepath = $file['name'];
-          return true;
-        },true,true);
+        $files = $_FILES;
+        foreach ($files as $file) {
+          $files = $this->web->receive(function($file){
+            array_push($this->filepath, $file);
+            return true;
+          },true,true);
+        }
         $this->model->newBoard($f3->get('POST'), $this->filepath);
       }
     } else {

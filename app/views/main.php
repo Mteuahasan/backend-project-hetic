@@ -68,7 +68,6 @@
             <div class="single-board-home"></div>
           </div>
         </section>
-          <h1>Hello world</h1>
           <?php
 
           $f3=\Base::instance();
@@ -95,6 +94,6 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="public/scripts/main.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
 </body>
 </html>

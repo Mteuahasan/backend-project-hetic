@@ -25,7 +25,21 @@ class board_model{
           $board->description=$data['description'];
           $board->author=$session['name'];
           $board->user_id=$session['id'];
-          $board->filepath=$filepath;
+          if(isset($filepath[0])){
+            $board->filepath=$filepath[0]['name'];
+          }
+          if(isset($filepath[1])){
+            $board->filepath2=$filepath[1]['name'];
+          }
+          if(isset($filepath[2])){
+            $board->filepath3=$filepath[2]['name'];
+          }
+          if(isset($filepath[3])){
+            $board->filepath4=$filepath[3]['name'];
+          }
+          if(isset($filepath[4])){
+            $board->filepath5=$filepath[4]['name'];
+          }
           $board->date=date("Y-m-d H:i:s");
           $board->tags=$data['tags'];
           $board->save();

@@ -76,6 +76,6 @@
     ?>
   </div>
 
-  <script type="text/javascript" src="public/scripts/board.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/board.js"></script>
 </body>
 </html>
