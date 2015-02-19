@@ -7,12 +7,19 @@ if(isset($SESSION) && !empty($SESSION)){
 
 $id = $SESSION['id'];
 
+
+
+
+
+
 require('partials/likedBoards.php');
 require('partials/usersBoards.php');
 
 
+
 ?>
 
+<div><a href="<?php echo $id ?>/profil">Your profil</a></div>
 
 
 

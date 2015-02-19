@@ -7,6 +7,7 @@
     echo $len;
   	$tronc = 15;
   	$post = substr($len, $tronc, 1);
+
 		echo $post;
 		$id = $board->id;
 		echo '<br/> <a href="board/'.$id.'">Voir plus</a>';
