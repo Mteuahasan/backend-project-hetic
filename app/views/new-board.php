@@ -9,9 +9,6 @@
   <base href="<?php echo $BASE; ?>/" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" type="text/css" href="./dist/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="./dist/assets/css/medium-editor.min.css">
-  <link rel="stylesheet" type="text/css" href="./dist/assets/css/flat.min.css">
-
 </head>
 <body>
 
@@ -51,17 +48,16 @@
         <input type="text" name="tags" placeholder="Add tags">
         <hr style="width:100%; color:#AAA">
         <textarea name="description" id="board-description" cols="30" rows="10" placeholder="Write here the strip's description"></textarea>
-        <input type="file" name="userfile">
-        <input type="file" name="userfile2">
-        <input type="file" name="userfile3">
-        <input type="file" name="userfile4">
-        <input type="file" name="userfile5">
+        <input type="file" name="userfile" class="input-file">
+        <input type="file" name="userfile2" class="input-file">
+        <input type="file" name="userfile3" class="input-file">
+        <input type="file" name="userfile4" class="input-file">
+        <input type="file" name="userfile5" class="input-file">
         <input type="submit" value="Submit board">
       </form>
     </div>
   </div>
 
-  <script type="text/javascript" src="dist/assets/scripts/medium-editor.min.js"></script>
   <script type="text/javascript" src="dist/assets/scripts/new-board.js"></script>
 </body>
 </html>
