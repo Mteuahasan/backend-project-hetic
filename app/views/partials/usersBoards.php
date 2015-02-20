@@ -8,14 +8,7 @@
 <h3><?php echo $add->name ?></h3>
 <div class="description">
 <?php
-	$len = $add->description;
-	$tronc = 15;
-	$post = substr($len, $tronc, 1);
-
-		echo $post;
-		$board_id = $add->id;
-		echo '<a href="board/'.$board_id.'">See more</a>';
-
+	echo $add->description;
 
 ?>
 </div>

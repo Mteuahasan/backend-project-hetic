@@ -44,7 +44,7 @@
 
     <div class="wrapper-home-content">
       <div class="filters">
-        <span>Categories</span>
+        <a href="board/category">Categories</a>
         <form action="search/" method="post" id='search-form'>
             <input type="text" name="name" placeholder="Recherche" autocomplete="off" id="search-content"/>
           </form>

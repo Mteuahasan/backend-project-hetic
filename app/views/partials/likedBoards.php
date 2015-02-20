@@ -8,13 +8,7 @@
 <h3><?php echo $board[0]->name ?></h3>
 <div class="description">
 <?php
-	$len = $board[0]->description;
-	$tronc = 15;
-	$post = substr($len, $tronc, 1);
-
-		echo $post;
-		$board_id = $board[0]->id;
-		echo '<a href="board/'.$board_id.'">See more</a>';
+	echo $board[0]->description;
 
 
 ?>

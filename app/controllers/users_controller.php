@@ -45,7 +45,6 @@ class users_controller{
     $f3->set('boardsLiked', $this->userLike);
     $this->usersBoard = $this->model->usersBoards($params['id']);
     $f3->set('boardsAdded', $this->usersBoard);
-
   }
 
   public function getUserProfil($f3, $params) {
