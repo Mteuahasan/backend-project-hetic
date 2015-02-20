@@ -23,7 +23,6 @@ var signin = {
     var form = document.getElementById('search-form');
 
     search.addEventListener('keyup', function(e){
-      console.log(this.value);
       if (this.value.length > 3) {
         var data=new FormData();
         data.append('search', this.value);

@@ -38,6 +38,6 @@
     <input type="submit" value="Signin">
   </form>
 
-  <script type="text/javascript" src="public/scripts/signin.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/signin.js"></script>
 </body>
 </html>
