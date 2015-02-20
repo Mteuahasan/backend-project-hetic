@@ -31,4 +31,10 @@ div.contain-form{
   input[type="file"]{
     display: block;
   }
+
+  div.delete{
+    width: 25px;
+    height: 25px;
+    background: black;
+  }
 }

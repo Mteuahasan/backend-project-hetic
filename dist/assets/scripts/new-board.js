@@ -25,9 +25,19 @@ var newBoard = {
       }
 
       reader.addEventListener('load',function(e){
-        img.setAttribute('src', e.target.result)
+        img.setAttribute('src', e.target.result);
       });
       input.parentNode.insertBefore(img, input.nextSibling);
+      var del = document.createElement('div');
+      del.setAttribute('class', 'delete');
+      img.parentNode.insertBefore(del, img.nextSibling);
+
+      del.addEventListener('click', function(){
+        del.parentNode.removeChild(img);
+        del.parentNode.removeChild(del);
+        input.value = "";
+      });
+
       reader.readAsDataURL(input.files[0]);
 
     }
