@@ -70,7 +70,6 @@
                   <i class="flaticon-label36"><span>120</span></i>
                   <i class="flaticon-view28"><span>380</span></i>
                 </div>
-                <!-- <div class="banner-effect"></div> -->
               </div>
 
             </a>
@@ -112,7 +111,6 @@
             <a href="#">See all</a>
           </div>
         </section>
-          <h1>Hello world</h1>
           <?php
 
           $f3=\Base::instance();
@@ -139,6 +137,6 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="public/scripts/main.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
 </body>
 </html>
