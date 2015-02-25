@@ -30,16 +30,18 @@
       <li><a href="#">RSS</a></li>
     </ul>
     <?php if(!isset($SESSION) || empty($SESSION)): ?>
-        <ul>
+        <ul class="menu--footer">
           <li><a href="signin">Sign Up</a></li>
-          <li><a href="login" class="btn-cta">Log In</a></li>
+          <li><a href="login" class="btn-cta">Log In <i class="flaticon-plus3"></i></a></li>
         </ul>
       <?php endif; ?>
-
   </nav>
+
   <div class="main-container">
     <section class="featured-event">
-
+      <p>The contest #<strong>18</strong></p>
+      <p>is finally launched !</p>
+      <a href="#">Read more <i class="flaticon-right11"></i></a>
     </section>
 
     <div class="wrapper-home-content">
@@ -53,19 +55,61 @@
         <section class="most-liked">
           <h2>Most liked</h2>
           <div class="boards-container-home">
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a href="landing" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <img src="./dist/assets/img/landing.jpg">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+                <!-- <div class="banner-effect"></div> -->
+              </div>
+
+            </a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a href="#">See all</a>
           </div>
         </section>
         <section class="most-liked">
           <h2>Most commented</h2>
           <div class="boards-container-home">
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a href="#">See all</a>
+          </div>
+        </section>
+        <section class="most-liked">
+          <h2>Most controversial</h2>
+          <div class="boards-container-home">
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a href="#">See all</a>
           </div>
         </section>
           <h1>Hello world</h1>

@@ -1,6 +1,6 @@
 .landing {
-	height: 100%;
-	background: url('../img/landing.jpg') no-repeat center fixed;
+	overflow: hidden;
+	background: url('../img/landing.jpg') no-repeat center center fixed;
   	-webkit-background-size: cover; /* pour Chrome et Safari */
   	-moz-background-size: cover; /* pour Firefox */
   	-o-background-size: cover; /* pour Opera */
@@ -11,14 +11,17 @@
 		margin: 10em 0 0;
 		overflow: hidden;
 		text-transform: uppercase;
+		@media screen and (max-width: 480px) {
+	    	margin: 5em 0 0;
+		}
 	}
 
 	.subtitle {
 		color: $grey;
 		font-size: 1.5em;
-		margin: 0 0 1em;
+		margin: 0 0 10px;
 		@media screen and (max-width: 480px) {
-			font-size: 1.4em;
+			font-size: 1em;
 		} 
 	}
 
@@ -27,7 +30,8 @@
 		font-size: 5em;
 		font-weight: $thin;
 		@media screen and (max-width: 480px) {
-			font-size: 4em;
+			font-size: 3em;
+			margin: 0 0 1em;
 		} 
 	}
 }

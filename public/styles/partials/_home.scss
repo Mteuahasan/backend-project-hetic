@@ -4,9 +4,28 @@ div.main-container{
   background: url('../img/background-texture.png') repeat;
   section.featured-event{
     width: 100%;
-    height: 300px;
-    background: url('http://lorempixel.com/1000/200');
+    height: 230px;
+    line-height: 35px;
     background-size: cover;
+    padding: 5em 0em 0em 9em;
+    background: url('../img/home-event.jpg');
+      p {
+        font-size: 1.8em;
+        color: $white;
+        font-weight: $light;
+        text-transform: uppercase;
+          strong {
+            font-weight: $medium;
+          }
+      }
+      a {
+        color: $white;
+        font-size: .8em;
+        border-bottom: 1px solid;
+          i{
+            margin-left: .7em;
+          }
+      }
   }
   div.wrapper-home-content{
     width: 90%;
@@ -15,6 +34,8 @@ div.main-container{
     div.filters{
       margin-top: 25px;
       height: 80px;
+      font-size: .8em;
+      font-weight: $bold;
 
       span{
         float: right;
@@ -26,6 +47,8 @@ div.main-container{
         input[type="text"]{
           @include placeholder {
               color: #333;
+              font-size: .8em;
+              font-weight: $bold;
           }
           font-size: 16px;
           width: 150px;
@@ -44,19 +67,103 @@ div.main-container{
 
       section{
         text-align: center;
+        overflow: hidden;
+        a {
+          margin: 1em 0;
+        }
         h2{
           text-align: left;
-          font-size: 20px;
           padding: 10px 0px;
           border-bottom: 1px solid #333;
           text-transform: uppercase;
         }
-        div.single-board-home{
+        div.boards-container-home {
+          height: 300px;
+          width: 2370px;
+          position: relative;
+          // background-color: grey;
+          margin: 2em 0 5em 0;
+          right: 750px;
+          a{
+            color: $black;
+            border-bottom: 1px solid;
+          }
+        }
+        a.single-board-home{
           display: inline-block;
-          width: 300px;
-          height: 350px;
-          background-color: red;
-          margin: 10px;
+          width: 230px;
+          height: 295px;
+          cursor: pointer;
+          margin: 0 .9em 1.5em;
+          background-color: pink;
+          box-shadow: -2px 2px 1px rgba(0, 0, 0, .1);
+            .board-hover {
+              position: absolute;
+              width: 230px;
+              height: 295px;
+              text-align: left;
+              padding: 2em 1em 0 2em;
+              background-color: $yellow;
+              h3 {
+                line-height: 20px;
+                font-weight: $medium;
+                text-transform: uppercase;
+              }
+              p {
+                font-size: .8em;
+                line-height: 30px;
+              }
+              em {
+                font-size: .8em;
+                font-style: italic;
+                font-weight: $light;
+                padding: 3em 0 0;
+                display: block;
+                i {
+                  font-size: .7em;
+                  margin-right: .5em;
+                }
+              }
+            }
+            &:hover .board-hover {
+                z-index: 2;
+                opacity: .9;
+                // box-shadow: -3px 3px 1px rgba(0, 0, 0, .06);
+              }
+            img {
+              position: absolute;
+              width: 230px;
+              height: 295px;
+            }
+            div.banner {
+              bottom: 0;
+              z-index: 4;
+              margin-left: 115px;
+              margin-bottom: 20px;
+              color: $white;
+              position: absolute;
+              background-color: $black;
+              .banner-content {
+                padding: .2em .5em .4em;
+                display: inline-block;
+                span {
+                  margin: 0 .4em;
+                  font-size: 14px;
+                }
+              }
+              .flaticon-label36 {
+                font-size: .7em;
+              }
+              .flaticon-view28 {
+                margin-right: .5em;
+              }
+            }
+            // .banner-effect {
+            //   width: 50px;
+            //   height: 20px;
+            //   float: right;
+            //   background-color: $yellow;
+            // }
         }
       }
     }

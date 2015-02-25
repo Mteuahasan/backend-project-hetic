@@ -6,6 +6,7 @@ nav {
 	line-height: 30px;
 	background-color: $black;
 	position: fixed;
+	z-index: 1;
 
 	.logo {
 		font-size: 3em;
@@ -40,11 +41,28 @@ nav {
 	}
 
 	.menu--more {
+		font-size: 14px;
 		a {
 			opacity: .3;
 				&:hover {
 					opacity: 1;
 				}
 		}
+	}
+
+	.menu--footer {
+		position: absolute;
+		bottom: 0;
+		padding-bottom: 30px;
+
+	}
+	i {
+		float: right;
+		display: block;
+		font-size: 10px;
+		line-height: 12px;
+		border-radius: 0 5px 5px 0;
+		padding: 7px 9px 7px 9px;
+		background-color: $yellow-light;
 	}
 }

@@ -1,53 +1,90 @@
 .btn-members {
 	display: block;
-	margin: 1.5em auto;
+	margin: 25px auto;
 	font-size: 1.2em;
 	font-weight: $medium;
 	border: 1px solid rgba(0, 0, 0, .2);
-	// width: 50%;
-	width: 485px;
+	width: 100%;
+	max-width: 500px;
 	color: $black;
 	overflow: hidden;
 		@media screen and (max-width: 480px) {
-	    	width: 90%;
+	    	max-width: 320px;
 	    	font-size: .8em;
 	  	}
+	span {
+		position: absolute;
+		display: none;
+		width: 500px;
+		height: 60px;
+		background-color: rgba(0, 0, 0, .05);
+		@media screen and (max-width: 480px) {
+	    	max-width: 320px;
+	    	height: 55px;
+	  	}
+	}
+	&:hover span {
+		display: block;
+	}
 
 	.btn-members--content {
 		background-color: $yellow;
 		float: left;
-		padding: .9em;
-		// width: 50%;
-		width: 325px;
-		border-right: 1px solid #ebde6f;
-			@media screen and (max-width: 480px) {
-	    		width: 60%;
-	  		}
-
+		padding: 20px 0;
+		width: 75%;
 	}
 	.btn-members--nbr {
-		background-color: #f7ec90;
+		background-color: $yellow-light;
 		float: left;
-		padding: 27px;
-		width: 158px;
-			@media screen and (max-width: 480px) {
-	    		width: 20%;
-	  		}
+		padding: 20px 0;
+		width: 25%;
+		letter-spacing: 2px;
 	}
 }
 
+/* Start button with hover animation */
 .btn-start {
-	display: block;
-	width: 190px;
-	color: $yellow;
-	padding: 1em;
-	margin: 0 auto;
-	font-weight: $medium;
-	border: 1px solid rgba(245, 231, 116, .4);
+    width: 100%;
+    max-width: 210px;
+    margin: 40px auto;
+    a {
+	    float: left;
+	    font-weight: $medium;
+	    line-height: 56px;
+	    color: $yellow;
+	    border: 2px solid rgba(245, 231, 116, .4);
+	    width: 210px;
+	    @include transition(.5s);
+	    @media screen and (max-width: 480px) {
+		    line-height: 46px;
+		    width: 180px;
+		}
 
-		@media screen and (max-width: 480px) {
-	    	width: 60%;
-	  }
+		&:hover{
+		    background: rgba(0,0,0,0);
+		    color: $black;
+		}
+    }
+	.ease {
+	    background: $yellow;
+	    width: 0;
+	    height: 60px;
+	    @include transition(.4s);
+	    @media screen and (max-width: 480px) {
+		    height: 50px;
+		}
+	}
+	&:hover .ease {
+	    background: $yellow;
+	    border: 0;
+	    width: 210px;
+	    @media screen and (max-width: 480px) {
+		    width: 180px;
+		}
+	}
+	@media screen and (max-width: 480px) {
+	    font-size: .8em;
+	}
 }
 
 
@@ -58,8 +95,5 @@
 	padding: .5em 3em;
 	text-transform: uppercase;
 	background-color: $yellow;
-	border-radius: 10px;
-	// @include border-radius(5px 0 0 5px);
+	border-radius: 5px 0 0 5px;
 }
-
-

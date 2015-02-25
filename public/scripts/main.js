@@ -1,4 +1,4 @@
-var signin = {
+var main = {
 
   init: function(){
     this.search();
@@ -40,4 +40,4 @@ var signin = {
   }
 }
 
-signin.init();
+main.init();

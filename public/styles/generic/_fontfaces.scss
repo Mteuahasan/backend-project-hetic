@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Mission-script';
-    src: url('./fonts/mission-script-webfont.eot');
+    src: url('../fonts/mission-script-webfont.eot');
     src: url('../fonts/mission-script-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/mission-script-webfont.woff') format('woff'),
          url('../fonts/mission-script-webfont.ttf') format('truetype'),
@@ -8,13 +8,26 @@
     font-style: normal;
     font-weight: normal;
 }
+@font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/flaticon.eot");
+    src: url("../fonts/flaticon.eot#iefix") format("embedded-opentype"),
+         url("../fonts/flaticon.woff") format("woff"),
+         url("../fonts/flaticon.ttf") format("truetype"),
+         url("../fonts/flaticon.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
 
 .logo {
-	font-family: 'Mission-script';
-	font-size: 6em;
-	color: $yellow;
-	padding-top: 5%;
-	text-shadow: 0 -2px #938944;
+    font-family: 'Mission-script';
+    font-size: 6em;
+    color: $yellow;
+    padding-top: 5%;
+    text-shadow: 0 -2px #938944;
+    @media screen and (max-width: 480px) {
+        font-size: 5em;
+    }
 }
 
 
@@ -26,3 +39,105 @@ $normal : 400;
 $medium : 500;
 $bold: 700;
 $ultra-bold : 900;
+
+
+// FLATICON
+//============================================================================ */
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+    font-family: Flaticon;
+    font-style: normal;
+}.flaticon-add13:before {
+    content: "\e000";
+}
+.flaticon-bin9:before {
+    content: "\e001";
+}
+.flaticon-book244:before {
+    content: "\e002";
+}
+.flaticon-bulb19:before {
+    content: "\e003";
+}
+.flaticon-cancel22:before {
+    content: "\e004";
+}
+.flaticon-caution7:before {
+    content: "\e005";
+}
+.flaticon-cloud334:before {
+    content: "\e006";
+}
+.flaticon-cropping4:before {
+    content: "\e007";
+}
+.flaticon-envelope54:before {
+    content: "\e008";
+}
+.flaticon-flag86:before {
+    content: "\e009";
+}
+.flaticon-folder256:before {
+    content: "\e00a";
+}
+.flaticon-information32:before {
+    content: "\e00b";
+}
+.flaticon-label36:before {
+    content: "\e00c";
+}
+.flaticon-left15:before {
+    content: "\e00d";
+}
+.flaticon-list91:before {
+    content: "\e00e";
+}
+.flaticon-location67:before {
+    content: "\e00f";
+}
+.flaticon-magnifier52:before {
+    content: "\e010";
+}
+.flaticon-magnifier58:before {
+    content: "\e011";
+}
+.flaticon-message30:before {
+    content: "\e012";
+}
+.flaticon-multiple10:before {
+    content: "\e013";
+}
+.flaticon-pencil124:before {
+    content: "\e014";
+}
+.flaticon-pin60:before {
+    content: "\e015";
+}
+.flaticon-plus3:before {
+    content: "\e016";
+}
+.flaticon-right11:before {
+    content: "\e017";
+}
+.flaticon-screwdriver26:before {
+    content: "\e018";
+}
+.flaticon-telephone106:before {
+    content: "\e019";
+}
+.flaticon-two290:before {
+    content: "\e01a";
+}
+.flaticon-user148:before {
+    content: "\e01b";
+}
+.flaticon-user7:before {
+    content: "\e01c";
+}
+.flaticon-view28:before {
+    content: "\e01d";
+}
+.flaticon-wand2:before {
+    content: "\e01e";
+}

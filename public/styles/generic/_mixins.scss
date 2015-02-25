@@ -1,8 +1,8 @@
 @mixin transition($seconds) {
-	-webkit-transition: all $seconds ease-in-out;
-	-moz-transition: all $seconds ease-in-out;
-	-o-transition: all $seconds ease-in-out;
-	-ms-transition: all $seconds ease-in-out;
+	-webkit-transition: all ease-in-out $seconds;
+	-moz-transition: all ease-in-out $seconds;
+	-o-transition: all ease-in-out $seconds;
+	-ms-transition: all ease-in-out $seconds;
 }
 
 @mixin placeholder {
