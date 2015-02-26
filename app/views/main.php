@@ -89,6 +89,11 @@
 
     <div class="wrapper-home-content">
       <div class="filters">
+
+        <a href="board/category">Categories</a>
+        <form action="search/" method="post" id='search-form'>
+            <input type="text" name="name" placeholder="Recherche" autocomplete="off" id="search-content"/>
+          </form>
         <a href="#">
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>

@@ -59,7 +59,6 @@ class users_model{
     if(empty($likedBoards)) {
       echo 'You didn\'t like any boards';
     }
-
     return $likedBoards;
   }
 

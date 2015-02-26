@@ -105,6 +105,48 @@ class board_model{
     }
   }
 
+  function getBoardCategory() {
+    $get_categories = $this->getCategoriesMapper()->select('*');
+    $table['categories']=array();
+    $table['boards']=array();
+
+    foreach($get_categories as $get_categorie) {
+      $idCat = $get_categorie->id;
+
+      $nameCat = array(
+      'id'=> $get_categorie->id,
+      'categories_name'=>$get_categorie->name
+
+      );
+      array_push($table['categories'], $nameCat);
+
+      $get_hasCategories = $this->getHasCategoriesMapper()->select('*', 'categories_id = "'.$idCat.'"');
+      foreach($get_hasCategories as $get_hasCategorie) {
+        $id_hasCat = $get_hasCategorie->boards_id;
+
+        $get_boards = $this->getBoardsMapper()->select('*', 'id = "'.$id_hasCat.'"');
+        foreach($get_boards as $get_board) {
+          $boards_name = $get_board->name;
+
+          $board_name = array(
+          'boards_id'=>$get_hasCategorie->boards_id,
+          'boards_name'=>$get_board->name,
+          'category_id'=>$get_hasCategorie->categories_id
+          );
+
+          array_push($table['boards'],$board_name);
+
+        }
+      }
+    }
+
+    var_dump($table);
+    return $table;
+  }
+
+
+
+
 
   function getBoardCategories($data){
     $categories_id = $this->getHasCategoriesMapper()->select('*', 'boards_id = "'.$data.'"');

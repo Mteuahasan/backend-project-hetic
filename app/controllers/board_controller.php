@@ -63,6 +63,13 @@ class board_controller{
     }
   }
 
+  public function getCategory($f3) {
+    $this->tpl = 'boardCategory.php';
+    $this->boardCategories  = $this->model->getBoardCategory();
+    $f3->set('categoryboards', $this->boardCategories);
+
+  }
+
   public function likes($f3, $params){
     $response = $this->model->likes($f3->get('POST.like'), $params);
     echo $response;

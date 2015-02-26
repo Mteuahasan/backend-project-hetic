@@ -19,12 +19,6 @@
 <div><?php echo $users[0]->url_linkdin ?></div>
 
 
-
-
-
-
-
-
 <form enctype="multipart/form-data" action="#" method="post">
 	<label for="site">Website :</label><input type="text" name="site" >
 	<label for="twitter">Twitter :</label><input type="text" name="twitter" >
