@@ -1,65 +1,123 @@
 .btn-members {
 	display: block;
-	margin: 1.5em auto;
+	margin: 25px auto;
 	font-size: 1.2em;
 	font-weight: $medium;
 	border: 1px solid rgba(0, 0, 0, .2);
-	// width: 50%;
-	width: 485px;
+	width: 100%;
+	max-width: 500px;
 	color: $black;
 	overflow: hidden;
 		@media screen and (max-width: 480px) {
-	    	width: 90%;
+	    	max-width: 320px;
 	    	font-size: .8em;
 	  	}
+	span {
+		@include span-hover(500px, 60px, 320px, 55px);
+	}
+	&:hover span {
+		display: block;
+	}
 
 	.btn-members--content {
-		background-color: $yellow;
+		width: 75%;
 		float: left;
-		padding: .9em;
-		// width: 50%;
-		width: 325px;
-		border-right: 1px solid #ebde6f;
-			@media screen and (max-width: 480px) {
-	    		width: 60%;
-	  		}
-
+		padding: 20px 0;
+		background-color: $yellow;
+		border-right: 1px solid rgba(0, 0, 0, .05);
 	}
 	.btn-members--nbr {
-		background-color: #f7ec90;
+		background-color: $yellow-light;
 		float: left;
-		padding: 27px;
-		width: 158px;
-			@media screen and (max-width: 480px) {
-	    		width: 20%;
-	  		}
+		padding: 20px 0;
+		width: 25%;
+		letter-spacing: 2px;
 	}
 }
 
-.btn-start {
-	display: block;
-	width: 190px;
-	color: $yellow;
-	padding: 1em;
-	margin: 0 auto;
-	font-weight: $medium;
-	border: 1px solid rgba(245, 231, 116, .4);
 
-		@media screen and (max-width: 480px) {
-	    	width: 60%;
-	  }
+/* Start button with hover animation */
+.btn-start {
+    width: 100%;
+    max-width: 210px;
+    margin: 40px auto;
+    a {
+	    float: left;
+	    font-weight: $medium;
+	    line-height: 56px;
+	    color: $yellow;
+	    border: 2px solid rgba(245, 231, 116, .4);
+	    width: 210px;
+	    @include transition(.5s);
+	    @media screen and (max-width: 480px) {
+		    line-height: 46px;
+		    width: 180px;
+		}
+
+		&:hover{
+		    background: rgba(0,0,0,0);
+		    color: $black;
+		}
+    }
+	.ease {
+	    background: $yellow;
+	    width: 0;
+	    height: 60px;
+	    @include transition(.4s);
+	    @media screen and (max-width: 480px) {
+		    height: 50px;
+		}
+	}
+	&:hover .ease {
+	    background: $yellow;
+	    border: 0;
+	    width: 210px;
+	    @media screen and (max-width: 480px) {
+		    width: 180px;
+		}
+	}
+	@media screen and (max-width: 480px) {
+	    font-size: .8em;
+	}
 }
+
 
 
 .btn-cta {
-	color: $black;
-	font-size: .8em;
+	display: block;
+	overflow: hidden;
+	margin-top: 30px;
+	line-height: 27px;
+	text-align: center;
 	font-weight: $bold;
-	padding: .5em 3em;
+	box-shadow: 1px 1px $yellow-dark;
 	text-transform: uppercase;
-	background-color: $yellow;
-	border-radius: 10px;
-	// @include border-radius(5px 0 0 5px);
+	@include border-radius(5px);
+	@include transition(.2s);
+	a {
+		color: $black;
+	}
+
+	span {
+		@include span-hover(150px, 27px, 150px, 27px);
+	}
+	&:hover span {
+		display: block;
+	}
+
+	strong {
+		font-size: 12px;
+		float: left;
+		width: 120px;
+		background-color: $yellow;
+	}
+	i {
+		float: left;
+		width: 30px;
+		font-size: 10px;
+		background-color: $yellow-light;
+	}
+	&:hover{
+  		@include transform(0, 1px);
+	}
 }
-
-

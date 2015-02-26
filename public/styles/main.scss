@@ -11,12 +11,12 @@ html {
 
 // GENERIC STYLES
 // ============================================================================ */
+@import "generic/mixins";
 @import "generic/colors";
 @import "generic/balises";
 @import "generic/fontfaces";
 @import "generic/images";
 @import "generic/buttons";
-@import "generic/mixins";
 
 // PARTIALS
 //============================================================================ */

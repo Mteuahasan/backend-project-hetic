@@ -13,59 +13,150 @@
 </head>
 <body>
   <nav>
-    <h1 class="logo">Striply</h1>
-    <ul class="menu">
-      <li><a class="menu--active" href="home">Home</a></li>
-      <li><a href="gallery">Gallery</a></li>
-      <li><a href="contests">Contests</a></li>
-      <li><a href="expos">Expos</a></li>
-      <li><a href="jobs">Jobs</a></li>
-    </ul>
-    <span></span>
-    <ul class="menu--more">
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Google +</a></li>
-      <li><a href="#">RSS</a></li>
-    </ul>
+    <div class="container-menu">
+      <h1 class="logo">Striply</h1>
+      <ul class="menu">
+        <li><a class="menu--active" href="home">Home</a></li>
+        <li><a href="gallery">Gallery</a></li>
+        <li><a href="contests">Contests</a></li>
+        <li><a href="shows">Shows</a></li>
+        <li><a href="jobs">Jobs</a></li>
+      </ul>
+      <span></span>
+      <ul class="menu--more">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Google +</a></li>
+        <li><a href="#">RSS</a></li>
+      </ul>
+    </div>
     <?php if(!isset($SESSION) || empty($SESSION)): ?>
-        <ul>
-          <li><a href="signin">Sign Up</a></li>
-          <li><a href="login" class="btn-cta">Log In</a></li>
-        </ul>
-      <?php endif; ?>
+        <div class="menu--footer">
+          <!-- NOT CONNECTED -->
+      <!--     <ul class="disconnected">
+            <li><a href="signin"><i class="flaticon-user148"></i><span>Sign Up</span><i class="flaticon-right11"></i></a></li>
+            <li class="btn-cta">
+              <a href="login">
+                <span></span>
+                <strong>Log In</strong>
+                <i class="flaticon-plus3"></i>
+              </a>
+            </li>
+          </ul> -->
 
+          <!-- CONNECTED -->
+          <ul class="connected">
+            <li id="feature-profile-menu">
+              <a href="home">
+                <img src="./dist/assets/img/profile.jpg">
+                <div class="username"><p>Annabelle</p><p>Ruiz</p></div>
+              </a>
+            </li>
+
+            <li class="feature-menu-hover">
+              <a href="#"><i class="flaticon-logout11"></i></a>
+              <span></span>
+              <a href="#"><p>See profile</p></a>
+            </li>
+
+            <li class="btn-cta">
+              <a href="login">
+                <span></span>
+                <strong>Add strip</strong>
+                <i class="flaticon-plus3"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      <?php endif; ?>
   </nav>
+
   <div class="main-container">
     <section class="featured-event">
-
+      <p>The contest #<strong>18</strong></p>
+      <p>is finally launched !</p>
+      <a href="#"><span>Read more</span><i class="flaticon-right11"></i></a>
     </section>
 
     <div class="wrapper-home-content">
       <div class="filters">
+
         <a href="board/category">Categories</a>
         <form action="search/" method="post" id='search-form'>
             <input type="text" name="name" placeholder="Recherche" autocomplete="off" id="search-content"/>
           </form>
+        <a href="#">
+          <span>Categories</span>
+          <i class="flaticon-telephone106"></i>
+        </a>
+        <a href="#">
+          <span>Search</span>
+          <i class="flaticon-magnifier52"></i>
+        </a>
+        <!-- <form action="search/" method="post" id='search-form'>
+            <input type="text" name="name" placeholder="Search" autocomplete="off" id="search-content"/>
+        </form> -->
+
       </div>
       <div class="top-content">
         <section class="most-liked">
           <h2>Most liked</h2>
           <div class="boards-container-home">
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a href="landing" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <img src="./dist/assets/img/landing.jpg">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+
+            </a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a href="#">See all</a>
           </div>
         </section>
         <section class="most-liked">
           <h2>Most commented</h2>
           <div class="boards-container-home">
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
-            <div class="single-board-home"></div>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a href="#">See all</a>
+          </div>
+        </section>
+        <section class="most-liked">
+          <h2>Most controversial</h2>
+          <div class="boards-container-home">
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a class="single-board-home"></a>
+            <a href="#">See all</a>
           </div>
         </section>
           <?php

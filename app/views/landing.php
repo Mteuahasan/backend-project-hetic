@@ -19,11 +19,14 @@
   		<p class="title">Welcome to Striply</p>
 
   		<a href="signin" class="btn-members">
+        <span></span>
   			<div class="btn-members--content">Become a cartoonist member</div>
-  			<div class="btn-members--nbr">5 710 189</div>
+  			<div class="btn-members--nbr">5710189</div>
   		</a>
-
-  		<a href="home" class="btn-start">Discover the site</a>
+      <div class="btn-start">
+  		  <a href="home">Discover the site</a>
+        <div class="ease"></div>
+      </div>
 
   	</div>
   </div>

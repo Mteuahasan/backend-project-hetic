@@ -1,4 +1,4 @@
-var signin = {
+var main = {
 
   init: function(){
     this.search();
@@ -36,7 +36,15 @@ var signin = {
     form.addEventListener('submit', function(e){
       e.preventDefault();
     });
+  },
+  nav: function(){
+    var menu = document.getElementById('feature-profile-menu');
+
+
+    menu.addEventListener('mouseover', function(){
+      this.classList.add('move');
+    });
   }
 }
 
-signin.init();
+main.init();
