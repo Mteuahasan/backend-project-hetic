@@ -9,6 +9,7 @@ div.main-container{
     background-size: cover;
     padding: 5em 0em 0em 9em;
     background: url('../img/event18.jpg');
+    box-shadow: 0 3px 3px $grey;
       p {
         font-size: 1.8em;
         color: $white;
@@ -26,7 +27,11 @@ div.main-container{
         }
           i{
             margin-left: .7em;
+            @include transition(.8s);
           }
+      }
+      a:hover i {
+        @include transform(5px, 0);
       }
   }
   div.wrapper-home-content{
@@ -34,17 +39,24 @@ div.main-container{
     margin: 0 auto;
 
     div.filters{
-      margin-top: 25px;
+      margin-top: 35px;
       height: 80px;
       font-size: .8em;
       font-weight: $bold;
-
-      span{
+      a {
         float: right;
-        margin: 20px;
+        color: $black;
+        margin: 0 10px;
+      }
+      i {
+        position: relative;
+        font-size: 9px;        
+        bottom: 1px;
+      }
+      span{
+        margin: 5px;
       }
       form{
-        float: right;
         margin: 20px;
         input[type="text"]{
           @include placeholder {

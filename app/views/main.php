@@ -81,10 +81,17 @@
 
     <div class="wrapper-home-content">
       <div class="filters">
-        <span>Categories</span>
-        <form action="search/" method="post" id='search-form'>
-            <input type="text" name="name" placeholder="Recherche" autocomplete="off" id="search-content"/>
-          </form>
+        <a href="#">
+          <span>Categories</span>
+          <i class="flaticon-telephone106"></i>
+        </a>
+        <a href="#">
+          <span>Search</span>
+          <i class="flaticon-magnifier52"></i>
+        </a>
+        <!-- <form action="search/" method="post" id='search-form'>
+            <input type="text" name="name" placeholder="Search" autocomplete="off" id="search-content"/>
+        </form> -->
       </div>
       <div class="top-content">
         <section class="most-liked">
