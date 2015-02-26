@@ -19,6 +19,7 @@ var main = {
   },
   search: function(){
     var self = this;
+    var allSearch = document.getElementById('search');
     var search  = document.getElementById('search-content');
     var form = document.getElementById('search-form');
 
@@ -36,10 +37,13 @@ var main = {
     form.addEventListener('submit', function(e){
       e.preventDefault();
     });
+
+    // allSearch.addEventListener('onclick') function() {
+      
+    // }
   },
   nav: function(){
     var menu = document.getElementById('feature-profile-menu');
-
 
     menu.addEventListener('mouseover', function(){
       this.classList.add('move');

@@ -71,6 +71,14 @@
         </div>
       <?php endif; ?>
   </nav>
+  
+  <!-- <section class="page-search">
+    <h1>Search anything by tiping here</h1>
+    <i class="flaticon-right11"></i>
+    <form action="search/" method="post" id='search-form'>
+        <input type="text" name="name" placeholder="Search" autocomplete="off" id="search-content"/>
+    </form>
+  </section> -->
 
   <div class="main-container">
     <section class="featured-event">
@@ -85,14 +93,13 @@
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
         </a>
-        <a href="#">
+        <a href="#" id="search">
           <span>Search</span>
           <i class="flaticon-magnifier52"></i>
         </a>
-        <!-- <form action="search/" method="post" id='search-form'>
-            <input type="text" name="name" placeholder="Search" autocomplete="off" id="search-content"/>
-        </form> -->
       </div>
+
+
       <div class="top-content">
         <section class="most-liked">
           <h2>Most liked</h2>
