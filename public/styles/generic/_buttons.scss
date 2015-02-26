@@ -13,25 +13,18 @@
 	    	font-size: .8em;
 	  	}
 	span {
-		position: absolute;
-		display: none;
-		width: 500px;
-		height: 60px;
-		background-color: rgba(0, 0, 0, .05);
-		@media screen and (max-width: 480px) {
-	    	max-width: 320px;
-	    	height: 55px;
-	  	}
+		@include span-hover(500px, 60px, 320px, 55px);
 	}
 	&:hover span {
 		display: block;
 	}
 
 	.btn-members--content {
-		background-color: $yellow;
+		width: 75%;
 		float: left;
 		padding: 20px 0;
-		width: 75%;
+		background-color: $yellow;
+		border-right: 1px solid rgba(0, 0, 0, .05);
 	}
 	.btn-members--nbr {
 		background-color: $yellow-light;
@@ -41,6 +34,7 @@
 		letter-spacing: 2px;
 	}
 }
+
 
 /* Start button with hover animation */
 .btn-start {
@@ -88,12 +82,42 @@
 }
 
 
+
 .btn-cta {
-	color: $black;
-	font-size: .8em;
+	display: block;
+	overflow: hidden;
+	margin-top: 30px;
+	line-height: 27px;
+	text-align: center;
 	font-weight: $bold;
-	padding: .5em 3em;
+	box-shadow: 1px 1px $yellow-dark;
 	text-transform: uppercase;
-	background-color: $yellow;
-	border-radius: 5px 0 0 5px;
+	@include border-radius(5px);
+	@include transition(.2s);
+	a {
+		color: $black;
+	}
+
+	span {
+		@include span-hover(150px, 27px, 150px, 27px);
+	}
+	&:hover span {
+		display: block;
+	}
+
+	strong {
+		font-size: 12px;
+		float: left;
+		width: 120px;
+		background-color: $yellow;
+	}
+	i {
+		float: left;
+		width: 30px;
+		font-size: 10px;
+		background-color: $yellow-light;
+	}
+	&:hover{
+  		@include transform(0, 1px);
+	}
 }

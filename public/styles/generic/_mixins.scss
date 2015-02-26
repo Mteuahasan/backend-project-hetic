@@ -11,3 +11,34 @@
   &::-moz-placeholder          {@content}
   &:-ms-input-placeholder      {@content}
 }
+
+@mixin a-menu($opacity) {
+	opacity: $opacity;
+		&:hover {
+			opacity: 1;
+		}
+}
+
+@mixin span-hover($width, $height, $width-media, $height-media) {
+	position: absolute;
+	display: none;
+	width: $width;
+	height: $height;
+	background-color: rgba(0, 0, 0, .05);
+
+	@media screen and (max-width: 480px) {
+    	max-width: $width-media;
+    	height: $height-media;
+  	}
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin transform($width, $height) {
+	transform: translate($width, $height);
+  	-webkit-transform: translate($width, $height);
+}

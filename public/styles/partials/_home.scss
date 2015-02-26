@@ -8,7 +8,7 @@ div.main-container{
     line-height: 35px;
     background-size: cover;
     padding: 5em 0em 0em 9em;
-    background: url('../img/home-event.jpg');
+    background: url('../img/event18.jpg');
       p {
         font-size: 1.8em;
         color: $white;
@@ -21,7 +21,9 @@ div.main-container{
       a {
         color: $white;
         font-size: .8em;
-        border-bottom: 1px solid;
+        span {
+          border-bottom: 1px solid $white;
+        }
           i{
             margin-left: .7em;
           }

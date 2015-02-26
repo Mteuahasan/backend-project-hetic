@@ -24,7 +24,7 @@
     font-size: 6em;
     color: $yellow;
     padding-top: 5%;
-    text-shadow: 0 -2px #938944;
+    text-shadow: 0 -2px $yellow-dark;
     @media screen and (max-width: 480px) {
         font-size: 5em;
     }
@@ -51,10 +51,10 @@ $ultra-bold : 900;
 }.flaticon-add13:before {
     content: "\e000";
 }
-.flaticon-bin9:before {
+.flaticon-arrows115:before {
     content: "\e001";
 }
-.flaticon-book244:before {
+.flaticon-bin9:before {
     content: "\e002";
 }
 .flaticon-bulb19:before {
@@ -75,69 +75,72 @@ $ultra-bold : 900;
 .flaticon-envelope54:before {
     content: "\e008";
 }
-.flaticon-flag86:before {
+.flaticon-facebook51:before {
     content: "\e009";
 }
-.flaticon-folder256:before {
+.flaticon-flag86:before {
     content: "\e00a";
 }
-.flaticon-information32:before {
+.flaticon-fullscreen6:before {
     content: "\e00b";
 }
-.flaticon-label36:before {
+.flaticon-information32:before {
     content: "\e00c";
 }
-.flaticon-left15:before {
+.flaticon-label36:before {
     content: "\e00d";
 }
-.flaticon-list91:before {
+.flaticon-left15:before {
     content: "\e00e";
 }
-.flaticon-location67:before {
+.flaticon-list91:before {
     content: "\e00f";
 }
-.flaticon-magnifier52:before {
+.flaticon-logout11:before {
     content: "\e010";
 }
-.flaticon-magnifier58:before {
+.flaticon-magnifier52:before {
     content: "\e011";
 }
-.flaticon-message30:before {
+.flaticon-menu19:before {
     content: "\e012";
 }
-.flaticon-multiple10:before {
+.flaticon-message30:before {
     content: "\e013";
 }
 .flaticon-pencil124:before {
     content: "\e014";
 }
-.flaticon-pin60:before {
+.flaticon-photo74:before {
     content: "\e015";
 }
-.flaticon-plus3:before {
+.flaticon-pin60:before {
     content: "\e016";
 }
-.flaticon-right11:before {
+.flaticon-plus3:before {
     content: "\e017";
 }
-.flaticon-screwdriver26:before {
+.flaticon-right11:before {
     content: "\e018";
 }
-.flaticon-telephone106:before {
+.flaticon-screwdriver26:before {
     content: "\e019";
 }
-.flaticon-two290:before {
+.flaticon-share16:before {
     content: "\e01a";
 }
-.flaticon-user148:before {
+.flaticon-telephone106:before {
     content: "\e01b";
 }
-.flaticon-user7:before {
+.flaticon-twitter44:before {
     content: "\e01c";
 }
-.flaticon-view28:before {
+.flaticon-user148:before {
     content: "\e01d";
 }
-.flaticon-wand2:before {
+.flaticon-view28:before {
     content: "\e01e";
+}
+.flaticon-wand2:before {
+    content: "\e01f";
 }

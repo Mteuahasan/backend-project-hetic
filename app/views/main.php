@@ -13,27 +13,62 @@
 </head>
 <body>
   <nav>
-    <h1 class="logo">Striply</h1>
-    <ul class="menu">
-      <li><a class="menu--active" href="home">Home</a></li>
-      <li><a href="gallery">Gallery</a></li>
-      <li><a href="contests">Contests</a></li>
-      <li><a href="expos">Expos</a></li>
-      <li><a href="jobs">Jobs</a></li>
-    </ul>
-    <span></span>
-    <ul class="menu--more">
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Google +</a></li>
-      <li><a href="#">RSS</a></li>
-    </ul>
+    <div class="container-menu">
+      <h1 class="logo">Striply</h1>
+      <ul class="menu">
+        <li><a class="menu--active" href="home">Home</a></li>
+        <li><a href="gallery">Gallery</a></li>
+        <li><a href="contests">Contests</a></li>
+        <li><a href="shows">Shows</a></li>
+        <li><a href="jobs">Jobs</a></li>
+      </ul>
+      <span></span>
+      <ul class="menu--more">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Google +</a></li>
+        <li><a href="#">RSS</a></li>
+      </ul>
+    </div>
     <?php if(!isset($SESSION) || empty($SESSION)): ?>
-        <ul class="menu--footer">
-          <li><a href="signin">Sign Up</a></li>
-          <li><a href="login" class="btn-cta">Log In <i class="flaticon-plus3"></i></a></li>
-        </ul>
+        <div class="menu--footer">
+          <!-- NOT CONNECTED -->
+      <!--     <ul class="disconnected">
+            <li><a href="signin"><i class="flaticon-user148"></i><span>Sign Up</span><i class="flaticon-right11"></i></a></li>
+            <li class="btn-cta">
+              <a href="login">
+                <span></span>
+                <strong>Log In</strong>
+                <i class="flaticon-plus3"></i>
+              </a>
+            </li>
+          </ul> -->
+
+          <!-- CONNECTED -->
+          <ul class="connected">
+            <li id="feature-profile-menu">
+              <a href="home">
+                <img src="./dist/assets/img/profile.jpg">
+                <div class="username"><p>Annabelle</p><p>Ruiz</p></div>
+              </a>
+            </li>
+
+            <li class="feature-menu-hover">
+              <a href="#"><i class="flaticon-logout11"></i></a>
+              <span></span>
+              <a href="#"><p>See profile</p></a>
+            </li>
+
+            <li class="btn-cta">
+              <a href="login">
+                <span></span>
+                <strong>Add strip</strong>
+                <i class="flaticon-plus3"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       <?php endif; ?>
   </nav>
 
@@ -41,7 +76,7 @@
     <section class="featured-event">
       <p>The contest #<strong>18</strong></p>
       <p>is finally launched !</p>
-      <a href="#">Read more <i class="flaticon-right11"></i></a>
+      <a href="#"><span>Read more</span><i class="flaticon-right11"></i></a>
     </section>
 
     <div class="wrapper-home-content">
