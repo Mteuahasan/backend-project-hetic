@@ -71,20 +71,50 @@
         </div>
       <?php endif; ?>
   </nav>
-  
-  <!-- <section class="page-search">
-    <h1>Search anything by tiping here</h1>
-    <i class="flaticon-right11"></i>
-    <form action="search/" method="post" id='search-form'>
-        <input type="text" name="name" placeholder="Search" autocomplete="off" id="search-content"/>
-    </form>
-  </section> -->
+
+  <!-- POP UP SEARCH -->
+  <section class="page-filters">
+    <div class="page-search">
+      <i class="flaticon-cancel22"></i>
+      <h1>Search anything by tiping here</h1>
+      <i class="flaticon-information32" title="Category, people or tag"></i>
+      <form action="search/" method="post" id='search-form'>
+          <input type="text" name="name" placeholder="" autocomplete="off" id="search-content"/>
+      </form>
+    </div>
+  </section>
+  <!-- POP UP CATEGORY -->
+  <section class="page-filters">
+    <div class="page-category">
+      <i class="flaticon-cancel22"></i>
+      <h1>Set up a maximum of <strong>3</strong> categories</h1>
+      <form autocomplete="off">
+        <ul>
+          <li><input type="checkbox" id="cat1"><label for="cat1">Comics</label></li>
+          <li><input type="checkbox" id="cat2"><label for="cat2">Humor</label></li>
+          <li><input type="checkbox" id="cat3"><label for="cat3">Politic</label></li>
+        </ul>
+        <ul>
+          <li><input type="checkbox" id="cat4"><label for="cat4">Celebrities</label></li>
+          <li><input type="checkbox" id="cat5"><label for="cat5">Dark Humor</label></li>
+          <li><input type="checkbox" id="cat6"><label for="cat6">Gore</label></li>
+          <li><input type="checkbox" id="cat7"><label for="cat7">Sensual</label></li>
+        </ul>
+        <ul>
+          <li><input type="checkbox" id="cat8"><label for="cat8">Religious</label></li>
+          <li><input type="checkbox" id="cat9"><label for="cat9">For kids</label></li>
+          <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
+        </ul>
+      </form>
+      <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
+    </div>
+  </section>
 
   <div class="main-container">
     <section class="featured-event">
       <p>The contest #<strong>18</strong></p>
       <p>is finally launched !</p>
-      <a href="#"><span>Read more</span><i class="flaticon-right11"></i></a>
+      <a href="#" class="btn-little"><span>Read more</span><i class="flaticon-right11"></i></a>
     </section>
 
     <div class="wrapper-home-content">
@@ -93,7 +123,7 @@
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
         </a>
-        <a href="#" id="search">
+        <a href@&é="#" id="search">
           <span>Search</span>
           <i class="flaticon-magnifier52"></i>
         </a>

@@ -121,3 +121,18 @@
   		@include transform(0, 1px);
 	}
 }
+
+
+.btn-little {
+	font-size: .8em;
+	span {
+	  border-bottom: 1px solid $white;
+	}
+	i {
+		margin-left: .7em;
+	    @include transition(.8s);
+	}
+	&:hover i {
+	  @include transform(5px, 0);
+	}
+}
