@@ -83,6 +83,7 @@
       </form>
     </div>
   </section>
+
   <!-- POP UP CATEGORY -->
   <section class="page-filters">
     <div class="page-category">
@@ -123,7 +124,7 @@
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
         </a>
-        <a href@&é="#" id="search">
+        <a href="#" id="search">
           <span>Search</span>
           <i class="flaticon-magnifier52"></i>
         </a>
@@ -131,64 +132,376 @@
 
 
       <div class="top-content">
+
+        <!-- MOST LIKED -->
         <section class="most-liked">
           <h2>Most liked</h2>
+          <div class="slider-btn slider-left"></div>
+          <div class="slider-btn slider-right"></div>
+
           <div class="boards-container-home">
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a href="landing" class="single-board-home">
+            <!-- Single board 1 -->
+            <a href="#" class="single-board-home">
               <div class="board-hover">
                 <h3>Nabila's phone</h3>
                 <p>Patrick Rodrigues</p>
                 <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
               </div>
-              <img src="./dist/assets/img/landing.jpg">
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
                   <i class="flaticon-view28"><span>380</span></i>
                 </div>
               </div>
-
             </a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a href="#">See all</a>
+            <!-- Single board 2 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 3 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 4 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 5 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 6 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 7 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
           </div>
+          <a href="#">See all</a>
         </section>
+
+
+        <!-- MOST COMMENTED -->
         <section class="most-liked">
           <h2>Most commented</h2>
+          <div class="slider-btn slider-left"></div>
+          <div class="slider-btn slider-right"></div>
+
           <div class="boards-container-home">
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a href="#">See all</a>
+            <!-- Single board 1 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 2 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 3 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 4 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 5 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 6 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 7 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
           </div>
+          <a href="#">See all</a>
         </section>
+
+
+        <!-- MOST CONTROVERSIAL -->
         <section class="most-liked">
           <h2>Most controversial</h2>
+          <div class="slider-btn slider-left"></div>
+          <div class="slider-btn slider-right"></div>
+          
           <div class="boards-container-home">
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a class="single-board-home"></a>
-            <a href="#">See all</a>
+            <!-- Single board 1 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 2 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 3 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 4 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 5 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 6 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 7 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-view28"><span>380</span></i>
+                </div>
+              </div>
+            </a>
           </div>
+          <a href="#">See all</a>
         </section>
           <?php
 

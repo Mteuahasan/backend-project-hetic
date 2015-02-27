@@ -3,6 +3,7 @@
 	-moz-transition: all ease-in-out $seconds;
 	-o-transition: all ease-in-out $seconds;
 	-ms-transition: all ease-in-out $seconds;
+	transition: all ease-in-out $seconds;
 }
 
 @mixin placeholder {
