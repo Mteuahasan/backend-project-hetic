@@ -42,4 +42,22 @@
 @mixin transform($width, $height) {
 	transform: translate($width, $height);
   	-webkit-transform: translate($width, $height);
+	-moz-transform: translate($width, $height);
+	-o-transform: translate($width, $height);
+	-ms-transform: translate($width, $height);
+}
+
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
+@mixin background-size($arg) {
+  	-webkit-background-size: $arg; /* pour Chrome et Safari */
+  	-moz-background-size: $arg; /* pour Firefox */
+  	-o-background-size: $arg; /* pour Opera */
+  	background-size: $arg; /* version standardisée */
 }

@@ -34,40 +34,38 @@
     <?php if(!isset($SESSION) || empty($SESSION)): ?>
         <div class="menu--footer">
           <!-- NOT CONNECTED -->
-      <!--     <ul class="disconnected">
-            <li><a href="signin"><i class="flaticon-user148"></i><span>Sign Up</span><i class="flaticon-right11"></i></a></li>
+          <ul class="disconnected">
+            <li><a href="login"><i class="flaticon-user148"></i><span>Log In</span><i class="flaticon-right11"></i></a></li>
             <li class="btn-cta">
-              <a href="login">
+              <a href="signup">
                 <span></span>
-                <strong>Log In</strong>
+                <strong>Sign Up</strong>
                 <i class="flaticon-plus3"></i>
               </a>
             </li>
-          </ul> -->
+          </ul>
 
           <!-- CONNECTED -->
-          <ul class="connected">
+<!--           <ul class="connected">
             <li id="feature-profile-menu">
               <a href="home">
                 <img src="./dist/assets/img/profile.jpg">
                 <div class="username"><p>Annabelle</p><p>Ruiz</p></div>
               </a>
             </li>
-
             <li class="feature-menu-hover">
               <a href="#"><i class="flaticon-logout11"></i></a>
               <span></span>
               <a href="#"><p>See profile</p></a>
             </li>
-
             <li class="btn-cta">
-              <a href="login">
+              <a href="#">
                 <span></span>
                 <strong>Add strip</strong>
                 <i class="flaticon-plus3"></i>
               </a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       <?php endif; ?>
   </nav>
@@ -107,6 +105,7 @@
           <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
         </ul>
       </form>
+      <input type="submit" value="Let's go" class="btn-little">
       <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
     </div>
   </section>
@@ -129,7 +128,6 @@
           <i class="flaticon-magnifier52"></i>
         </a>
       </div>
-
 
       <div class="top-content">
 
