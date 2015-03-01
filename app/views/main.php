@@ -31,10 +31,10 @@
         <li><a href="#">RSS</a></li>
       </ul>
     </div>
-    <?php if(!isset($SESSION) || empty($SESSION)): ?>
+    <?php if(empty($SESSION)): ?>
         <div class="menu--footer">
           <!-- NOT CONNECTED -->
-      <!--     <ul class="disconnected">
+          <ul class="disconnected">
             <li><a href="signin"><i class="flaticon-user148"></i><span>Sign Up</span><i class="flaticon-right11"></i></a></li>
             <li class="btn-cta">
               <a href="login">
@@ -43,21 +43,24 @@
                 <i class="flaticon-plus3"></i>
               </a>
             </li>
-          </ul> -->
+          </ul>
+      <?php endif; ?>
+
+      <?php if(!empty($SESSION)): ?>
 
           <!-- CONNECTED -->
           <ul class="connected">
             <li id="feature-profile-menu">
               <a href="home">
                 <img src="./dist/assets/img/profile.jpg">
-                <div class="username"><p>Annabelle</p><p>Ruiz</p></div>
+                <div class="username"><p><?php echo $SESSION['name'] ?></p></div>
               </a>
             </li>
 
             <li class="feature-menu-hover">
-              <a href="#"><i class="flaticon-logout11"></i></a>
+              <a href="logout"><i class="flaticon-logout11"></i></a>
               <span></span>
-              <a href="#"><p>See profile</p></a>
+              <a href="user/<?php echo $SESSION['id'] ?>"><p>See profile</p></a>
             </li>
 
             <li class="btn-cta">
@@ -68,8 +71,9 @@
               </a>
             </li>
           </ul>
+        <?php endif; ?>
         </div>
-      <?php endif; ?>
+      
   </nav>
   
   <!-- <section class="page-search">
@@ -89,7 +93,7 @@
 
     <div class="wrapper-home-content">
       <div class="filters">
-        <a href="board/category">
+        <a href="board/selectCategory">
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
         </a>
