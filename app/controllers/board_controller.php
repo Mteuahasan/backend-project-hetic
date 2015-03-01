@@ -64,10 +64,16 @@ class board_controller{
   }
 
   public function getCategory($f3) {
-    $this->tpl = 'boardCategory.php';
+    $this->tpl = 'selectBoardCategory.php';
     $this->boardCategories  = $this->model->getBoardCategory();
     $f3->set('categoryboards', $this->boardCategories);
 
+  }
+
+  public function getSelectedCategory($f3, $params) {
+    $this->tpl = 'selectedBoardCategory.php';
+    $this->boardCategories  = $this->model->getSelectedBoardCategory($params['id']);
+    $f3->set('categoryboards', $this->boardCategories);
   }
 
   public function likes($f3, $params){
