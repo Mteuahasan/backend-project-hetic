@@ -133,7 +133,7 @@
 	    @include transition(.8s);
 	}
 	&:hover i {
-	  @include transform(5px, 0);
+	  margin-left: 15px;
 	}
 }
 

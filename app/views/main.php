@@ -46,9 +46,7 @@
           </ul>
         </div>
       <?php endif; ?>
-
       <?php if(!empty($SESSION)): ?>
-
           <!-- CONNECTED -->
         <div class="menu--footer">
           <ul class="connected">
