@@ -147,10 +147,8 @@
 		font-weight: 400;
 		a{
 			display: block;
-			padding: 10px 40px;
 			line-height: 18px;
 			border: 2px solid $white;
-			border-left: none;
 			@include transition(.3s);
 			&:hover {
 				color: $black;
@@ -171,8 +169,37 @@
 		font-size: 1em;
 		background-color: $yellow;
 		border: 2px solid $white;
-		padding: 10px 45px;
 		cursor: pointer;
-		margin-right: -4px;
+	}
+}
+
+.login {
+	.btn-login-signup {
+		li{
+			a{
+				border-left: none;
+				padding: 10px 40px;
+			}
+		}
+		input {
+			padding: 10px 45px;
+			margin-right: -5px;
+		}
+	}
+}
+.signup {
+	.btn-login-signup {
+		li{
+			a{
+				border-right: none;
+				padding: 10px 47px;
+				margin-right: -4px;
+			}
+		}
+		li:nth-child(2){
+			input {
+				padding: 10px 38px;
+			}
+		}
 	}
 }

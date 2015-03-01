@@ -34,6 +34,13 @@
             <span class="input__label-content input__label-content--kaede">Name</span>
           </label>
         </span>
+        <!-- SURNAME -->
+        <span class="input input--kaede">
+          <input class="input__field input__field--kaede" type="text" id="input-4" name="name"/>
+          <label class="input__label input__label--kaede" for="input-4">
+            <span class="input__label-content input__label-content--kaede">Surname</span>
+          </label>
+        </span>
 
         <!-- EMAIL -->
         <span class="input input--kaede">
@@ -52,16 +59,18 @@
         </span>
 
         <!-- REPEAT PASSWORD -->
+        <!-- <label for="password-2">Repeat password</label><input type="password" name="password-2"> -->
         <span class="input input--kaede">
-          <input class="input__field input__field--kaede" type="password" id="input-2" name="password"/>
-          <label class="input__label input__label--kaede" for="input-2">
+          <input class="input__field input__field--kaede" type="password" id="input-5" name="password"/>
+          <label class="input__label input__label--kaede" for="input-5">
             <span class="input__label-content input__label-content--kaede">Repeat password</span>
           </label>
         </span>
 
-        
-        <label for="password-2">Repeat password</label><input type="password" name="password-2">
-        <input type="submit" value="Signin">
+        <ul class="btn-login-signup">
+          <li><a href="login">Log In</a></li>
+          <li><span></span><input type="submit" value="Register"></li>
+        </ul>
       </form>
     </div>
 
