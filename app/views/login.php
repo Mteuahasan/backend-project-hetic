@@ -15,7 +15,7 @@
 	<section class="page-register">
 		<div class="login">
 			<h1><i class="flaticon-user148"></i>Log In</h1>
-			<form action="#" method="post" class="ac-custom ac-checkbox ac-checkmark">
+			<form action="" method="post" class="ac-custom ac-checkbox ac-checkmark">
 			 	<!-- <label for="email"></label><input type="email" name="email" placeholder="Login"> -->
 			 	<span class="input input--kaede">
 					<input class="input__field input__field--kaede" type="email" id="input-1" name="email"/>
