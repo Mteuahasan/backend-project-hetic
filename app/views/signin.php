@@ -16,28 +16,30 @@
 </head>
 <body>
 
-  <?php
-  $f3 = \Base::instance();
-  echo "<pre>";
-  var_dump($f3->get('error_permissions'));
-  echo "</pre>";
-  if(!empty($f3->get('error_permissions')) && $f3->get('error_permissions')):
+  <section class="page-register signup">
+    <?php
+      $f3 = \Base::instance();
+      echo "<pre>";
+      var_dump($f3->get('error_permissions'));
+      echo "</pre>";
+      if(!empty($f3->get('error_permissions')) && $f3->get('error_permissions')):
+    ?>
 
-  ?>
+    Attention, vous devez vous inscrire pour accéder à cette page
 
-  Attention, vous devez vous inscrire pour accéder à cette page
+    <?php endif; ?>
+    <h1>Sign Up</h1>
+    <form action="signin" method="POST">
+      <label for="name">Nom</label><input type="text" name="name" id="signin-name">
+      <label for="email">Email</label><input type="email" name="email" id="signin-email">
+      <label for="password">Password</label><input type="password" name="password">
+      <label for="password-2">Repeat password</label><input type="password" name="password-2">
+      <input type="submit" value="Signin">
+    </form>
 
-  <?php endif; ?>
-
-  <h1>Signin</h1>
-  <form action="signin" method="POST">
-    <label for="name">Nom</label><input type="text" name="name" id="signin-name">
-    <label for="email">Email</label><input type="email" name="email" id="signin-email">
-    <label for="password">Password</label><input type="password" name="password">
-    <label for="password-2">Repeat password</label><input type="password" name="password-2">
-    <input type="submit" value="Signin">
-  </form>
+  </section>
 
   <script type="text/javascript" src="dist/assets/scripts/signin.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/register.js"></script>
 </body>
 </html>

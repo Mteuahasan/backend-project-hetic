@@ -1,10 +1,7 @@
 .landing {
 	overflow: hidden;
 	background: url('../img/landing.jpg') no-repeat center center fixed;
-  	-webkit-background-size: cover; /* pour Chrome et Safari */
-  	-moz-background-size: cover; /* pour Firefox */
-  	-o-background-size: cover; /* pour Opera */
-  	background-size: cover; /* version standardisée */
+  	@include background-size(cover);
   	text-align: center;
 	
 	.content-landing {

@@ -2,7 +2,7 @@ node_modules
 lib
 config/config.ini
 .sass-cache
-dist/assets/css
+dist/assets/css/
 pumir.sql
 .DS_Store
 /public/assets/*
