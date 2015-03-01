@@ -34,7 +34,7 @@
     <?php if(!isset($SESSION) || empty($SESSION)): ?>
         <div class="menu--footer">
           <!-- NOT CONNECTED -->
-          <ul class="disconnected">
+<!--           <ul class="disconnected">
             <li><a href="login"><i class="flaticon-user148"></i><span>Log In</span><i class="flaticon-right11"></i></a></li>
             <li class="btn-cta">
               <a href="signup">
@@ -43,10 +43,10 @@
                 <i class="flaticon-plus3"></i>
               </a>
             </li>
-          </ul>
+          </ul> -->
 
           <!-- CONNECTED -->
-<!--           <ul class="connected">
+          <ul class="connected">
             <li id="feature-profile-menu">
               <a href="home">
                 <img src="./dist/assets/img/profile.jpg">
@@ -65,7 +65,7 @@
                 <i class="flaticon-plus3"></i>
               </a>
             </li>
-          </ul> -->
+          </ul>
         </div>
       <?php endif; ?>
   </nav>

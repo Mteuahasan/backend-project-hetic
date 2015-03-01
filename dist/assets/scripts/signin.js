@@ -19,8 +19,8 @@ var signin = {
   },
   listeners: function(){
     var self = this;
-    var name  = document.getElementById('signin-name'),
-        email = document.getElementById('signin-email')
+    var name  = document.getElementById('input-3'),
+        email = document.getElementById('input-1')
 
 
     name.addEventListener('keyup', function(){
@@ -31,9 +31,11 @@ var signin = {
         self.ajax('POST', 'signin/name', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
-            name.style.outlineColor = 'green';
+            // name.style.outlineColor = 'green';
+            name.style.backgroundColor = '#f5e774';
           } else {
-            name.style.outlineColor = 'red';
+            // name.style.outlineColor = 'red';
+            name.style.backgroundColor = '#c1161e';
           }
         });
       };
@@ -46,9 +48,11 @@ var signin = {
         self.ajax('POST', 'signin/email', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
-            email.style.outlineColor = 'green';
+            // email.style.outlineColor = 'green';
+            email.style.backgroundColor = '#f5e774';
           } else {
-            email.style.outlineColor = 'red';
+            // email.style.outlineColor = 'red';
+            email.style.backgroundColor = '#c1161e';
           }
         });
       };

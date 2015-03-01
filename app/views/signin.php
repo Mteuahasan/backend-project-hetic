@@ -8,15 +8,12 @@
   <meta name="description" content="">
   <base href="<?php echo $BASE; ?>/" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Arapey" rel="stylesheet" type="text/css" />
-  <link href="public/stylesheet/style.css" rel="stylesheet" type="text/css" />
-  <link href="public/stylesheet/mfglabs_iconset.css" rel="stylesheet"  type="text/css" />
-  <link href="public/stylesheet/wtfay.css" rel="stylesheet" type="text/css" />
-
+  <link rel="stylesheet" type="text/css" href="./dist/assets/css/main.css">
 </head>
 <body>
 
-  <section class="page-register signup">
+  <section class="page-register">
+    <div class="signup">
     <?php
       $f3 = \Base::instance();
       echo "<pre>";
@@ -28,14 +25,45 @@
     Attention, vous devez vous inscrire pour accéder à cette page
 
     <?php endif; ?>
-    <h1>Sign Up</h1>
-    <form action="signin" method="POST">
-      <label for="name">Nom</label><input type="text" name="name" id="signin-name">
-      <label for="email">Email</label><input type="email" name="email" id="signin-email">
-      <label for="password">Password</label><input type="password" name="password">
-      <label for="password-2">Repeat password</label><input type="password" name="password-2">
-      <input type="submit" value="Signin">
-    </form>
+      <h1><i class="flaticon-user148"></i>Sign Up</h1>
+      <form action="signin" method="POST" class="ac-custom ac-checkbox ac-checkmark">
+        <!-- NAME -->
+        <span class="input input--kaede">
+          <input class="input__field input__field--kaede" type="text" id="input-3" name="name"/>
+          <label class="input__label input__label--kaede" for="input-3">
+            <span class="input__label-content input__label-content--kaede">Name</span>
+          </label>
+        </span>
+
+        <!-- EMAIL -->
+        <span class="input input--kaede">
+          <input class="input__field input__field--kaede" type="email" id="input-1" name="email"/>
+          <label class="input__label input__label--kaede" for="input-1">
+            <span class="input__label-content input__label-content--kaede">Email</span>
+          </label>
+        </span>
+
+        <!-- PASSWORD -->
+        <span class="input input--kaede">
+          <input class="input__field input__field--kaede" type="password" id="input-2" name="password"/>
+          <label class="input__label input__label--kaede" for="input-2">
+            <span class="input__label-content input__label-content--kaede">Password</span>
+          </label>
+        </span>
+
+        <!-- REPEAT PASSWORD -->
+        <span class="input input--kaede">
+          <input class="input__field input__field--kaede" type="password" id="input-2" name="password"/>
+          <label class="input__label input__label--kaede" for="input-2">
+            <span class="input__label-content input__label-content--kaede">Repeat password</span>
+          </label>
+        </span>
+
+        
+        <label for="password-2">Repeat password</label><input type="password" name="password-2">
+        <input type="submit" value="Signin">
+      </form>
+    </div>
 
   </section>
 
