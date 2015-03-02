@@ -138,7 +138,7 @@
 }
 
 
-
+// LOGIN - SIGNUP
 .btn-login-signup {
 	margin: 30px 0 15px;
 
@@ -147,10 +147,8 @@
 		font-weight: 400;
 		a{
 			display: block;
-			padding: 10px 40px;
 			line-height: 18px;
 			border: 2px solid $white;
-			border-left: none;
 			@include transition(.3s);
 			&:hover {
 				color: $black;
@@ -158,21 +156,57 @@
 			}
 		}
 	}
-	li:first-child {
-		span {
-			@include span-hover(140px, 40px, 140px, 40px);
-		}
-		&:hover span {
-			cursor: pointer;
-			display: block;
-		}
-	}
 	input {
 		font-size: 1em;
 		background-color: $yellow;
 		border: 2px solid $white;
-		padding: 10px 45px;
 		cursor: pointer;
-		margin-right: -4px;
+	}
+}
+
+.login {
+	.btn-login-signup {
+		li{
+			a{
+				border-left: none;
+				padding: 10px 40px;
+			}
+		}
+			li:first-child {
+				span {
+					@include span-hover(140px, 40px, 140px, 40px);
+				}
+				&:hover span {
+					cursor: pointer;
+					display: block;
+				}
+			}
+		input {
+			padding: 10px 45px;
+			margin-right: -5px;
+		}
+	}
+}
+.signup {
+	.btn-login-signup {
+		li{
+			a{
+				border-right: none;
+				padding: 10px 47px;
+				margin-right: -4px;
+			}
+		}
+		li:nth-child(2){
+			span {
+				@include span-hover(140px, 40px, 140px, 40px);
+			}
+			&:hover span {
+				cursor: pointer;
+				display: block;
+			}
+			input {
+				padding: 10px 38px;
+			}
+		}
 	}
 }

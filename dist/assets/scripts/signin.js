@@ -20,6 +20,7 @@ var signin = {
   listeners: function(){
     var self = this;
     var name  = document.getElementById('input-3'),
+        surname  = document.getElementById('input-4'),
         email = document.getElementById('input-1')
 
 
@@ -29,6 +30,23 @@ var signin = {
         data.append('name', this.value);
         data.append('ajax', true);
         self.ajax('POST', 'signin/name', data, function(xhr){
+          console.log(xhr);
+          if(xhr.response === '1'){
+            // name.style.outlineColor = 'green';
+            name.style.backgroundColor = '#f5e774';
+          } else {
+            // name.style.outlineColor = 'red';
+            name.style.backgroundColor = '#c1161e';
+          }
+        });
+      };
+    });
+    surname.addEventListener('keyup', function(){
+      if (this.value.length > 3) {
+        var data=new FormData();
+        data.append('surname', this.value);
+        data.append('ajax', true);
+        self.ajax('POST', 'signin/surname', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
             // name.style.outlineColor = 'green';

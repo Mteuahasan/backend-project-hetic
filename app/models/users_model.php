@@ -24,7 +24,7 @@ class users_model{
     if(isset($data) && !empty($data)){
       $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
       if(!$email){
-        if($data['password'] == $data['password-2']){
+        if($data['password'] == $data['input-5']){
           $user=$this->getUsersMapper();
           $user->name=$data['name'];
           $user->email=$data['email'];
@@ -48,7 +48,7 @@ class users_model{
     if($this->crypt->hash($data['password'], $this->f3->get('salt')) == $user['password']){
       return $user;
     } else {
-      return "Erreur de mot de passe";
+      return "Password error";
     }
   }
 
