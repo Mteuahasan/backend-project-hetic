@@ -14,6 +14,11 @@ class users_model{
     $this->crypt = \Bcrypt::instance();
   }
 
+  public function getAllUsers() {
+    $allUsers = $this->getUsersMapper()->select('*');
+    return $allUsers;
+  }
+
 
   public function signin($data){
     if(isset($data) && !empty($data)){
