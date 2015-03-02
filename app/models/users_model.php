@@ -15,13 +15,14 @@ class users_model{
   }
 
 
-  public function signin($data){
+  public function signup($data){
     if(isset($data) && !empty($data)){
       $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
       if(!$email){
-        if($data['password'] == $data['input-5']){
+        if($data['password'] == $data['password-2']){
           $user=$this->getUsersMapper();
           $user->name=$data['name'];
+          $user->surname=$data['surname'];
           $user->email=$data['email'];
           $user->password=$this->crypt->hash($data['password'], $this->f3->get('salt'));
           $user->save();
@@ -51,7 +52,7 @@ class users_model{
     $user_id = $this->f3->get('SESSION')['id'];
     $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
     $likedBoards = array();
-    
+
     foreach($hasLiked as $key) {
       $boardLiked = $this->getBoardsMapper()->select('*', 'id = "'.$key->boards_id.'"');
       array_push($likedBoards, $boardLiked);
@@ -65,7 +66,7 @@ class users_model{
   public function usersBoards() {
     $user_id = $this->f3->get('SESSION')['id'];
     $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$user_id.'"');
-   
+
     return $usersBoard;
   }
 
@@ -84,10 +85,10 @@ class users_model{
       $addSite->url_facebook=$data['facebook'];
       $addSite->url_linkdin=$data['linkdin'];
       $addSite->update();
-      
+
 
     }
-    
+
 
 
 

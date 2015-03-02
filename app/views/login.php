@@ -36,13 +36,13 @@
 				</div>
 				<ul class="btn-login-signup">
 					<li><span></span><input type="submit" value="Log In"></li>
-					<li><a href="signin">Sign Up</a></li>
+					<li><a href="signup">Sign Up</a></li>
 				</ul>
 				<em><a href="#">Forgot password?</a></em>
 			</form>
 		</div>
 	</section>
 
-	<script type="text/javascript" src="dist/assets/scripts/signin.js"></script>
+	<script type="text/javascript" src="dist/assets/scripts/signup.js"></script>
 	<script type="text/javascript" src="dist/assets/scripts/register.js"></script>
 </body>

@@ -21,6 +21,8 @@ class app_controller{
   public function home($f3){
     $this->tpl = 'main.php';
     $this->boards = $this->boardsModel->getHomeBoards();
+    $f3->set('mostLikedBoards', $this->boardsModel->getMostLiked());
+    $f3->set('mostLikedCategories', $this->boardsModel->getMostLikedCategories());
     $f3->set('boards',$this->boards);
   }
 
