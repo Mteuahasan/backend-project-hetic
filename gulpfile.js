@@ -17,9 +17,9 @@ gulp.task('styles', function() {
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
-// gulp.task('clean', function(cb) {
-//     del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img'], cb)
-// });
+gulp.task('clean', function(cb) {
+    del(['dist/assets/css', 'dist/assets/js'], cb)
+});
 
 gulp.task('default', function() {
     gulp.start('styles');

@@ -12,10 +12,13 @@ class app_controller{
   function __construct(){
     $this->model=new \APP\MODELS\app_model();
     $this->boardsModel = new \APP\MODELS\board_model();
+    $this->usersModel = new \APP\MODELS\users_model();
   }
 
   public function landing($f3){
     $this->tpl='landing.php';
+    $this->user = $this->usersModel->getAllUsers();
+    $f3->set('allUsers', $this->user);
   }
 
   public function home($f3){

@@ -36,10 +36,11 @@
           <!-- NOT CONNECTED -->
           <ul class="disconnected">
             <li><a href="signup"><i class="flaticon-user148"></i><span>Sign Up</span><i class="flaticon-right11"></i></a></li>
+
             <li class="btn-cta">
-              <a href="login">
+              <a href="signin">
                 <span></span>
-                <strong>Log In</strong>
+                <strong>Sign Up</strong>
                 <i class="flaticon-plus3"></i>
               </a>
             </li>
@@ -50,17 +51,19 @@
           <!-- CONNECTED -->
         <div class="menu--footer">
           <ul class="connected">
-              <li id="feature-profile-menu">
-                <a href="home">
-                  <img src="./dist/assets/img/profile.jpg">
-                  <div class="username"><p><?php echo $SESSION['name'] ?></p></div>
-                </a>
-              </li>
-              <li class="feature-menu-hover">
-                <a href="logout"><i class="flaticon-logout11"></i></a>
-                <span></span>
-                <a href="user/<?php echo $SESSION['id'] ?>"><p>See profile</p></a>
-              </li>
+            <div class="profilHover">
+                <li id="feature-profile-menu">
+                  <a href="home">
+                    <img src="./dist/assets/img/profile.jpg">
+                    <div class="username"><p><?php echo $SESSION['name'] ?></p></div>
+                  </a>
+                </li>
+                <li id="test" class="feature-menu-hover">
+                  <a href="logout"><i class="flaticon-logout11"></i></a>
+                  <span></span>
+                  <a href="user/<?php echo $SESSION['id'] ?>"><p>See profile</p></a>
+                </li>
+              </div>
               <li class="btn-cta">
                 <a href="#">
                   <span></span>
@@ -113,7 +116,7 @@
     </div>
   </section>
 
-  <div class="main-container">
+  <div id="mainContent" class="main-container">
     <section class="featured-event">
       <p>The contest #<strong>18</strong></p>
       <p>is finally launched !</p>
@@ -448,5 +451,6 @@
     </div>
   </div>
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
+  <script type="text/javascript" src="public/script/home.js"></script>
 </body>
 </html>
