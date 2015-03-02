@@ -21,7 +21,7 @@ gulp.task('clean', function(cb) {
     del(['dist/assets/css', 'dist/assets/js'], cb)
 });
 
-gulp.task('default', ['clean'], function() {
+gulp.task('default', function() {
     gulp.start('styles');
 });
 

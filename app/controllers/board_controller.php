@@ -46,7 +46,7 @@ class board_controller{
       }
     } else {
       $f3->set('error_permissions', true);
-      $f3->reroute('/signin');
+      $f3->reroute('/signup');
     }
   }
 

@@ -79,6 +79,36 @@ class board_model{
     return $boards;
   }
 
+  function getMostLiked(){
+    $boards = $this->getBoardsMapper()->select('*',NULL , array(
+      'group'=>NULL,
+      'order'=>'likes DESC',
+      'limit'=>7,
+      'offset'=>0
+    ));
+    return $boards;
+  }
+
+  function getMostLikedCategories(){
+    $boards = $this->getBoardsMapper()->select('*',NULL , array(
+      'group'=>NULL,
+      'order'=>'likes DESC',
+      'limit'=>7,
+      'offset'=>0
+    ));
+    $categories = array();
+    $categorie = array();
+    foreach ($boards as $board) {
+      $cate = $this->getBoardCategories($board->id);
+      foreach ($cate as $cat) {
+        array_push($categorie, array("categorie" => $cat->name));
+      }
+      array_push($categories, $categorie);
+      $categorie = array();
+    }
+    return $categories;
+  }
+
 
   function getPageBoards($page){
     $pagination = 10;
@@ -89,9 +119,6 @@ class board_model{
       'limit'=>$pagination,
       'offset'=>$offset
     ));
-    echo "<pre>";
-    var_dump($boards);
-    echo "</pre>";
     return $boards;
   }
 
@@ -144,7 +171,7 @@ class board_model{
     return $table;
   }
 
-  function getSelectedBoardCategory($data) { 
+  function getSelectedBoardCategory($data) {
     $selectedCategory = $this->getCategoriesMapper()->select('*', 'id = "'.$data.'"');
     $table['categories']=array();
     $table['boards']=array();

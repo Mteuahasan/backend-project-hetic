@@ -26,7 +26,7 @@
 
     <?php endif; ?>
       <h1><i class="flaticon-user148"></i>Sign Up</h1>
-      <form action="signin" method="POST" class="ac-custom ac-checkbox ac-checkmark">
+      <form action="signup" method="POST" class="ac-custom ac-checkbox ac-checkmark">
         <!-- NAME -->
         <span class="input input--kaede">
           <input class="input__field input__field--kaede" type="text" id="input-3" name="name"/>
@@ -36,7 +36,7 @@
         </span>
         <!-- SURNAME -->
         <span class="input input--kaede">
-          <input class="input__field input__field--kaede" type="text" id="input-4" name="name"/>
+          <input class="input__field input__field--kaede" type="text" id="input-4" name="surname"/>
           <label class="input__label input__label--kaede" for="input-4">
             <span class="input__label-content input__label-content--kaede">Surname</span>
           </label>
@@ -61,7 +61,7 @@
         <!-- REPEAT PASSWORD -->
         <!-- <label for="password-2">Repeat password</label><input type="password" name="password-2"> -->
         <span class="input input--kaede">
-          <input class="input__field input__field--kaede" type="password" id="input-5" name="password"/>
+          <input class="input__field input__field--kaede" type="password" id="input-5" name="password-2"/>
           <label class="input__label input__label--kaede" for="input-5">
             <span class="input__label-content input__label-content--kaede">Repeat password</span>
           </label>
@@ -76,7 +76,7 @@
 
   </section>
 
-  <script type="text/javascript" src="dist/assets/scripts/signin.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/signup.js"></script>
   <script type="text/javascript" src="dist/assets/scripts/register.js"></script>
 </body>
 </html>

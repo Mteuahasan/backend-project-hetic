@@ -13,10 +13,10 @@ class users_controller{
   }
 
 
-  public function signin($f3){
-    $this->tpl = 'signin.php';
+  public function signup($f3){
+    $this->tpl = 'signup.php';
     if($f3->get('VERB')=='POST'){
-      $this->model->signin($f3->get('POST'));
+      $this->model->signup($f3->get('POST'));
       $f3->reroute('/home');
     }
   }

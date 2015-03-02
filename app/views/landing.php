@@ -18,7 +18,7 @@
   		<p class="subtitle">Comics creators have Their place now</p>
   		<p class="title">Welcome to Striply</p>
 
-  		<a href="signin" class="btn-members">
+  		<a href="signup" class="btn-members">
         <span></span>
   			<div class="btn-members--content">Become a cartoonist member</div>
 

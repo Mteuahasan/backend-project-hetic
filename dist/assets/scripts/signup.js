@@ -1,4 +1,4 @@
-var signin = {
+var signup = {
 
   init: function(){
     this.listeners();
@@ -29,7 +29,7 @@ var signin = {
         var data=new FormData();
         data.append('name', this.value);
         data.append('ajax', true);
-        self.ajax('POST', 'signin/name', data, function(xhr){
+        self.ajax('POST', 'signup/name', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
             // name.style.outlineColor = 'green';
@@ -46,7 +46,7 @@ var signin = {
         var data=new FormData();
         data.append('surname', this.value);
         data.append('ajax', true);
-        self.ajax('POST', 'signin/surname', data, function(xhr){
+        self.ajax('POST', 'signup/surname', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
             // name.style.outlineColor = 'green';
@@ -63,7 +63,7 @@ var signin = {
         var data=new FormData();
         data.append('email', this.value);
         data.append('ajax', true);
-        self.ajax('POST', 'signin/email', data, function(xhr){
+        self.ajax('POST', 'signup/email', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
             // email.style.outlineColor = 'green';
@@ -78,4 +78,4 @@ var signin = {
   }
 }
 
-signin.init();
+signup.init();
