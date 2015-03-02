@@ -25,6 +25,8 @@ class app_controller{
     $this->tpl = 'main.php';
     $this->boards = $this->boardsModel->getHomeBoards();
     $f3->set('boards',$this->boards);
+    $this->boardCategories  = $this->boardsModel->getBoardCategory();
+    $f3->set('cat', $this->boardCategories);
   }
 
   public function search($f3){
