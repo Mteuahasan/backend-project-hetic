@@ -138,7 +138,7 @@
 }
 
 
-
+// LOGIN - SIGNUP
 .btn-login-signup {
 	margin: 30px 0 15px;
 
@@ -154,15 +154,6 @@
 				color: $black;
 				background-color: $grey-light;
 			}
-		}
-	}
-	li:first-child {
-		span {
-			@include span-hover(140px, 40px, 140px, 40px);
-		}
-		&:hover span {
-			cursor: pointer;
-			display: block;
 		}
 	}
 	input {
@@ -181,6 +172,15 @@
 				padding: 10px 40px;
 			}
 		}
+			li:first-child {
+				span {
+					@include span-hover(140px, 40px, 140px, 40px);
+				}
+				&:hover span {
+					cursor: pointer;
+					display: block;
+				}
+			}
 		input {
 			padding: 10px 45px;
 			margin-right: -5px;
@@ -197,6 +197,13 @@
 			}
 		}
 		li:nth-child(2){
+			span {
+				@include span-hover(140px, 40px, 140px, 40px);
+			}
+			&:hover span {
+				cursor: pointer;
+				display: block;
+			}
 			input {
 				padding: 10px 38px;
 			}

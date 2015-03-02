@@ -35,11 +35,11 @@
         <div class="menu--footer">
           <!-- NOT CONNECTED -->
           <ul class="disconnected">
-            <li><a href="signin"><i class="flaticon-user148"></i><span>Sign Up</span><i class="flaticon-right11"></i></a></li>
+            <li><a href="login"><i class="flaticon-user148"></i><span>Log In</span><i class="flaticon-right11"></i></a></li>
             <li class="btn-cta">
-              <a href="login">
+              <a href="signin">
                 <span></span>
-                <strong>Log In</strong>
+                <strong>Sign Up</strong>
                 <i class="flaticon-plus3"></i>
               </a>
             </li>
