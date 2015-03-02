@@ -18,10 +18,17 @@
   		<p class="subtitle">Comics creators have Their place now</p>
   		<p class="title">Welcome to Striply</p>
 
-  		<a href="signin" class="btn-members">
+  		<a href="signup" class="btn-members">
         <span></span>
   			<div class="btn-members--content">Become a cartoonist member</div>
-  			<div class="btn-members--nbr">5710189</div>
+
+        <?php 
+          $count = 0;
+          foreach ($allUsers as $allUser) {
+            $count++;
+          }
+        ?>
+  			<div class="btn-members--nbr"><?php echo $count ?></div>
   		</a>
       <div class="btn-start">
   		  <a href="home">Discover the site</a>

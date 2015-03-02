@@ -31,7 +31,7 @@
     </ul>
     <?php if(!isset($SESSION) || empty($SESSION)): ?>
         <ul>
-          <li><a href="signin">Sign Up</a></li>
+          <li><a href="signup">Sign Up</a></li>
           <li><a href="login" class="btn-cta">Log In</a></li>
         </ul>
       <?php endif; ?>
