@@ -49,6 +49,7 @@ function searchClose() {
 
 function clickCategory(e) {
 	e.preventDefault();
+	e.stopPropagation();
 	filterCategory.style.display="block";	
 	pageCategory.style.display="block";
 }

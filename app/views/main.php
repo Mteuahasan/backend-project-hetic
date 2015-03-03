@@ -95,17 +95,13 @@
     <div id="pageCategory" class="page-category">
       <i id="closeCategory" class="flaticon-cancel22"></i>
       <h1>Set up a maximum of <strong>3</strong> categories</h1>
-      <?php foreach($cat['categories'] as $catName): ?>
-        <a href="board/selectedCategory/<?php echo $catName['id'] ?>" style="color:black"><?php echo $catName['categories_name'] ?></a>
-
-      <?php endforeach ?>
-
-
-       <!--  <ul>
+        <form autocomplete="off">
+        <ul>
+          <li><input type="checkbox" id="cat1"><label for="cat1">Comics</label></li>
           <li><input type="checkbox" id="cat2"><label for="cat2">Humor</label></li>
           <li><input type="checkbox" id="cat3"><label for="cat3">Politic</label></li>
-        </ul> -->
-       <!--  <ul>
+        </ul>
+        <ul>
           <li><input type="checkbox" id="cat4"><label for="cat4">Celebrities</label></li>
           <li><input type="checkbox" id="cat5"><label for="cat5">Dark Humor</label></li>
           <li><input type="checkbox" id="cat6"><label for="cat6">Gore</label></li>
@@ -115,7 +111,8 @@
           <li><input type="checkbox" id="cat8"><label for="cat8">Religious</label></li>
           <li><input type="checkbox" id="cat9"><label for="cat9">For kids</label></li>
           <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
-        </ul> -->
+        </ul>
+      </form>  
       <input type="submit" value="Let's go" class="btn-little">
       <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
     </div>
@@ -134,7 +131,7 @@
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
         </a>
-        <a href="home" id="search">
+        <a href="#" id="search">
           <span>Search</span>
           <i class="flaticon-magnifier52"></i>
         </a>
@@ -456,6 +453,6 @@
     </div>
   </div>
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
-  <script type="text/javascript" src="public/script/home.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/home.js"></script>
 </body>
 </html>
