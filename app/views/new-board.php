@@ -12,46 +12,41 @@
 </head>
 <body>
 
-  <nav>
-    <h1 class="logo">Striply</h1>
-    <ul class="menu">
-      <li><a class="menu--active" href="home">Home</a></li>
-      <li><a href="gallery">Gallery</a></li>
-      <li><a href="contests">Contests</a></li>
-      <li><a href="expos">Expos</a></li>
-      <li><a href="jobs">Jobs</a></li>
-    </ul>
-    <span></span>
-    <ul class="menu--more">
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Google +</a></li>
-      <li><a href="#">RSS</a></li>
-    </ul>
-    <?php if(!isset($SESSION) || empty($SESSION)): ?>
-        <ul>
-          <li><a href="signup">Sign Up</a></li>
-          <li><a href="login" class="btn-cta">Log In</a></li>
-        </ul>
-      <?php endif; ?>
-
-  </nav>
+  <?php
+  include('partials/nav.php');
+  include('partials/search.php');
+  include('partials/category.php');
+  ?>
 
   <div class="main-container">
     <div class="contain-form">
       <form enctype="multipart/form-data" action="new-board" method="post">
         <input type="text" name="name" placeholder="Add a title">
+        <h1>Add 3 categories</h1>
         <?php foreach ($categories as $categorie): ?>
-          <input type="checkbox" name="categories[]" value="<?php echo $categorie->id ?>"><label for="<?php echo $categorie->slug ?>"><?php echo $categorie->name ?></label>
+          <input type="checkbox" name="categories[]" value="<?php echo $categorie->id ?>" id="<?php echo $categorie->slug ?>"><label for="<?php echo $categorie->slug ?>"><?php echo $categorie->name ?></label>
         <?php endforeach ?>
         <input type="text" name="tags" placeholder="Add tags">
-        <hr style="width:100%; color:#AAA">
-        <textarea name="description" id="board-description" cols="30" rows="10" placeholder="Write here the strip's description"></textarea>
-        <input type="file" name="userfile" class="input-file">
-        <input type="file" name="userfile2" class="input-file">
-        <input type="file" name="userfile3" class="input-file">
-        <input type="file" name="userfile4" class="input-file">
+        <hr style="width:100%; color:##9b9a9a; margin-bottom:20px;">
+        <textarea name="description" id="board-description" cols="30" rows="10" placeholder="Write here your description"></textarea>
+        <div class="btn--file-upload">
+          <span>Add a strip</span>
+          <input type="file" name="userfile" class="input-file">
+        </div>
+        <div class="btn--file-upload">
+          <span>Add a strip</span>
+          <input type="file" name="userfile2" class="input-file">
+        </div>
+        <div class="btn--file-upload">
+          <span>Add a strip</span>
+          <input type="file" name="userfile3" class="input-file">
+        </div>
+        <div class="btn--file-upload">
+          <span>Add a strip</span>
+          <input type="file" name="userfile4" class="input-file">
+        </div>
+
+
         <input type="file" name="userfile5" class="input-file">
         <input type="submit" value="Submit board">
       </form>
@@ -59,5 +54,6 @@
   </div>
 
   <script type="text/javascript" src="dist/assets/scripts/new-board.js"></script>
+  <script type="text/javascript" src="public/script/home.js"></script>
 </body>
 </html>

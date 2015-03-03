@@ -210,3 +210,26 @@
 		}
 	}
 }
+
+.btn--file-upload {
+	position: relative;
+	width: 180px;
+	margin: 10px auto;
+	span {
+		display: block;
+		font-weight: $light;
+		line-height: 26px;
+		text-transform: uppercase;
+		color: $blue;
+		text-align: center;
+		border: 2px solid $blue;
+	}
+	input[type=file] {
+		position: absolute;
+		display: block;
+		bottom: 0px;
+		opacity: 0;
+		width: 180px;
+		height: 30px;
+	}
+}

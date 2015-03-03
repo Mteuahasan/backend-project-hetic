@@ -1,35 +1,75 @@
 div.contain-form{
   width: 80%;
   margin: 0 auto;
-  padding: 50px;
+  line-height: 30px;
+  padding: 30px 50px 50px;
   input[type=text]{
     border: none;
     background: none;
     display: block;
-    font-size: 24px;
+    font-size: 20px;
     padding: 10px 0;
-    color: #666;
+    margin-bottom: 50px;
+    color: $black;
+    width: 100%;
     &:first-child{
-      font-size: 62px;
+      font-size: 48px;
+      font-weight: $bold;
+      margin: 0;
+      @include placeholder {
+        color: $grey-dark;
+      }
     }
     &:focus{
       outline: none;
     }
+    @include placeholder {
+        color: $grey;
+      }
+    .tag-valid {
+      color: $blue;
+    }  
+  }
+  h1 {
+    font-size: 20px;
+    color: $grey;
+  }
+  label {
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    width: calc(100% / 3);
+    width: -webkit-calc(100% / 3);
+    width: -moz-calc(100% / 3);
+    @include transition(.3s);
+  }
+  input:checked + label {
+    color: $blue;
+  }
+  input[id] {
+    display: none;
   }
 
   textarea{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    border: 1px solid #AAA;
+    border: 1px solid $grey-dark;
     background: none;
-    height: 75px;
+    height: 100px;
     padding: 10px;
-    color: #666;
-    font-size: 24px;
+    color: $black;
+    font-size: 12px;
+    margin-bottom: 40px;
+
+    @include placeholder {
+      color: $grey-dark;
+      font-style: italic;
+    }
   }
 
-  input[type="file"]{
-    display: block;
+
+  img {
+    width: 90%;
   }
 
   div.delete{
