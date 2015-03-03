@@ -7,17 +7,23 @@ div.contain-form{
     border: none;
     background: none;
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px 0;
     margin-bottom: 50px;
     color: $black;
     width: 100%;
+    line-height: 26px;
+    @include placeholder {
+        font-size: 20px;
+      }
     &:first-child{
       font-size: 48px;
       font-weight: $bold;
       margin: 0;
+      line-height: 40px;
       @include placeholder {
         color: $grey-dark;
+        font-size: 48px;
       }
     }
     &:focus{
@@ -59,7 +65,7 @@ div.contain-form{
     padding: 10px;
     color: $black;
     font-size: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     @include placeholder {
       color: $grey-dark;
@@ -72,10 +78,51 @@ div.contain-form{
     width: 90%;
   }
 
-  div.delete{
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    background: black;
+  .flaticon-bin9{
+    cursor: pointer;
+    @include transition(.3s);
+
+    &:hover {
+      color: $grey-dark;
+    }
   }
+
+  .btn--submit-form {
+    overflow: hidden;
+    float: right;
+    cursor:pointer;
+    text-align: center;
+    margin: 10px 0 30px;
+    box-shadow: 1px 1px rgba($blue-light, .4);
+
+    @include border-radius(5px);
+    @include transition(.2s);
+
+    input[type="submit"] {
+      float: left;
+      border: none;
+      width: 120px;
+      cursor:pointer;
+      line-height: 25px;
+      font-weight: $bold;
+      background-color: $blue;
+      text-transform: uppercase;
+    }
+    span {
+      @include span-hover(150px, 30px, 150px, 30px);
+    }
+    &:hover span {
+      display: block;
+    }
+    .flaticon-right11 {
+      float: left;
+      width: 30px;
+      font-size: 10px;
+      background-color: $blue-light;
+    }
+    &:hover{
+        @include transform(0, 1px);
+    }
+  }
+
 }
