@@ -12,10 +12,49 @@
 
 </head>
 <body>
+
+  <!-- POP UP SEARCH -->
+  <section id="searchFilter" class="page-filters-search">
+    <div id="pageSearch" class="page-search">
+      <i id="closeSearch" class="flaticon-cancel22"></i>
+      <h1>Search anything by tiping here</h1>
+      <i class="flaticon-information32" title="Category, people or tag"></i>
+      <form action="search/" method="post" id='search-form'>
+          <input type="text" name="name" placeholder="" autocomplete="off" id="search-content"/>
+      </form>
+    </div>
+  </section>
+
+  <!-- POP UP CATEGORY -->
+  <section id="categoryFilter" class="page-filters-category">
+    <div id="pageCategory" class="page-category">
+      <i id="closeCategory" class="flaticon-cancel22"></i>
+      <h1>Set up a maximum of <strong>3</strong> categories</h1>
+        <form autocomplete="off">
+        <ul>
+          <li><input type="checkbox" id="cat1"><label for="cat1">Comics</label></li>
+          <li><input type="checkbox" id="cat2"><label for="cat2">Humor</label></li>
+          <li><input type="checkbox" id="cat3"><label for="cat3">Politic</label></li>
+        </ul>
+        <ul>
+          <li><input type="checkbox" id="cat4"><label for="cat4">Celebrities</label></li>
+          <li><input type="checkbox" id="cat5"><label for="cat5">Dark Humor</label></li>
+          <li><input type="checkbox" id="cat6"><label for="cat6">Gore</label></li>
+          <li><input type="checkbox" id="cat7"><label for="cat7">Sensual</label></li>
+        </ul>
+        <ul>
+          <li><input type="checkbox" id="cat8"><label for="cat8">Religious</label></li>
+          <li><input type="checkbox" id="cat9"><label for="cat9">For kids</label></li>
+          <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
+        </ul>
+      </form>  
+      <input type="submit" value="Let's go" class="btn-little">
+      <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
+    </div>
+  </section>
+
   <?php
   include('partials/nav.php');
-  include('partials/search.php');
-  include('partials/category.php');
   ?>
 
   <div id="mainContent" class="main-container">
@@ -31,7 +70,7 @@
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
         </a>
-        <a href="home" id="search">
+        <a href="#" id="search">
           <span>Search</span>
           <i class="flaticon-magnifier52"></i>
         </a>
@@ -353,6 +392,6 @@
     </div>
   </div>
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
-  <script type="text/javascript" src="public/script/home.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/home.js"></script>
 </body>
 </html>
