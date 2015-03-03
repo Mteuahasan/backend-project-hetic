@@ -167,7 +167,7 @@ class board_model{
       }
     }
 
-    var_dump($table);
+    // var_dump($table);
     return $table;
   }
 
@@ -206,7 +206,7 @@ class board_model{
       }
     }
 
-    var_dump($table);
+    // var_dump($table);
     return $table;
 
   }

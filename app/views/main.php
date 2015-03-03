@@ -18,7 +18,6 @@
   include('partials/category.php');
   ?>
 
-
   <div id="mainContent" class="main-container">
     <section class="featured-event">
       <p>The contest #<strong>18</strong></p>
@@ -28,11 +27,11 @@
 
     <div class="wrapper-home-content">
       <div class="filters">
-        <a href="board/selectCategory">
+        <a href="#" id="category">
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
         </a>
-        <a href="#" id="search">
+        <a href="home" id="search">
           <span>Search</span>
           <i class="flaticon-magnifier52"></i>
         </a>
