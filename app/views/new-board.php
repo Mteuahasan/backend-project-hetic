@@ -14,8 +14,6 @@
 
   <?php
   include('partials/nav.php');
-  include('partials/search.php');
-  include('partials/category.php');
   ?>
 
   <div class="main-container">
