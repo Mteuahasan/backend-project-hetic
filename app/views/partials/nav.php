@@ -1,6 +1,6 @@
 <nav>
     <div class="container-menu">
-      <h1 class="logo">Striply</h1>
+      <a href="home" class="logo">Striply</a>
       <ul class="menu">
         <li><a class="menu--active" href="home">Home</a></li>
         <li><a href="gallery">Gallery</a></li>

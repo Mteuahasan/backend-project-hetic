@@ -1,0 +1,38 @@
+div.wrapper-home-content{
+	.top-gallery{
+		width: 90%;
+		margin: 0 auto;
+		h1{
+			font-size: 20px;
+			line-height: 20px;
+			margin-bottom: 60px;
+			i{
+				font-size: 16px;
+				color: $blue;
+				margin-right: 15px;
+			}
+		}
+		h2{
+			font-size: 16px;
+			line-height: 26px;
+			border-bottom: 1px solid #333;
+
+			span{
+				color: $blue;
+			}
+		}
+		p{
+			font-weight: $light;
+			line-height: 40px;
+			strong{
+				color: $blue;
+				font-size: 20px;
+				font-weight: $medium;
+			}
+			span{
+				font-weight: $normal;
+			}
+		}
+	}
+
+}

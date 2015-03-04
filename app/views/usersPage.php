@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Document</title>
+	<title>Striply</title>
 	<meta name="description" content="">
 	<base href="<?php echo $BASE; ?>/" />
 	<meta name="viewport" content="width=device-width,initial-scale=1">

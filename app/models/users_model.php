@@ -77,8 +77,10 @@ class users_model{
   public function usersBoards() {
     $user_id = $this->f3->get('SESSION')['id'];
     $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$user_id.'"');
-
-    return $usersBoard;
+    if(empty($usersBoard)) {
+      echo 'Kikikikiki';
+    }
+      return $usersBoard;
   }
 
   public function userProfil() {

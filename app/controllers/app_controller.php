@@ -34,6 +34,9 @@ class app_controller{
     $this->boardCategories  = $this->boardsModel->getBoardCategory();
     $f3->set('cat', $this->boardCategories);
   }
+  public function gallery($f3){
+    $this->tpl = 'gallery.php';
+  }
 
   public function search($f3){
     $this->ajax = $f3->get('POST.ajax');
