@@ -49,7 +49,6 @@
         </div>
 
         <div class="btn--submit-form">
-          <span></span>
           <input type="submit" value="Publish">
           <i class="flaticon-right11"></i>
         </div>
@@ -61,6 +60,6 @@
 
   <script type="text/javascript" src="dist/assets/scripts/new-board.js"></script>
   <script type="text/javascript" src="dist/assets/scripts/home.js"></script>
-  
+
 </body>
 </html>

@@ -58,14 +58,20 @@ class users_model{
     $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
     $likedBoards = array();
 
-    foreach($hasLiked as $key) {
-      $boardLiked = $this->getBoardsMapper()->select('*', 'id = "'.$key->boards_id.'"');
-      array_push($likedBoards, $boardLiked);
+    $request = '';
+
+    foreach ($hasLiked as $like) {
+      $request = $request.'id = "'.$like->boards_id.'" OR ';
     }
-    if(empty($likedBoards)) {
+
+    $request = substr($request,0, -3);
+
+    $boardLiked = $this->getBoardsMapper()->select('*', $request);
+
+    if(empty($boardLiked)) {
       echo 'You didn\'t like any boards';
     }
-    return $likedBoards;
+    return $boardLiked;
   }
 
   public function usersBoards() {

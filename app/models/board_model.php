@@ -45,10 +45,7 @@ class board_model{
             $board->tags=$data['tags'];
             $board->save();
             foreach ($data['categories'] as $categorie) {
-              $has_categories=$this->getHasCategoriesMapper();
-              $has_categories->boards_id = $board['id'];
-              $has_categories->categories_id = $categorie;
-              $has_categories->save();
+              $this->dB->exec('INSERT INTO boards_has_categories VALUES (:boards_id, :categories_id)', array(':boards_id'=>$board['id'],':categories_id'=>$categorie));
             }
             $this->f3->reroute('/home');
           }
@@ -90,6 +87,26 @@ class board_model{
       'group'=>NULL,
       'order'=>'likes DESC',
       'limit'=>7,
+      'offset'=>0
+    ));
+    return $boards;
+  }
+
+  function getMostCommented(){
+    $boards = $this->getBoardsMapper()->select('*',NULL , array(
+      'group'=>NULL,
+      'order'=>'commentNumber DESC',
+      'limit'=>4,
+      'offset'=>0
+    ));
+    return $boards;
+  }
+
+  function getMostUnliked(){
+    $boards = $this->getBoardsMapper()->select('*',NULL , array(
+      'group'=>NULL,
+      'order'=>'likes ASC',
+      'limit'=>4,
       'offset'=>0
     ));
     return $boards;
@@ -222,6 +239,7 @@ class board_model{
     }
 
     $request = substr($request, 0, -4);
+
     return $categoriesMapper = $this->getCategoriesMapper()->select('*', $request);
   }
 
