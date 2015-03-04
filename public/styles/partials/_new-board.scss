@@ -1,40 +1,128 @@
 div.contain-form{
   width: 80%;
   margin: 0 auto;
-  padding: 50px;
+  line-height: 30px;
+  padding: 30px 50px 50px;
   input[type=text]{
     border: none;
     background: none;
     display: block;
-    font-size: 24px;
+    font-size: 16px;
     padding: 10px 0;
-    color: #666;
+    margin-bottom: 50px;
+    color: $black;
+    width: 100%;
+    line-height: 26px;
+    @include placeholder {
+        font-size: 20px;
+      }
     &:first-child{
-      font-size: 62px;
+      font-size: 48px;
+      font-weight: $bold;
+      margin: 0;
+      line-height: 40px;
+      @include placeholder {
+        color: $grey-dark;
+        font-size: 48px;
+      }
     }
     &:focus{
       outline: none;
     }
+    @include placeholder {
+        color: $grey;
+      }
+    .tag-valid {
+      color: $blue;
+    }  
+  }
+  h1 {
+    font-size: 20px;
+    color: $grey;
+  }
+  label {
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    width: calc(100% / 3);
+    width: -webkit-calc(100% / 3);
+    width: -moz-calc(100% / 3);
+    @include transition(.3s);
+  }
+  input:checked + label {
+    color: $blue;
+  }
+  input[id] {
+    display: none;
   }
 
   textarea{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    border: 1px solid #AAA;
+    border: 1px solid $grey-dark;
     background: none;
-    height: 75px;
+    height: 100px;
     padding: 10px;
-    color: #666;
-    font-size: 24px;
+    color: $black;
+    font-size: 12px;
+    margin-bottom: 20px;
+
+    @include placeholder {
+      color: $grey-dark;
+      font-style: italic;
+    }
   }
 
-  input[type="file"]{
-    display: block;
+
+  img {
+    width: 90%;
   }
 
-  div.delete{
-    width: 25px;
-    height: 25px;
-    background: black;
+  .flaticon-bin9{
+    cursor: pointer;
+    @include transition(.3s);
+
+    &:hover {
+      color: $grey-dark;
+    }
   }
+
+  .btn--submit-form {
+    overflow: hidden;
+    float: right;
+    cursor:pointer;
+    text-align: center;
+    margin: 10px 0 30px;
+    box-shadow: 1px 1px rgba($blue-light, .4);
+
+    @include border-radius(5px);
+    @include transition(.2s);
+
+    input[type="submit"] {
+      float: left;
+      border: none;
+      width: 120px;
+      cursor:pointer;
+      line-height: 25px;
+      font-weight: $bold;
+      background-color: $blue;
+      text-transform: uppercase;
+    }
+    span {
+      @include span-hover(150px, 30px, 150px, 30px);
+    }
+    &:hover span {
+      display: block;
+    }
+    .flaticon-right11 {
+      float: left;
+      width: 30px;
+      font-size: 10px;
+      background-color: $blue-light;
+    }
+    &:hover{
+        @include transform(0, 1px);
+    }
+  }
+
 }

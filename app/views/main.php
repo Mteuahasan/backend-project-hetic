@@ -12,74 +12,11 @@
 
 </head>
 <body>
-  <nav>
-    <div class="container-menu">
-      <h1 class="logo">Striply</h1>
-      <ul class="menu">
-        <li><a class="menu--active" href="home">Home</a></li>
-        <li><a href="gallery">Gallery</a></li>
-        <li><a href="contests">Contests</a></li>
-        <li><a href="shows">Shows</a></li>
-        <li><a href="jobs">Jobs</a></li>
-      </ul>
-      <span></span>
-      <ul class="menu--more">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Google +</a></li>
-        <li><a href="#">RSS</a></li>
-      </ul>
-    </div>
-    <?php if(empty($SESSION)): ?>
-        <div class="menu--footer">
-          <!-- NOT CONNECTED -->
-          <ul class="disconnected">
-            <li><a href="login"><i class="flaticon-user148"></i><span>Sign In</span><i class="flaticon-right11"></i></a></li>
-
-            <li class="btn-cta">
-              <a href="signup">
-                <span></span>
-                <strong>Sign Up</strong>
-                <i class="flaticon-plus3"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      <?php endif; ?>
-      <?php if(!empty($SESSION)): ?>
-          <!-- CONNECTED -->
-        <div class="menu--footer">
-          <ul class="connected">
-            <div class="profilHover">
-                <li id="feature-profile-menu">
-                  <a href="home">
-                    <img src="./dist/assets/img/profile.jpg">
-                    <div class="username"><p><?php echo $SESSION['name'] ?></p></div>
-                  </a>
-                </li>
-                <li id="test" class="feature-menu-hover">
-                  <a href="logout"><i class="flaticon-logout11"></i></a>
-                  <span></span>
-                  <a href="user/<?php echo $SESSION['id'] ?>"><p>See profile</p></a>
-                </li>
-              </div>
-              <li class="btn-cta">
-                <a href="#">
-                  <span></span>
-                  <strong>Add strip</strong>
-                  <i class="flaticon-plus3"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        <?php endif; ?>
-  </nav>
 
   <!-- POP UP SEARCH -->
-  <section class="page-filters">
-    <div class="page-search">
-      <i class="flaticon-cancel22"></i>
+  <section id="searchFilter" class="page-filters-search">
+    <div id="pageSearch" class="page-search">
+      <i id="closeSearch" class="flaticon-cancel22"></i>
       <h1>Search anything by tiping here</h1>
       <i class="flaticon-information32" title="Category, people or tag"></i>
       <form action="search/" method="post" id='search-form'>
@@ -89,11 +26,11 @@
   </section>
 
   <!-- POP UP CATEGORY -->
-  <section class="page-filters">
-    <div class="page-category">
-      <i class="flaticon-cancel22"></i>
+  <section id="categoryFilter" class="page-filters-category">
+    <div id="pageCategory" class="page-category">
+      <i id="closeCategory" class="flaticon-cancel22"></i>
       <h1>Set up a maximum of <strong>3</strong> categories</h1>
-      <form autocomplete="off">
+        <form autocomplete="off">
         <ul>
           <li><input type="checkbox" id="cat1"><label for="cat1">Comics</label></li>
           <li><input type="checkbox" id="cat2"><label for="cat2">Humor</label></li>
@@ -110,11 +47,15 @@
           <li><input type="checkbox" id="cat9"><label for="cat9">For kids</label></li>
           <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
         </ul>
-      </form>
+      </form>  
       <input type="submit" value="Let's go" class="btn-little">
       <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
     </div>
   </section>
+
+  <?php
+  include('partials/nav.php');
+  ?>
 
   <div id="mainContent" class="main-container">
     <section class="featured-event">
@@ -125,7 +66,7 @@
 
     <div class="wrapper-home-content">
       <div class="filters">
-        <a href="board/selectCategory">
+        <a href="#" id="category">
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
         </a>
@@ -451,6 +392,6 @@
     </div>
   </div>
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
-  <script type="text/javascript" src="public/script/home.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/home.js"></script>
 </body>
 </html>
