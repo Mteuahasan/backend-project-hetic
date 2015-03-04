@@ -21,7 +21,7 @@ class users_model{
 
 
   public function signup($data){
-    if(isset($data) && !empty($data)){
+    if(isset($data) && !empty($data) && !empty($data['email'])){
       $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
       if(!$email){
         if($data['password'] == $data['password-2']){
