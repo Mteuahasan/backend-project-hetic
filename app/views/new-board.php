@@ -43,15 +43,24 @@
           <span>Add a strip</span>
           <input type="file" name="userfile4" class="input-file">
         </div>
+        <div class="btn--file-upload">
+          <span>Add a strip</span>
+          <input type="file" name="userfile5" class="input-file">
+        </div>
 
+        <div class="btn--submit-form">
+          <span></span>
+          <input type="submit" value="Publish">
+          <i class="flaticon-right11"></i>
+        </div>
 
-        <input type="file" name="userfile5" class="input-file">
-        <input type="submit" value="Submit board">
+        </div>
       </form>
     </div>
   </div>
 
   <script type="text/javascript" src="dist/assets/scripts/new-board.js"></script>
-  <script type="text/javascript" src="public/script/home.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/home.js"></script>
+  
 </body>
 </html>
