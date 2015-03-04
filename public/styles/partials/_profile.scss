@@ -1,0 +1,54 @@
+div.main-container {
+	div.wrapper-home-content {
+		div.top-content {
+			div.selection {
+				text-align: center;
+
+				span {
+					padding-right: 20px;
+					padding-left: 20px;
+					font-size: 1.8em;
+					cursor: pointer;
+				}
+
+				.color {
+					color: $blue;
+				}
+
+				.portfolio {
+					border-right: 1px solid $black;
+				}
+			}
+
+			div.separation {
+				width: 80%;
+				margin: auto;
+				height: 1px;
+				background-color: $black;
+				margin-top: 45px;;
+			}
+			
+			section.most-liked {
+
+				div.boards-container-profile {
+					width: 90%;
+					margin: 30px auto;
+
+					a.single-board-home {
+						display: none;
+					}
+
+					a.displayAdded {
+						display: inline-block;
+					}
+
+					a.displayLiked {
+						display: inline-block;
+					}
+
+				}
+			}
+			
+		}
+	}
+}
