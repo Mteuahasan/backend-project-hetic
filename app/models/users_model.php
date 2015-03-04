@@ -65,14 +65,16 @@ class users_model{
     if(empty($likedBoards)) {
       echo 'You didn\'t like any boards';
     }
-    return $likedBoards;
+      return $likedBoards;
   }
 
   public function usersBoards() {
     $user_id = $this->f3->get('SESSION')['id'];
     $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$user_id.'"');
-
-    return $usersBoard;
+    if(empty($usersBoard)) {
+      echo 'Kikikikiki';
+    }
+      return $usersBoard;
   }
 
   public function userProfil() {

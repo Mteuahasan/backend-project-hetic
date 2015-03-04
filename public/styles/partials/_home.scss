@@ -122,6 +122,7 @@ section.page-filters-category {
 div.main-container{
   width: 100%;
   padding-left: 200px;
+  // overflow: hidden;
   background: url('../img/background-texture.png') repeat;
   section.featured-event{
     width: 100%;
@@ -143,10 +144,11 @@ div.main-container{
   }
   div.wrapper-home-content{
     width: 100%;
+    overflow: hidden;
 
     div.filters{
       margin-top: 35px;
-      margin-right: 30px;
+      width: 95%;
       height: 80px;
       font-size: .8em;
       font-weight: $bold;
