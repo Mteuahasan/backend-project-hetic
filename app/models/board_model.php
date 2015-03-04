@@ -20,36 +20,42 @@ class board_model{
     if(isset($data) && !empty($data)){
       if(!empty($data['name'])){
         if(!empty($data['description'])){
-          $board=$this->getBoardsMapper();
-          $board->name=$data['name'];
-          $board->description=$data['description'];
-          $board->author=$session['name'];
-          $board->user_id=$session['id'];
-          if(isset($filepath[0])){
-            $board->filepath=$filepath[0]['name'];
+          if(!empty($data['categories'])){
+            $board=$this->getBoardsMapper();
+            $board->name=$data['name'];
+            $board->description=$data['description'];
+            $board->author=$session['name'];
+            $board->user_id=$session['id'];
+            if(isset($filepath[0])){
+              $board->filepath=$filepath[0]['name'];
+            }
+            if(isset($filepath[1])){
+              $board->filepath2=$filepath[1]['name'];
+            }
+            if(isset($filepath[2])){
+              $board->filepath3=$filepath[2]['name'];
+            }
+            if(isset($filepath[3])){
+              $board->filepath4=$filepath[3]['name'];
+            }
+            if(isset($filepath[4])){
+              $board->filepath5=$filepath[4]['name'];
+            }
+            $board->date=date("Y-m-d H:i:s");
+            $board->tags=$data['tags'];
+            $board->save();
+            foreach ($data['categories'] as $categorie) {
+              $has_categories=$this->getHasCategoriesMapper();
+              $has_categories->boards_id = $board['id'];
+              $has_categories->categories_id = $categorie;
+              $has_categories->save();
+            }
+            $this->f3->reroute('/home');
           }
-          if(isset($filepath[1])){
-            $board->filepath2=$filepath[1]['name'];
+          else{
+            $error = "Aucune catégorie";
+            echo $error;
           }
-          if(isset($filepath[2])){
-            $board->filepath3=$filepath[2]['name'];
-          }
-          if(isset($filepath[3])){
-            $board->filepath4=$filepath[3]['name'];
-          }
-          if(isset($filepath[4])){
-            $board->filepath5=$filepath[4]['name'];
-          }
-          $board->date=date("Y-m-d H:i:s");
-          $board->tags=$data['tags'];
-          $board->save();
-          foreach ($data['categories'] as $categorie) {
-            $has_categories=$this->getHasCategoriesMapper();
-            $has_categories->boards_id = $board['id'];
-            $has_categories->categories_id = $categorie;
-            $has_categories->save();
-          }
-          $this->f3->reroute('/home');
         }
         else {
           $error = 'La description doit être renseignée';
@@ -89,13 +95,7 @@ class board_model{
     return $boards;
   }
 
-  function getMostLikedCategories(){
-    $boards = $this->getBoardsMapper()->select('*',NULL , array(
-      'group'=>NULL,
-      'order'=>'likes DESC',
-      'limit'=>7,
-      'offset'=>0
-    ));
+  function getHomeCategories($boards){
     $categories = array();
     $categorie = array();
     foreach ($boards as $board) {
@@ -205,10 +205,7 @@ class board_model{
         }
       }
     }
-
-    // var_dump($table);
     return $table;
-
   }
 
 
@@ -291,6 +288,11 @@ class board_model{
     $commentsMapper->date = date("Y-m-d H:i:s");
     $commentsMapper->board_id = $params['id'];
     $commentsMapper->save();
+    $board = $this->getBoardsMapper();
+    $board->load(array('id=?', $params['id']));
+    $comments = $board->get('commentNumber');
+    $board->set('commentNumber', $comments + 1);
+    $board->save();
     $response = array('content'=>$post, 'author'=>$this->f3->get('SESSION')['name'], 'date'=>date("Y-m-d H:i:s"));
     echo json_encode($response);
   }
