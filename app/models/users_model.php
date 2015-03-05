@@ -32,23 +32,37 @@ class users_model{
   *******/
   public function signup($data){
     if(isset($data) && !empty($data) && !empty($data['email'])){
-      $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
-      if(!$email){
-        if($data['password'] == $data['password-2']){
-          $user=$this->getUsersMapper();
-          $user->name=$data['name'];
-          $user->surname=$data['surname'];
-          $user->email=$data['email'];
-          $user->password=$this->crypt->hash($data['password'], $this->f3->get('salt'));
-          $user->save();
-        }
-        else {
-          $error = 'Passwords must be similar';
-          echo $error;
+      if(filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+        if(strlen($data['name']) > 3){
+          if(strlen($data['password']) > 5){
+            $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
+            if(!$email){
+              if($data['password'] == $data['password-2']){
+                $user=$this->getUsersMapper();
+                $user->name=$data['name'];
+                $user->email=$data['email'];
+                $user->password=$this->crypt->hash($data['password'], $this->f3->get('salt'));
+                $user->save();
+              }
+              else {
+                $error = 'Passwords must be similar';
+                die($error);
+              }
+            } else {
+              $error = 'Email already taken';
+              die($error);
+            }
+          } else {
+            $error = 'Password must be at leat 6 characters long';
+            die($error);
+          }
+        } else {
+          $error = 'Pseudo must be at leat 3 characters long';
+          die($error);
         }
       } else {
-        $error = 'Email already taken';
-        echo $error;
+        $error = "Email format invalid";
+        die($error);
       }
     }
   }

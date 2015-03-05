@@ -20,17 +20,9 @@
         <span class="input input--kaede">
           <input class="input__field input__field--kaede" type="text" id="input-3" name="name"/>
           <label class="input__label input__label--kaede" for="input-3">
-            <span class="input__label-content input__label-content--kaede">Name</span>
+            <span class="input__label-content input__label-content--kaede">Pseudo</span>
           </label>
         </span>
-        <!-- SURNAME -->
-        <span class="input input--kaede">
-          <input class="input__field input__field--kaede" type="text" id="input-4" name="surname"/>
-          <label class="input__label input__label--kaede" for="input-4">
-            <span class="input__label-content input__label-content--kaede">Surname</span>
-          </label>
-        </span>
-
         <!-- EMAIL -->
         <span class="input input--kaede">
           <input class="input__field input__field--kaede" type="email" id="input-1" name="email"/>
@@ -48,7 +40,6 @@
         </span>
 
         <!-- REPEAT PASSWORD -->
-        <!-- <label for="password-2">Repeat password</label><input type="password" name="password-2"> -->
         <span class="input input--kaede">
           <input class="input__field input__field--kaede" type="password" id="input-5" name="password-2"/>
           <label class="input__label input__label--kaede" for="input-5">

@@ -29,23 +29,23 @@
         <textarea name="description" id="board-description" cols="30" rows="10" placeholder="Write here your description"></textarea>
         <div class="btn--file-upload">
           <span>Add a strip</span>
-          <input type="file" name="userfile" class="input-file">
+          <input type="file" name="userfile" class="input-file" accept=".png,.jpg">
         </div>
         <div class="btn--file-upload">
           <span>Add a strip</span>
-          <input type="file" name="userfile2" class="input-file">
+          <input type="file" name="userfile2" class="input-file" accept=".png,.jpg">
         </div>
         <div class="btn--file-upload">
           <span>Add a strip</span>
-          <input type="file" name="userfile3" class="input-file">
+          <input type="file" name="userfile3" class="input-file" accept=".png,.jpg">
         </div>
         <div class="btn--file-upload">
           <span>Add a strip</span>
-          <input type="file" name="userfile4" class="input-file">
+          <input type="file" name="userfile4" class="input-file" accept=".png,.jpg">
         </div>
         <div class="btn--file-upload">
           <span>Add a strip</span>
-          <input type="file" name="userfile5" class="input-file">
+          <input type="file" name="userfile5" class="input-file" accept=".png,.jpg">
         </div>
 
         <div class="btn--submit-form">

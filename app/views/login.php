@@ -31,9 +31,6 @@
 						<span class="input__label-content input__label-content--kaede">Password</span>
 					</label>
 				</span>
-				<div class="savepass">
-			 		<input type="checkbox" id="savepass"><label for="savepass">Save my password</label>
-				</div>
 				<ul class="btn-login-signup">
 					<li><input type="submit" value="Log In"></li>
 					<li><a href="signup">Sign Up</a></li>
