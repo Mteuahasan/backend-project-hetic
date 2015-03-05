@@ -67,16 +67,16 @@
 	          <span>Search</span>
 	          <i class="flaticon-magnifier52"></i>
 	        </a>
-	        <a href="user/<?php echo $SESSION['id'] ?>/profile" id="setting">
+	        <a href="user/<?php echo $users[0]->id ?>/settings" id="setting">
 	          <span>Settings</span>
 	          <i class="flaticon-screwdriver26"></i>
 	        </a>
-	        <a href="#" id="about">
+	        <a href="user/<?php echo $users[0]->id ?>/about" id="about">
 	          <span>About</span>
 	          <i class="flaticon-information32"></i>
 	        </a>
 	      </div>
-	      <div class="top-content">
+	      <div id="settings-content" class="top-content">
 	      	<div class="selection">
 	      		<span class="liked color">SETTINGS</span>
 	      	</div>
@@ -89,9 +89,9 @@
 							<span class="input input--hoshi">
 								<div class="information"><?php echo $users[0]->name; ?></div>
 
-								<input class="input__field input__field--hoshi" type="text" id="input-5" />
+								<input class="input__field input__field--hoshi" type="text" name="name" id="input-5" />
 								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-5">
-								<span class="input__label-content input__label-content--hoshi">Name</span>
+								<span class="input__label-content input__label-content--hoshi">Username</span>
 
 								</label>
 							</span>
@@ -100,11 +100,10 @@
 
 						<section class="content">
 							<span class="input input--hoshi">
-								<div class="information"><?php echo $users[0]->email; ?></div>							
-
-								<input class="input__field input__field--hoshi" type="text" id="input-5" />
+								<div class="information"><?php echo $users[0]->description ?></div>					
+								<input class="input__field input__field--hoshi" type="text" name="description" id="input-5" />
 								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-5">
-								<span class="input__label-content input__label-content--hoshi">Email</span>
+								<span class="input__label-content input__label-content--hoshi">Descritpion</span>
 
 								</label>
 							</span>
@@ -113,70 +112,100 @@
 
 						<section class="content">
 							<span class="input input--hoshi">
-								<div class="information"><?php echo $users[0]->website; ?></div>
+								<div class="information"><?php echo $users[0]->city ?></div>
 
-								<input class="input__field input__field--hoshi" type="text" name="site" id="display-linkdin" />
+								<input class="input__field input__field--hoshi" type="text" name="city" id="display-linkdin" />
 								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="site">
-								<span class="input__label-content input__label-content--hoshi">Website</span>
+								<span class="input__label-content input__label-content--hoshi">Current City</span>
 
 								</label>
 							</span>
+	
 						</section>      			
-							<input type="submit" name="same" class="button-submit" value="web">
+							
 			      					
 					</div>
 					<div class="settings-content container-settings-right">
 
 					<section class="content">
 						<span class="input input--hoshi">
-							<div class="information"><?php echo $users[0]->url_twitter ?></div>
+							<div class="information"><?php echo $users[0]->email ?></div>
 
-							<input class="input__field input__field--hoshi" type="text" name="twitter" id="display-twitter" />
+							<input class="input__field input__field--hoshi" type="text" name="mail" id="display-twitter" />
 							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="twitter">
-							<span class="input__label-content input__label-content--hoshi">Twitter</span>
+							<span class="input__label-content input__label-content--hoshi">Mail adresse</span>
 
 							</label>
 						</span>
+		
 					</section>
-						<input type="submit" name="same" class="button-submit" value="twitter">
 
 					<section class="content">
 						<span class="input input--hoshi">
-							<div class="information"><?php echo $users[0]->url_facebook ?></div>
+							<div class="information"></div>
 
-							<input class="input__field input__field--hoshi" type="text" name="facebook" id="display-facebook" />
+							<input class="input__field input__field--hoshi" type="text" name="categorie" id="display-facebook" />
 							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="facebook">
-							<span class="input__label-content input__label-content--hoshi">Facebook</span>
+							<span class="input__label-content input__label-content--hoshi">Catégorie of interest (3 max).</span>
 
 							</label>
 						</span>
+						
 					</section> 
-						<input type="submit" name="same" class="button-submit" value="facebook">
 
 					<section class="content">
 						<span class="input input--hoshi">
-							<div class="information"><?php echo $users[0]->url_linkdin ?></div>
+							<div class="information"><?php echo $users[0]->website ?></div>
 
-							<input class="input__field input__field--hoshi" type="text" name="linkdin" id="display-linkdin" />
-							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="linkdin">
-							<span class="input__label-content input__label-content--hoshi">Linkdin</span>
+							<input class="input__field input__field--hoshi" type="text" name="site" />
+							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="site">
+							<span class="input__label-content input__label-content--hoshi">Portfolio URL</span>
 
 							</label>
 						</span>
+						
 					</section>      
-						<input type="submit" name="same" class="button-submit" value="linkdin">	
 					</div>
-					<!-- <label for="site">Website :</label><input type="text" name="site" >
-						<input type="submit" name="same" value="web">
+					<div class="settings-content container-settings-bottom">
+						<section class="bottom">
+							<span class="input input--hoshi">
+								<div class="information"><?php echo $users[0]->url_twitter ?></div>
 
-						<label for="twitter">Twitter :</label><input type="text" name="twitter" >
-						<input type="submit" name="same" value="twitter"> -->
+								<input class="input__field input__field--hoshi" type="text" name="twitter" />
+								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="twitter">
+								<span class="input__label-content input__label-content--hoshi">Twitter</span>
 
-						<!-- <label for="facebook">Facebook :</label><input type="text" name="facebook" >
-						<input type="submit" name="same" value="facebook">
+								</label>
+							</span>
+							
+						</section>
 
-						<label for="linkdin">Linkdin :</label><input type="text" name="linkdin" >
-						<input type="submit" name="same" value="linkdin"> -->
+						<section class="bottom">
+							<span class="input input--hoshi">
+								<div class="information"><?php echo $users[0]->url_facebook ?></div>
+
+								<input class="input__field input__field--hoshi" type="text" name="facebook" />
+								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="facebook">
+								<span class="input__label-content input__label-content--hoshi">Facebook</span>
+
+								</label>
+							</span>
+						</section> 
+
+						<section class="bottom">
+							<span class="input input--hoshi">
+								<div class="information"><?php echo $users[0]->url_linkdin ?></div>
+
+								<input class="input__field input__field--hoshi" type="text" name="linkdin" />
+								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="linkdin">
+								<span class="input__label-content input__label-content--hoshi">Linkdin</span>
+
+								</label>
+							</span>
+						</section> 
+					</div>
+
+					<input type="submit" value="add">
 
 					</form>
 

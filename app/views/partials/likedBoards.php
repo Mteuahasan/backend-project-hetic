@@ -1,5 +1,4 @@
 <?php foreach ($boardsLiked as $like): ?>
-
 	<a href="board/<?php echo $like['id'] ?>" class="single-board-home likedBoards">
 		<div class="board-hover">
 			<h3><?php echo $like['name'] ?></h3>

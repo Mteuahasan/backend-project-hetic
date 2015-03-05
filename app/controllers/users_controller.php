@@ -47,15 +47,19 @@ class users_controller{
     $f3->set('boardsAdded', $this->usersBoard);
   }
 
-  public function getUserProfil($f3, $params) {
+  public function getUserSettings($f3, $params) {
     $this->tpl = 'settings.php';
     $this->userProfil = $this->model->userProfil($params['id']);
     $f3->set('users', $this->userProfil);
 
     if($f3->get('VERB')=='POST'){
       $this->model->addurls($f3->get('POST'), $params);
-      $f3->reroute('/user/'.$params['id'].'/profile');
+      $f3->reroute('/user/'.$params['id'].'/settings');
     }
+  }
+
+  public function getUserAbout($f3, $params) {
+    $this->tpl = 'about.php';
   }
 
 

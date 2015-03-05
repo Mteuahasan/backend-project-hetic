@@ -73,9 +73,18 @@ div.main-container {
 					width: 90%;
 					margin: 30px auto;
 
+					div.container-settings-bottom {
+						width: 100%;
+
+						section.bottom {
+							display: inline-block;
+							width: 27%;
+						}
+					}
+
 					.settings-content {
 						float: left;
-						width: 50%;	
+						width: 46%;	
 
 						span {
 						color: $blue;
@@ -89,6 +98,8 @@ div.main-container {
 							border: 1px solid $blue;
 							font-size: 18px;
 							cursor: pointer;
+							position: absolute;
+							margin-top: 20px;
 						}
 					
 					.input {
@@ -96,7 +107,7 @@ div.main-container {
 						z-index: 1;
 						display: inline-block;
 						margin: 1em;
-						max-width: 400px;
+						max-width: 335px;
 						width: calc(100% - 2em);
 						vertical-align: top;
 
@@ -171,7 +182,7 @@ div.main-container {
 
 					.input__field--hoshi {
 						margin-top: 1em;
-						padding: 0.85em 0.15em;
+						padding: 0.85em 7.15em;
 						width: 100%;
 						background: transparent;
 						color: #595F6E;

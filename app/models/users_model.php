@@ -99,26 +99,40 @@ class users_model{
   public function addurls($data, $params) {
       $addSite=$this->getUsersMapper();
       $addSite->load(array('id=?', $params['id']));
-
-      if($_POST['same']=='twitter') {
-        $addSite->url_twitter=$data['twitter'];
-        $addSite->update();
-      }
-
-      if($_POST['same']=='facebook') {
-        $addSite->url_facebook=$data['facebook'];
-        $addSite->update();
-      }
-
-      if($_POST['same']=="linkdin") {
-        $addSite->url_linkdin=$data['linkdin'];
-        $addSite->update();
-      }
-
-      if($_POST['same']="web") {
+      
+      if(!empty($_POST['site'])) {
         $addSite->website=$data['site'];
-        $addSite->update();
-      }  
+      }
+
+      if(!empty($_POST['twitter'])) {
+        $addSite->url_twitter=$data['twitter'];
+      }
+
+      if(!empty($_POST['facebook'])) {
+        $addSite->url_facebook=$data['facebook'];
+      }
+
+      if(!empty($_POST['linkdin'])) {
+        $addSite->url_linkdin=$data['linkdin'];
+      }
+
+      if(!empty($_POST['city'])) {
+        $addSite->city=$data['city'];
+      }
+
+      if(!empty($_POST['description'])) {
+        $addSite->description=$data['description'];
+      }
+
+      if(!empty($_POST['mail'])) {
+        $addSite->email=$data['mail'];
+      }
+
+      if(!empty($_POST['name'])) {
+        $addSite->name=$data['name'];
+      }
+    
+      $addSite->update();
     }
 
   public function verifName($post){
