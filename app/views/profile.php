@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Document</title>
+	<title>Striply</title>
 	<meta name="description" content="">
 	<base href="<?php echo $BASE; ?>/" />
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -45,7 +45,7 @@
           <li><input type="checkbox" id="cat9"><label for="cat9">For kids</label></li>
           <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
         </ul>
-      </form>  
+      </form>
       <input type="submit" value="Let's go" class="btn-little">
       <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
     </div>
@@ -88,12 +88,12 @@
 	      	</div>
 	      	<div class="separation"></div>
 	      	<section class="most-liked">
-		      	<div class="boards-container-profile">			
-					<?php 
-						include("partials/usersBoards.php") 
+		      	<div class="boards-container-profile">
+					<?php
+						include("partials/usersBoards.php")
 					?>
-					<?php 
-						include("partials/likedBoards.php") 
+					<?php
+						include("partials/likedBoards.php")
 					?>
 				</div>
 			</section>
@@ -102,11 +102,9 @@
 	</div>
 
 
-
-
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
-  <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>	
-  <script type="text/javascript" src="dist/assets/scripts/profile.js"></script>	
+  <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/profile.js"></script>
 </body>
 </html>
 
