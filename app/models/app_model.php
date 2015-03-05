@@ -11,11 +11,9 @@ class app_model{
   }
 
 
-  public function getPage(){
-
-  }
-
-
+  /*******
+  * $post -> data from the search form
+  *******/
   public function search($post){
     $response = $this->getBoardsMapper()->find(
       array('name LIKE :name or description LIKE :description or tags LIKE :tags or author LIKE :author',':name'=>'%'.$post.'%',':description'=>'%'.$post.'%',':tags'=>'%'.$post.'%',':author'=>'%'.$post.'%'),

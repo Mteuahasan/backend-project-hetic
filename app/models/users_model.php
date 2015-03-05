@@ -14,12 +14,22 @@ class users_model{
     $this->crypt = \Bcrypt::instance();
   }
 
+
+
+  /*******
+  * Return the count of all the users
+  *******/
   public function getAllUsers() {
-    $allUsers = $this->getUsersMapper()->select('*');
+    $allUsers = $this->getUsersMapper()->count();
     return $allUsers;
   }
 
 
+
+  /*******
+  * $data -> data from the signup form
+  * Used for create an unser account
+  *******/
   public function signup($data){
     if(isset($data) && !empty($data) && !empty($data['email'])){
       $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
@@ -44,6 +54,11 @@ class users_model{
   }
 
 
+
+  /*******
+  * $data -> data from the login form
+  * Used for login an user
+  *******/
   public function login($data){
     $user = $this->getUsersMapper()->load(array('email=:email',':email'=>$data['email']));
     if($this->crypt->hash($data['password'], $this->f3->get('salt')) == $user['password']){
@@ -53,12 +68,18 @@ class users_model{
     }
   }
 
-  public function userLikes() {
-    $user_id = $this->f3->get('SESSION')['id'];
-    $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
+
+
+  /*******
+  * $id -> the id of the user
+  * Return the boards that an user liked
+  *******/
+  public function userLikes($id) {
+    $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$id.'"');
     $likedBoards = array();
 
     $request = '';
+    $boardLiked = array();
 
     foreach ($hasLiked as $like) {
       $request = $request.'id = "'.$like->boards_id.'" OR ';
@@ -66,7 +87,9 @@ class users_model{
 
     $request = substr($request,0, -3);
 
-    $boardLiked = $this->getBoardsMapper()->select('*', $request);
+    if(!empty($request)){
+      $boardLiked = $this->getBoardsMapper()->select('*', $request);
+    }
 
     if(empty($boardLiked)) {
       echo 'You didn\'t like any boards';
@@ -74,28 +97,39 @@ class users_model{
     return $boardLiked;
   }
 
-  public function usersBoards() {
-    $user_id = $this->f3->get('SESSION')['id'];
-    $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$user_id.'"');
+
+
+  /*******
+  * $id -> the id of the user
+  * Return the boards that an user added
+  *******/
+  public function usersBoards($id) {
+    $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$id.'"');
 
     if(empty($usersBoard)) {
       echo "you do not have added any boards";
     }
-
     return $usersBoard;
-
   }
-  public function userProfil() {
-    $user_id = $this->f3->get('SESSION')['id'];
-    $usersProfil = $this->getUsersMapper()->select('*', 'id = "'.$user_id.'"');
-    
-    if(empty($usersProfil)) {
-      echo 'Kikikikiki';
-    }
+
+
+
+  /*******
+  * Get informations about an user
+  *******/
+  public function userProfil($id) {
+    $usersProfil = $this->getUsersMapper()->select('*', 'id = "'.$id.'"');
 
     return $usersProfil;
   }
 
+
+
+  /*******
+  * $data -> data from the post
+  * $params -> contain the id of the user
+  * Update the user's profile
+  *******/
   public function addurls($data, $params) {
       $addSite=$this->getUsersMapper();
       $addSite->load(array('id=?', $params['id']));
@@ -118,9 +152,15 @@ class users_model{
       if($_POST['same']="web") {
         $addSite->website=$data['site'];
         $addSite->update();
-      }  
+      }
     }
 
+
+
+  /*******
+  * $post -> data from the post for checking the availability of the name
+  * echo 0 if the name already exists and 1 if it don't
+  *******/
   public function verifName($post){
     $user = $this->getUsersMapper()->load(array('name=:name',':name'=>$post));
     if(!$user){
@@ -131,6 +171,11 @@ class users_model{
   }
 
 
+
+  /*******
+  * $post -> data from the post for checking the availability of the email
+  * echo 0 if the name already exists and 1 if it don't
+  *******/
   public function verifEmail($post){
     $email = $this->getUsersMapper()->load(array('email=:email',':email'=>$post));
     if(!$email){
