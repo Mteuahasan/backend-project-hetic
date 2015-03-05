@@ -15,6 +15,11 @@ class app_controller{
     $this->usersModel = new \APP\MODELS\users_model();
   }
 
+
+
+  /*******
+  * Controller for the landing page
+  *******/
   public function landing($f3){
     if(!null == $f3->get('SESSION')){
       $f3->reroute('/home');
@@ -25,6 +30,11 @@ class app_controller{
     }
   }
 
+
+
+  /*******
+  * Controller for the home page
+  *******/
   public function home($f3){
     $this->tpl = 'main.php';
     $f3->set('mostLikedBoards', $this->boardsModel->getMostLiked());
@@ -35,10 +45,20 @@ class app_controller{
     $f3->set('mostUnlikedCategories', $this->boardsModel->getHomeCategories($this->boardsModel->getMostUnliked()));
   }
 
+
+
+  /*******
+  * Controller for the gallery page
+  *******/
   public function gallery($f3){
     $this->tpl = 'gallery.php';
   }
 
+
+
+  /*******
+  * Controller for the search feature
+  *******/
   public function search($f3){
     $this->ajax = $f3->get('POST.ajax');
     $search = $this->model->search($f3->get('POST.search'));

@@ -38,11 +38,6 @@ var main = {
     form.addEventListener('submit', function(e){
       e.preventDefault();
     });
-
-
-    // allSearch.addEventListener('onclick') function() {
-      
-    // }
   },
   nav: function(){
     var menu = document.getElementById('feature-profile-menu');

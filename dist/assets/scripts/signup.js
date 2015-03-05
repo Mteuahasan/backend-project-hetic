@@ -32,10 +32,8 @@ var signup = {
         self.ajax('POST', 'signup/name', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
-            // name.style.outlineColor = 'green';
             name.style.backgroundColor = '#f5e774';
           } else {
-            // name.style.outlineColor = 'red';
             name.style.backgroundColor = '#c1161e';
           }
         });
@@ -49,10 +47,8 @@ var signup = {
         self.ajax('POST', 'signup/surname', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
-            // name.style.outlineColor = 'green';
             name.style.backgroundColor = '#f5e774';
           } else {
-            // name.style.outlineColor = 'red';
             name.style.backgroundColor = '#c1161e';
           }
         });
@@ -66,10 +62,8 @@ var signup = {
         self.ajax('POST', 'signup/email', data, function(xhr){
           console.log(xhr);
           if(xhr.response === '1'){
-            // email.style.outlineColor = 'green';
             email.style.backgroundColor = '#f5e774';
           } else {
-            // email.style.outlineColor = 'red';
             email.style.backgroundColor = '#c1161e';
           }
         });

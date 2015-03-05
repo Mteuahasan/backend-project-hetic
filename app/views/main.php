@@ -82,7 +82,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span><?php echo $board->likes ?></span></i>
-                  <i class="flaticon-view28"><span><?php echo $board->commentNumber ?></span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -103,34 +103,118 @@
           <div class="slider-btn slider-right"></div>
 
           <div class="boards-container-home">
-            <?php
-            $i = 0;
-            foreach ($mostCommentedBoards as $board):
-            ?>
-              <!-- Single board 1 -->
-              <a href="board/<?php echo $board->id ?>" class="single-board-home">
-                <div class="board-hover">
-                  <h3><?php echo $board->name ?></h3>
-                  <p><?php echo $board->author ?></p>
-                  <em> <i class="flaticon-right11"></i>
-                    <?php foreach ($mostCommentedCategories[$i] as $cate): ?>
-                      <?php echo $cate['categorie']; ?>
-                    <?php endforeach; ?>
-                  </em>
+            <!-- Single board 1 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
-                <!-- <img src="./dist/assets/img/landing.jpg"> -->
-                <img src="<?php echo $board->filepath ?>">
-                <div class="banner">
-                  <div class="banner-content">
-                    <i class="flaticon-label36"><span><?php echo $board->likes ?></span></i>
-                    <i class="flaticon-view28"><span><?php echo $board->commentNumber ?></span></i>
-                  </div>
+              </div>
+            </a>
+            <!-- Single board 2 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
-              </a>
-              <?php
-              $i += 1;
-              endforeach;
-              ?>
+              </div>
+            </a>
+            <!-- Single board 3 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 4 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 5 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 6 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 7 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
           </div>
           <a href="#">See all</a>
         </section>
@@ -143,38 +227,143 @@
           <div class="slider-btn slider-right"></div>
 
           <div class="boards-container-home">
-            <?php
-            $i = 0;
-            foreach ($mostUnlikedBoards as $board):
-            ?>
-              <!-- Single board 1 -->
-              <a href="board/<?php echo $board->id ?>" class="single-board-home">
-                <div class="board-hover">
-                  <h3><?php echo $board->name ?></h3>
-                  <p><?php echo $board->author ?></p>
-                  <em> <i class="flaticon-right11"></i>
-                    <?php foreach ($mostUnlikedCategories[$i] as $cate): ?>
-                      <?php echo $cate['categorie']; ?>
-                    <?php endforeach; ?>
-                  </em>
+            <!-- Single board 1 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
-                <!-- <img src="./dist/assets/img/landing.jpg"> -->
-                <img src="<?php echo $board->filepath ?>">
-                <div class="banner">
-                  <div class="banner-content">
-                    <i class="flaticon-label36"><span><?php echo $board->likes ?></span></i>
-                    <i class="flaticon-view28"><span><?php echo $board->commentNumber ?></span></i>
-                  </div>
+              </div>
+            </a>
+            <!-- Single board 2 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
-              </a>
-              <?php
-              $i += 1;
-              endforeach;
-              ?>
+              </div>
+            </a>
+            <!-- Single board 3 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 4 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 5 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 6 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
+            <!-- Single board 7 -->
+            <a href="#" class="single-board-home">
+              <div class="board-hover">
+                <h3>Nabila's phone</h3>
+                <p>Patrick Rodrigues</p>
+                <em> <i class="flaticon-right11"></i>Dark Humor, Celebrities, Caricature</em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="http://lorempixel.com/230/300">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span>120</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
+                </div>
+              </div>
+            </a>
           </div>
           <a href="#">See all</a>
         </section>
+          <?php
 
+          $f3=\Base::instance();
+
+          if(isset($SESSION) && !empty($SESSION)){
+            echo "Salut ".$SESSION['name'];
+          }
+
+          ?>
+          <br/>
+
+          <?php if(isset($SESSION) && !empty($SESSION)): ?>
+            <a href="logout">Logout</a>
+            <a href="new-board">New Board</a>
+            <a href="user/<?php echo $f3->get('SESSION.id') ?>">View Profil</a>
+          <?php endif; ?>
+
+
+
+          <?php require('partials/homeBoards.php'); ?>
+
+        </section>
 
       </div>
     </div>
