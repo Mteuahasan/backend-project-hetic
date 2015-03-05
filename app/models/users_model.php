@@ -21,7 +21,7 @@ class users_model{
 
 
   public function signup($data){
-    if(isset($data) && !empty($data)){
+    if(isset($data) && !empty($data) && !empty($data['email'])){
       $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
       if(!$email){
         if($data['password'] == $data['password-2']){
@@ -58,28 +58,40 @@ class users_model{
     $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
     $likedBoards = array();
 
-    foreach($hasLiked as $key) {
-      $boardLiked = $this->getBoardsMapper()->select('*', 'id = "'.$key->boards_id.'"');
-      array_push($likedBoards, $boardLiked);
+    $request = '';
+
+    foreach ($hasLiked as $like) {
+      $request = $request.'id = "'.$like->boards_id.'" OR ';
     }
-    if(empty($likedBoards)) {
+
+    $request = substr($request,0, -3);
+
+    $boardLiked = $this->getBoardsMapper()->select('*', $request);
+
+    if(empty($boardLiked)) {
       echo 'You didn\'t like any boards';
     }
-      return $likedBoards;
+    return $boardLiked;
   }
 
   public function usersBoards() {
     $user_id = $this->f3->get('SESSION')['id'];
     $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$user_id.'"');
-    if(empty($usersBoard)) {
-      echo 'Kikikikiki';
-    }
-      return $usersBoard;
-  }
 
+    if(empty($usersBoard)) {
+      echo "you do not have added any boards";
+    }
+
+    return $usersBoard;
+
+  }
   public function userProfil() {
     $user_id = $this->f3->get('SESSION')['id'];
     $usersProfil = $this->getUsersMapper()->select('*', 'id = "'.$user_id.'"');
+    
+    if(empty($usersProfil)) {
+      echo 'Kikikikiki';
+    }
 
     return $usersProfil;
   }
@@ -87,17 +99,27 @@ class users_model{
   public function addurls($data, $params) {
       $addSite=$this->getUsersMapper();
       $addSite->load(array('id=?', $params['id']));
-      $addSite->website=$data['site'];
-      $addSite->url_twitter=$data['twitter'];
-      $addSite->url_facebook=$data['facebook'];
-      $addSite->url_linkdin=$data['linkdin'];
-      $addSite->update();
 
+      if($_POST['same']=='twitter') {
+        $addSite->url_twitter=$data['twitter'];
+        $addSite->update();
+      }
 
+      if($_POST['same']=='facebook') {
+        $addSite->url_facebook=$data['facebook'];
+        $addSite->update();
+      }
+
+      if($_POST['same']=="linkdin") {
+        $addSite->url_linkdin=$data['linkdin'];
+        $addSite->update();
+      }
+
+      if($_POST['same']="web") {
+        $addSite->website=$data['site'];
+        $addSite->update();
+      }  
     }
-
-
-
 
   public function verifName($post){
     $user = $this->getUsersMapper()->load(array('name=:name',':name'=>$post));

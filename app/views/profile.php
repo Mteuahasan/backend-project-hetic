@@ -45,14 +45,14 @@
           <li><input type="checkbox" id="cat9"><label for="cat9">For kids</label></li>
           <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
         </ul>
-      </form>  
+      </form>
       <input type="submit" value="Let's go" class="btn-little">
       <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
     </div>
   </section>
 
   <?php
-  include('partials/nav.php');
+  	include('partials/nav.php');
   ?>
 
   	<div id="mainContent" class="main-container">
@@ -72,7 +72,7 @@
 	          <span>Search</span>
 	          <i class="flaticon-magnifier52"></i>
 	        </a>
-	        <a href="#" id="setting">
+	        <a href="user/<?php echo $SESSION['id'] ?>/profile" id="setting">
 	          <span>Settings</span>
 	          <i class="flaticon-screwdriver26"></i>
 	        </a>
@@ -88,12 +88,12 @@
 	      	</div>
 	      	<div class="separation"></div>
 	      	<section class="most-liked">
-		      	<div class="boards-container-profile">			
-					<?php 
-						include("partials/usersBoards.php") 
+		      	<div class="boards-container-profile">
+					<?php
+						include("partials/usersBoards.php")
 					?>
-					<?php 
-						include("partials/likedBoards.php") 
+					<?php
+						include("partials/likedBoards.php")
 					?>
 				</div>
 			</section>
@@ -102,31 +102,9 @@
 	</div>
 
 
-
-<?php 
-// if(isset($SESSION) && !empty($SESSION)){
-// 	echo "Salut ".$SESSION['name'];
-// }
-
-$id = $SESSION['id'];
-
-
-
-
-
-// include('partials/usersBoards.php');
-// require('partials/likedBoards.php');
-
-
-
-
-?>
-
-<div><a href="<?php echo $id ?>/profil">Your profil</a></div>
-
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
-  <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>	
-  <script type="text/javascript" src="dist/assets/scripts/profile.js"></script>	
+  <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/profile.js"></script>
 </body>
 </html>
 

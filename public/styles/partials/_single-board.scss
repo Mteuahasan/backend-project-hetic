@@ -150,6 +150,9 @@ section.container-single-board{
           margin: 10px auto;
           padding-bottom: 10px;
           border-bottom: 1px solid $grey;
+          &:first-child{
+            border-top: 1px solid $grey;
+          }
           .author-comment{
             font-size: 16px;
             font-weight: $medium;
