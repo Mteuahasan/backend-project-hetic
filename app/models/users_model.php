@@ -14,12 +14,22 @@ class users_model{
     $this->crypt = \Bcrypt::instance();
   }
 
+
+
+  /*******
+  * Return the count of all the users
+  *******/
   public function getAllUsers() {
-    $allUsers = $this->getUsersMapper()->select('*');
+    $allUsers = $this->getUsersMapper()->count();
     return $allUsers;
   }
 
 
+
+  /*******
+  * $data -> data from the signup form
+  * Used for create an unser account
+  *******/
   public function signup($data){
     if(isset($data) && !empty($data) && !empty($data['email'])){
       $email = $this->getUsersMapper()->select('*', 'email = "'.$data['email'].'"');
@@ -44,6 +54,11 @@ class users_model{
   }
 
 
+
+  /*******
+  * $data -> data from the login form
+  * Used for login an user
+  *******/
   public function login($data){
     $user = $this->getUsersMapper()->load(array('email=:email',':email'=>$data['email']));
     if($this->crypt->hash($data['password'], $this->f3->get('salt')) == $user['password']){
@@ -53,9 +68,14 @@ class users_model{
     }
   }
 
-  public function userLikes() {
-    $user_id = $this->f3->get('SESSION')['id'];
-    $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$user_id.'"');
+
+
+  /*******
+  * $id -> the id of the user
+  * Return the boards that the current logged user liked
+  *******/
+  public function userLikes($id) {
+    $hasLiked = $this->getHasLikesMapper()->select('boards_id', 'users_id = "'.$id.'"');
     $likedBoards = array();
 
     $request = '';
@@ -88,7 +108,7 @@ class users_model{
   public function userProfil() {
     $user_id = $this->f3->get('SESSION')['id'];
     $usersProfil = $this->getUsersMapper()->select('*', 'id = "'.$user_id.'"');
-    
+
     if(empty($usersProfil)) {
       echo 'Kikikikiki';
     }
@@ -118,7 +138,7 @@ class users_model{
       if($_POST['same']="web") {
         $addSite->website=$data['site'];
         $addSite->update();
-      }  
+      }
     }
 
   public function verifName($post){

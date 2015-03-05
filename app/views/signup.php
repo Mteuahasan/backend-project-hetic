@@ -14,17 +14,6 @@
 
   <section class="page-register">
     <div class="signup">
-    <?php
-      $f3 = \Base::instance();
-      echo "<pre>";
-      var_dump($f3->get('error_permissions'));
-      echo "</pre>";
-      if(!empty($f3->get('error_permissions')) && $f3->get('error_permissions')):
-    ?>
-
-    Attention, vous devez vous inscrire pour accéder à cette page
-
-    <?php endif; ?>
       <h1><i class="flaticon-user148"></i>Sign Up</h1>
       <form action="signup" method="POST" class="ac-custom ac-checkbox ac-checkmark">
         <!-- NAME -->

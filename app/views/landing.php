@@ -21,14 +21,7 @@
   		<a href="signup" class="btn-members">
         <span></span>
   			<div class="btn-members--content">Become a cartoonist member</div>
-
-        <?php 
-          $count = 0;
-          foreach ($allUsers as $allUser) {
-            $count++;
-          }
-        ?>
-  			<div class="btn-members--nbr"><?php echo $count ?></div>
+  			<div class="btn-members--nbr"><?php echo $allUsers ?></div>
   		</a>
       <div class="btn-start">
   		  <a href="home">Discover the site</a>

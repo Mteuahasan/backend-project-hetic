@@ -45,7 +45,7 @@
       by  <span class="author"><?php echo $board[0]->author ?></span>
       <span class="date"> - <?php echo $board[0]->date; ?></span>
       <?php foreach ($boardCategories as $categorie): ?>
-        <span> - <a href="board/selectedCategory/<?php echo $categorie->id; ?>"><?php echo $categorie->name; ?></a></span>
+        <span> - <a href="category/<?php echo $categorie->id; ?>"><?php echo $categorie->name; ?></a></span>
       <?php endforeach; ?>
       <div class="tags">Tags:
           <span><?php echo $board[0]->tags; ?></span>

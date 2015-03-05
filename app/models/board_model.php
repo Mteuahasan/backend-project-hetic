@@ -15,6 +15,11 @@ class board_model{
   }
 
 
+  /*******
+  * $data -> data from the form
+  * $filepath -> array with the different filepaths for the images
+  * Get the fourth most liked boards for the home page
+  *******/
   function newBoard($data, $filepath){
     $session = $this->f3->get('SESSION');
     if(isset($data) && !empty($data)){
@@ -66,22 +71,9 @@ class board_model{
   }
 
 
-  function getBoards(){
-    $boards = $this->getBoardsMapper()->select('*');
-    return $boards;
-  }
-
-
-  function getHomeBoards(){
-    $boards = $this->getBoardsMapper()->select('*',NULL , array(
-      'group'=>NULL,
-      'order'=>'id DESC',
-      'limit'=>10,
-      'offset'=>0
-    ));
-    return $boards;
-  }
-
+  /*******
+  * Get the fourth most liked boards for the home page
+  *******/
   function getMostLiked(){
     $boards = $this->getBoardsMapper()->select('*',NULL , array(
       'group'=>NULL,
@@ -92,6 +84,11 @@ class board_model{
     return $boards;
   }
 
+
+
+  /*******
+  * Get the fourth most commented boards for the home page
+  *******/
   function getMostCommented(){
     $boards = $this->getBoardsMapper()->select('*',NULL , array(
       'group'=>NULL,
@@ -102,6 +99,11 @@ class board_model{
     return $boards;
   }
 
+
+
+  /*******
+  * Get the fourth most unliked boards for the home page
+  *******/
   function getMostUnliked(){
     $boards = $this->getBoardsMapper()->select('*',NULL , array(
       'group'=>NULL,
@@ -112,6 +114,11 @@ class board_model{
     return $boards;
   }
 
+
+  /*******
+  * $boards -> group of boards
+  * Return the categories of a group of boards
+  *******/
   function getHomeCategories($boards){
     $categories = array();
     $categorie = array();
@@ -127,21 +134,12 @@ class board_model{
   }
 
 
-  function getPageBoards($page){
-    $pagination = 10;
-    $offset = ($page - 1) * $pagination;
-    $boards = $this->getBoardsMapper()->select('*',NULL , array(
-      'group'=>NULL,
-      'order'=>'id DESC',
-      'limit'=>$pagination,
-      'offset'=>$offset
-    ));
-    return $boards;
-  }
-
-
-  function getBoard($data){
-    $board = $this->getBoardsMapper()->select('*', 'id = "'.$data.'"');
+  /*******
+  * $id -> board's id
+  * Return a specific board's informations
+  *******/
+  function getBoard($id){
+    $board = $this->getBoardsMapper()->select('*', 'id = "'.$id.'"');
     if(!empty($board)){
       return $board;
     } else {
@@ -150,50 +148,39 @@ class board_model{
   }
 
 
-  function getSelectedBoardCategory($data) {
-    $selectedCategory = $this->getCategoriesMapper()->select('*', 'id = "'.$data.'"');
-    $table['categories']=array();
-    $table['boards']=array();
+  /*******
+  * $id -> category's id
+  * $pagination -> number of boards to display
+  * $page -> current page
+  * Used for the categories pages
+  *******/
+  function getSelectedBoardCategory($id, $pagination, $page) {
+    $hasCategorieMapper = $this->getHasCategoriesMapper();
+    $boardsMapper = $this->getBoardsMapper();
 
-    foreach($selectedCategory as $get_categorie) {
-      $idCat = $get_categorie->id;
+    $selectedCategory = $hasCategorieMapper->select('*', 'categories_id = "'.$id.'"');
 
-      $nameCat = array(
-      'id'=> $get_categorie->id,
-      'categories_name'=>$get_categorie->name
+    $request = "";
 
-      );
-      array_push($table['categories'], $nameCat);
-
-      $get_hasCategories = $this->getHasCategoriesMapper()->select('*', 'categories_id = "'.$idCat.'"');
-      foreach($get_hasCategories as $get_hasCategorie) {
-        $id_hasCat = $get_hasCategorie->boards_id;
-
-        $get_boards = $this->getBoardsMapper()->select('*', 'id = "'.$id_hasCat.'"');
-        foreach($get_boards as $get_board) {
-          $boards_name = $get_board->name;
-
-          $board_name = array(
-          'boards_id'=>$get_hasCategorie->boards_id,
-          'boards_name'=>$get_board->name,
-          'category_id'=>$get_hasCategorie->categories_id
-          );
-
-          array_push($table['boards'],$board_name);
-
-        }
-      }
+    foreach ($selectedCategory as $cat) {
+      $request = $request.'id = '.$cat->boards_id.' OR ';
     }
-    return $table;
+
+    $request = substr($request,0,-3);
+    $request = $request.' LIMIT '.$pagination.' OFFSET '.($page - 1) * $pagination;
+
+    $boards = $boardsMapper->select('*', $request);
+
+    return $boards;
   }
 
 
-
-
-
-  function getBoardCategories($data){
-    $categories_id = $this->getHasCategoriesMapper()->select('*', 'boards_id = "'.$data.'"');
-    $categories = array();
+  /*******
+  * $id -> board's id
+  * Get the categories of a specific board
+  *******/
+  function getBoardCategories($id){
+    $categories_id = $this->getHasCategoriesMapper()->select('*', 'boards_id = "'.$id.'"');
     $request = '';
 
     foreach($categories_id as $categorie){
@@ -202,16 +189,36 @@ class board_model{
 
     $request = substr($request, 0, -4);
 
-    return $categoriesMapper = $this->getCategoriesMapper()->select('*', $request);
+    $cats = $categoriesMapper = $this->getCategoriesMapper()->select('*', $request);
+
+    return $cats;
   }
 
 
+  /*******
+  * Get all the categories
+  *******/
   function getAllCategories(){
     $categories = $this->getCategoriesMapper()->select('*');
     return $categories;
   }
 
 
+  /*******
+  * $id -> category's id
+  * Return the name of a specific category
+  *******/
+  function getCategorieName($id){
+    return $this->getCategoriesMapper()->select('name', 'id = '.$id);
+  }
+
+
+
+  /*******
+  * $post -> data of the post
+  * $params -> contain informations about the current board
+  * Makes the likes system work
+  *******/
   function likes($post, $params){
     $SESSION = $this->f3->get('SESSION');
     $canLike = "";
@@ -260,7 +267,11 @@ class board_model{
     return $error;
   }
 
-
+  /*******
+  * $post -> data of the post
+  * $params -> contain the informations about the current board
+  * Makes the comment system work
+  *******/
   function newComment($post, $params){
     $commentsMapper = $this->getCommentsMapper();
     $commentsMapper->content = $post;
@@ -277,7 +288,10 @@ class board_model{
     echo json_encode($response);
   }
 
-
+  /*******
+  * $param -> current board's id
+  * Return comments for a specific board
+  *******/
   function getComments($param){
     $commentsMapper = $this->getCommentsMapper();
     $response = $commentsMapper->select('*', 'board_id = "'.$param.'"', array('order'=>'id DESC'));
