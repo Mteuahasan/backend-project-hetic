@@ -72,6 +72,10 @@ class users_model{
     $user_id = $this->f3->get('SESSION')['id'];
     $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$user_id.'"');
 
+    if(empty($usersBoard)) {
+      echo "you do not have added any boards";
+    }
+
     return $usersBoard;
   }
 
@@ -85,17 +89,27 @@ class users_model{
   public function addurls($data, $params) {
       $addSite=$this->getUsersMapper();
       $addSite->load(array('id=?', $params['id']));
-      $addSite->website=$data['site'];
-      $addSite->url_twitter=$data['twitter'];
-      $addSite->url_facebook=$data['facebook'];
-      $addSite->url_linkdin=$data['linkdin'];
-      $addSite->update();
 
+      if($_POST['same']=='twitter') {
+        $addSite->url_twitter=$data['twitter'];
+        $addSite->update();
+      }
 
+      if($_POST['same']=='facebook') {
+        $addSite->url_facebook=$data['facebook'];
+        $addSite->update();
+      }
+
+      if($_POST['same']=="linkdin") {
+        $addSite->url_linkdin=$data['linkdin'];
+        $addSite->update();
+      }
+
+      if($_POST['same']="web") {
+        $addSite->website=$data['site'];
+        $addSite->update();
+      }  
     }
-
-
-
 
   public function verifName($post){
     $user = $this->getUsersMapper()->load(array('name=:name',':name'=>$post));
