@@ -105,7 +105,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span><?php echo $board->likes ?></span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -138,7 +138,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -154,7 +154,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -170,7 +170,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -186,7 +186,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -202,7 +202,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -218,7 +218,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -234,7 +234,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -262,7 +262,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -278,7 +278,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -294,7 +294,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -310,7 +310,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -326,7 +326,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -342,7 +342,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
@@ -358,7 +358,7 @@
               <div class="banner">
                 <div class="banner-content">
                   <i class="flaticon-label36"><span>120</span></i>
-                  <i class="flaticon-view28"><span>380</span></i>
+                  <i class="flaticon-comment21"><span>380</span></i>
                 </div>
               </div>
             </a>
