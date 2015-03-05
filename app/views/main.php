@@ -197,28 +197,7 @@
           </div>
           <a href="#">See all</a>
         </section>
-          <?php
 
-          $f3=\Base::instance();
-
-          if(isset($SESSION) && !empty($SESSION)){
-            echo "Salut ".$SESSION['name'];
-          }
-
-          ?>
-          <br/>
-
-          <?php if(isset($SESSION) && !empty($SESSION)): ?>
-            <a href="logout">Logout</a>
-            <a href="new-board">New Board</a>
-            <a href="user/<?php echo $f3->get('SESSION.id') ?>">View Profil</a>
-          <?php endif; ?>
-
-
-
-          <?php require('partials/homeBoards.php'); ?>
-
-        </section>
 
       </div>
     </div>

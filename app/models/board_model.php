@@ -86,7 +86,7 @@ class board_model{
     $boards = $this->getBoardsMapper()->select('*',NULL , array(
       'group'=>NULL,
       'order'=>'likes DESC',
-      'limit'=>7,
+      'limit'=>4,
       'offset'=>0
     ));
     return $boards;
