@@ -45,7 +45,7 @@ section.page-filters-search {
           outline: 0;
         }
       }
-        // .typing {
+        // .searching {
         //   opacity: .3;
         // }
     }
@@ -276,8 +276,10 @@ div.main-container{
               }
             img {
               position: absolute;
-              width: 230px;
-              height: 295px;
+              max-width: 100%;
+              max-height: 100%;
+              text-align: center;
+              line-height: 295px;
             }
             div.banner {
               bottom: 0;

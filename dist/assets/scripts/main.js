@@ -23,7 +23,7 @@ var main = {
     var search  = document.getElementById('search-content');
     var form = document.getElementById('search-form');
 
-    onload = document.getElementById('search-content').focus();
+    document.getElementById('search-content').focus();
     search.addEventListener('keyup', function(e){
       if (this.value.length > 3) {
         var data=new FormData();

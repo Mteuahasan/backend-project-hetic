@@ -8,6 +8,5 @@ $f3->config('config/routes.ini');
 //   echo \Template::instance()->render('error.html');
 // });
 
-
 $f3->run();
 ?>
