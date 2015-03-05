@@ -115,7 +115,7 @@
 							<span class="input input--hoshi">
 								<div class="information"><?php echo $users[0]->website; ?></div>
 
-								<input class="input__field input__field--hoshi" type="text" name="site" id="input-5" />
+								<input class="input__field input__field--hoshi" type="text" name="site" id="display-linkdin" />
 								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="site">
 								<span class="input__label-content input__label-content--hoshi">Website</span>
 
@@ -131,7 +131,7 @@
 						<span class="input input--hoshi">
 							<div class="information"><?php echo $users[0]->url_twitter ?></div>
 
-							<input class="input__field input__field--hoshi" type="text" name="twitter" id="input-5" />
+							<input class="input__field input__field--hoshi" type="text" name="twitter" id="display-twitter" />
 							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="twitter">
 							<span class="input__label-content input__label-content--hoshi">Twitter</span>
 
@@ -144,7 +144,7 @@
 						<span class="input input--hoshi">
 							<div class="information"><?php echo $users[0]->url_facebook ?></div>
 
-							<input class="input__field input__field--hoshi" type="text" name="facebook" id="input-5" />
+							<input class="input__field input__field--hoshi" type="text" name="facebook" id="display-facebook" />
 							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="facebook">
 							<span class="input__label-content input__label-content--hoshi">Facebook</span>
 
@@ -157,7 +157,7 @@
 						<span class="input input--hoshi">
 							<div class="information"><?php echo $users[0]->url_linkdin ?></div>
 
-							<input class="input__field input__field--hoshi" type="text" name="linkdin" id="input-5" />
+							<input class="input__field input__field--hoshi" type="text" name="linkdin" id="display-linkdin" />
 							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="linkdin">
 							<span class="input__label-content input__label-content--hoshi">Linkdin</span>
 

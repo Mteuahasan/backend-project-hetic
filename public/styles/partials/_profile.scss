@@ -49,12 +49,8 @@ div.main-container {
 			}
 			
 			section.most-liked {
-<<<<<<< HEAD
 				div.boards-container-profile {
-=======
 
-				div.boards-container {
->>>>>>> 3e0be52d75d02f0899db017da9139efe00dd60b2
 					width: 90%;
 					margin: 30px auto;
 
@@ -93,6 +89,7 @@ div.main-container {
 							padding: 10px 40px 10px 40px;
 							border: 1px solid $blue;
 							font-size: 18px;
+							cursor: pointer;
 						}
 					
 					.input {
