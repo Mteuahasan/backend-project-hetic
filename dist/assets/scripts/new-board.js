@@ -15,10 +15,8 @@ var newBoard = {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
       var img = document.createElement('img');
-      console.log(input.nextSibling.nodeName);
 
       if(input.nextSibling.nodeName == "IMG"){
-        console.log('ok');
         var next = input.nextSibling;
         input.parentNode.removeChild(next);
         console.log(input.nextSibling.nodeName);
@@ -27,7 +25,10 @@ var newBoard = {
       reader.addEventListener('load',function(e){
         img.setAttribute('src', e.target.result);
       });
-      input.parentNode.insertBefore(img, input.nextSibling);
+      console.log(input.nextSibling);
+      var div = input.parentNode;
+      var form = div.parentNode;
+      form.insertBefore(img, div);
       var del = document.createElement('i');
       del.setAttribute('class', 'flaticon-bin9');
       input.style.display="none";

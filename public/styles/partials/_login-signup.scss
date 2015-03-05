@@ -26,14 +26,15 @@
 			}
 		}
 		.savepass {
-			width: 30px;
-			height: 30px;
+			width: 20px;
+			height: 20px;
 			border: 2px solid $white;
 			margin-left: calc(50% - 90px);
 			label {
 		        cursor: pointer;
+		        font-size: 14px;
 				position: absolute;
-				margin: 3px 0 0 30px;
+				margin-left: 30px;
 		    	@include transition(.3s);
 		    }
 		    input{
@@ -46,11 +47,11 @@
 			input[type=checkbox]:checked + label:after {
 				content: '';
 				position: absolute;
-				width: 15px;
-				height: 8px;
+				width: 12px;
+				height: 6px;
 				background: transparent;
 				top: 4px;
-				left: -38px;
+				left: -36px;
 				border: 3px solid $yellow;
 				border-top: none;
 				border-right: none;
@@ -127,11 +128,11 @@
 			position: absolute;
 			top: 0;
 			right: 100%;
-			width: 60%;
+			width: 50%;
 			height: 100%;
 			background: $grey-light;
 			color: $black;
-			font-size: 1.1em;
+			font-size: 14px;
 			-webkit-transition: -webkit-transform 0.5s;
 			transition: transform 0.5s;
 			-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -154,6 +155,8 @@
 		}
 
 		.input__label-content--kaede {
+			font-size: 14px;
+  			line-height: 16px;
 			padding: 1em 0;
 		}
 

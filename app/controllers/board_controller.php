@@ -18,8 +18,12 @@ class board_controller{
     $this->model=new \APP\MODELS\board_model();
   }
 
+
+  /*******
+  * Upload system for the image and controller for the new board page
+  *******/
   public function newBoard($f3){
-    if(!empty($f3->get('SESSION'))){
+    if(!null == $f3->get('SESSION')){
       $this->tpl        = 'new-board.php';
       $this->categories = $this->model->getAllCategories();
       $f3->set('categories', $this->categories);
@@ -31,7 +35,12 @@ class board_controller{
         foreach ($files as $file) {
           if($file['size'] <= $maxsize) {
             $files = $this->web->receive(function($file){
-              array_push($this->filepath, $file);
+              if(pathinfo($file['name'],PATHINFO_EXTENSION) == "png" || pathinfo($file['name'],PATHINFO_EXTENSION) == 'jpg' || pathinfo($file['name'],PATHINFO_EXTENSION) == 'jpeg'){
+                array_push($this->filepath, $file);
+              } else {
+                echo "Non non petit malin, il ne faut pas toucher au html ! <a href='home'>Allez reviens à l'accueil</a>";
+                die();
+              }
               return true;
             },true,true);
           } else {
@@ -50,6 +59,10 @@ class board_controller{
     }
   }
 
+
+  /*******
+  * Controller for the single board's page
+  *******/
   public function singleBoard($f3, $params){
     $this->tpl              = 'single-board.php';
     $this->board            = $this->model->getBoard($params['id']);
@@ -63,17 +76,31 @@ class board_controller{
     }
   }
 
+
+  /*******
+  * Controller for the categories's pages
+  *******/
   public function getSelectedCategory($f3, $params) {
     $this->tpl = 'selectedBoardCategory.php';
-    $this->boardCategories  = $this->model->getSelectedBoardCategory($params['id']);
+    $this->boardCategories  = $this->model->getSelectedBoardCategory($params['id'], 20, $params['page']);
     $f3->set('categoryboards', $this->boardCategories);
+    $f3->set('categories', $this->model->getHomeCategories($this->model->getSelectedBoardCategory($params['id'], 20, $params['page'])));
+    $f3->set('categorie', $this->model->getCategorieName($params['id']));
   }
 
+
+  /*******
+  * Controller for the likes's system
+  *******/
   public function likes($f3, $params){
     $response = $this->model->likes($f3->get('POST.like'), $params);
     echo $response;
   }
 
+
+  /*******
+  * Controller for the comments's system
+  *******/
   public function newComment($f3, $params){
     $response = $this->model->newComment($f3->get('POST.content'), $params);
     echo $response;

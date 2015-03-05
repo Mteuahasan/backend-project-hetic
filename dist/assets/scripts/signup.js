@@ -17,12 +17,40 @@ var signup = {
     xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     xhr.send(datas);
   },
+  validateEmail: function(email) {
+    var re = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    return re.test(email);
+  },
   listeners: function(){
     var self = this;
     var name  = document.getElementById('input-3'),
         surname  = document.getElementById('input-4'),
-        email = document.getElementById('input-1')
+        email = document.getElementById('input-1'),
+        password1 = document.getElementById('input-2'),
+        password2 = document.getElementById('input-5');
 
+    password2.addEventListener('keyup', function(){
+      var value1 = password1.value,
+          value2 = this.value;
+
+      if(value1 === value2){
+        this.style.backgroundColor = '#239421';
+        password1.style.backgroundColor = '#239421';
+      } else {
+        this.style.backgroundColor = '#c1161e';
+        password1.style.backgroundColor = '#c1161e';
+      }
+      if(value2.length < 5){
+        this.style.backgroundColor = '#c1161e';
+      }
+    });
+
+    password1.addEventListener('keyup',function(){
+      value = this.value
+      if(value.length < 5){
+        password1.style.backgroundColor = '#c1161e';
+      }
+    });
 
     name.addEventListener('keyup', function(){
       if (this.value.length > 3) {
@@ -30,29 +58,15 @@ var signup = {
         data.append('name', this.value);
         data.append('ajax', true);
         self.ajax('POST', 'signup/name', data, function(xhr){
-          console.log(xhr);
           if(xhr.response === '1'){
-            name.style.backgroundColor = '#f5e774';
+            name.style.backgroundColor = '#239421';
           } else {
             name.style.backgroundColor = '#c1161e';
           }
         });
-      };
-    });
-    surname.addEventListener('keyup', function(){
-      if (this.value.length > 3) {
-        var data=new FormData();
-        data.append('surname', this.value);
-        data.append('ajax', true);
-        self.ajax('POST', 'signup/surname', data, function(xhr){
-          console.log(xhr);
-          if(xhr.response === '1'){
-            name.style.backgroundColor = '#f5e774';
-          } else {
-            name.style.backgroundColor = '#c1161e';
-          }
-        });
-      };
+      } else {
+        name.style.backgroundColor = '#fff';
+      }
     });
     email.addEventListener('keyup', function(){
       if (this.value.length > 3) {
@@ -60,14 +74,15 @@ var signup = {
         data.append('email', this.value);
         data.append('ajax', true);
         self.ajax('POST', 'signup/email', data, function(xhr){
-          console.log(xhr);
-          if(xhr.response === '1'){
-            email.style.backgroundColor = '#f5e774';
+          if(xhr.response === '1' && this.validateEmail(email.value)){
+            email.style.backgroundColor = '#239421';
           } else {
             email.style.backgroundColor = '#c1161e';
           }
         });
-      };
+      } else {
+        email.style.backgroundColor = '#fff';
+      }
     });
   }
 }

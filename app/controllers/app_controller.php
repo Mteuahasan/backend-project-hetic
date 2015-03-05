@@ -15,42 +15,56 @@ class app_controller{
     $this->usersModel = new \APP\MODELS\users_model();
   }
 
+
+
+  /*******
+  * Controller for the landing page
+  *******/
   public function landing($f3){
-    $this->tpl='landing.php';
-    $this->user = $this->usersModel->getAllUsers();
-    $f3->set('allUsers', $this->user);
+    if(!null == $f3->get('SESSION')){
+      $f3->reroute('/home');
+    } else {
+      $this->tpl='landing.php';
+      $this->user = $this->usersModel->getAllUsers();
+      $f3->set('allUsers', $this->user);
+    }
   }
 
+
+
+  /*******
+  * Controller for the home page
+  *******/
   public function home($f3){
     $this->tpl = 'main.php';
-    $this->boards = $this->boardsModel->getHomeBoards();
     $f3->set('mostLikedBoards', $this->boardsModel->getMostLiked());
     $f3->set('mostLikedCategories', $this->boardsModel->getHomeCategories($this->boardsModel->getMostLiked()));
     $f3->set('mostCommentedBoards', $this->boardsModel->getMostCommented());
     $f3->set('mostCommentedCategories', $this->boardsModel->getHomeCategories($this->boardsModel->getMostCommented()));
-    $f3->set('mostUnlikedBoards', $this->boardsModel->getMostLiked());
+    $f3->set('mostUnlikedBoards', $this->boardsModel->getMostUnliked());
     $f3->set('mostUnlikedCategories', $this->boardsModel->getHomeCategories($this->boardsModel->getMostUnliked()));
-    $f3->set('boards',$this->boards);
-    $this->boardCategories  = $this->boardsModel->getBoardCategory();
-    $f3->set('cat', $this->boardCategories);
   }
+
+
+
+  /*******
+  * Controller for the gallery page
+  *******/
   public function gallery($f3){
     $this->tpl = 'gallery.php';
   }
 
+
+
+  /*******
+  * Controller for the search feature
+  *******/
   public function search($f3){
     $this->ajax = $f3->get('POST.ajax');
     $search = $this->model->search($f3->get('POST.search'));
     echo $search;
   }
 
-
-  public function getPage($f3, $param = 1){
-    $boards = $this->boardsModel->getPageBoards($param['page']);
-    echo "<pre>";
-    var_dump($boards);
-    echo "</pre>";
-  }
 
   public function afterroute(){
     if(!$this->ajax) {

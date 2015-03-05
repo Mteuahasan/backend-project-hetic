@@ -13,6 +13,10 @@ class users_controller{
   }
 
 
+
+  /*******
+  * Controller for the signup page
+  *******/
   public function signup($f3){
     $this->tpl = 'signup.php';
     if($f3->get('VERB')=='POST'){
@@ -22,6 +26,10 @@ class users_controller{
   }
 
 
+
+  /*******
+  * Controller for the login page
+  *******/
   public function login($f3){
     $this->tpl = 'login.php';
     if($f3->get('VERB')=='POST'){
@@ -39,6 +47,11 @@ class users_controller{
     }
   }
 
+
+
+  /*******
+  * Controller for the user's profil page
+  *******/
   public function getUserPage($f3, $params) {
     $this->tpl   = 'profile.php';
     $this->userLike = $this->model->userLikes($params['id']);
@@ -46,6 +59,10 @@ class users_controller{
     $this->usersBoard = $this->model->usersBoards($params['id']);
     $f3->set('boardsAdded', $this->usersBoard);
   }
+
+  /*******
+  * Controller for the user's setting page
+  *******/
 
   public function getUserSettings($f3, $params) {
     $this->tpl = 'settings.php';
@@ -63,18 +80,30 @@ class users_controller{
   }
 
 
+
+  /*******
+  * Logout the user
+  *******/
   public function logout($f3){
     session_start();
     session_destroy();
     $f3->reroute('/home');
   }
 
+
+  /*******
+  * Function used for checking the availability of the username
+  *******/
   public function verifName($f3){
     $this->ajax = $f3->get('POST.ajax');
     $response = $this->model->verifName($f3->get('POST.name'));
   }
 
 
+
+  /*******
+  * Function used for checking the availability of the mail
+  *******/
   public function verifEmail($f3){
     $this->ajax = $f3->get('POST.ajax');
     $response = $this->model->verifEmail($f3->get('POST.email'));
