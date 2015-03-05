@@ -6,27 +6,168 @@ section.container-single-board{
   div.content-single-board{
     width: 80%;
     margin: 0 auto;
-    padding: 50px;
+    font-size: 20px;
     margin-top: 50px;
-    color: #666;
+    color: $grey-dark;
 
     h1{
-      font-size: 62px;
-      color: #222;
+      font-weight: $bold;
+      font-size: 48px;
+      color: $black;
+      margin-bottom: 15px;
     }
 
-    .container-imgs{
-      text-align: center;
+    .tags{
+      margin: 20px 0 40px;
+      span{
+        color:$blue;
+      }
+    }
+    .top-informations{
+        // position: fixed;
+      .banner{
+        color: $white;
+        width: 100%;
+        // position: fixed;
+        padding: 15px 50px;
+        background-color: $black;
+        box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.3);
 
-      img{
-        max-width: 100%;
-        margin: 0 auto;
+        .likes-number {
+          font-weight: $light;
+          margin-right: 30px;
+          i{
+            margin-right: 10px;
+          }
+        }
+        .comments-number {
+          @extend .likes-number;
+        }
+        .flaticon-label36, .flaticon-comment21, .flaticon-facebook51, .flaticon-twitter44, .flaticon-like29, .flaticon-dont2{
+          font-size: 16px;
+        }
+        .banner:before{
+          bottom: -6px;
+          right: 0;
+          width: 0;
+          height: 0;
+          border: 3px solid;
+          border-color: #000 transparent transparent #000;
+        }
+
+        .likes{
+          position: absolute;
+          width: calc(50% - 55px);
+          text-align: center;
+          .minus, .plus {
+            cursor: pointer;
+          }
+          span{
+            margin-right: 20px;
+          }
+        }
+        .social-share {
+          float: right;
+          .flaticon-facebook51{
+            margin-right: 10px;
+          }
+        }
       }
     }
 
-    div.content-description{
-      font-size: 24px;
-      margin-top: 25px;
+    .single-strip{
+      padding: 20px;
+      background-color: #e1e1e1;
+      div.content-description{
+        color: $black;
+        font-size: 12px;
+        margin: 0 20px;
+        line-height: 14px;
+        text-align: center;
+        font-weight: $light;
+        padding: 75px 0 45px;
+      }
+      .container-imgs{
+        text-align: center;
+        position: relative;
+        i{
+          left:0;
+          z-index: 100;
+          color: $white;
+          padding: 10px;
+          cursor: pointer;
+          position: absolute;
+          background-color: rgba($black, .6);
+          @include transition(.3s);
+
+          &:hover {
+            background-color: $black;
+          }
+        }
+        img{
+          max-width: 100%;
+          margin: 20px auto;
+        }
+      }
+      .post-comments{
+        h3{
+          font-size: 18px;
+          line-height: 20px;
+          padding: 40px 0 10px;
+          color: $black;
+          font-weight: $bold;
+          letter-spacing: .5px;
+        }
+        form{
+          textarea{
+            width: 100%;
+            padding: 10px;
+            height: 85px;
+            border: 1px solid $grey-dark;
+            background-color: transparent;
+
+            @include placeholder {
+              color: $grey-dark;
+              font-style: italic;
+            }
+          }
+          em{
+            font-size: 12px;
+            font-weight: $light;
+          }
+          .btn-cta{
+            border: none;
+            width: 170px;
+            margin: 20px 0 30px;
+            background-color: $yellow;
+          }
+        }
+      }
+      .display-comments{
+        .single-comment{
+          width: 100%;
+          color: $black;
+          margin: 10px auto;
+          padding-bottom: 10px;
+          border-bottom: 1px solid $grey;
+          &:first-child{
+            border-top: 1px solid $grey;
+          }
+          .author-comment{
+            font-size: 16px;
+            font-weight: $medium;
+          }
+          .content-comment{
+            font-size: 14px;
+            margin: 15px 0 10px;
+            font-weight: $light;
+          }
+          .date-comment{
+            font-size: 8px;
+            font-weight: $thin;
+          }
+        }
+      }
     }
   }
 }

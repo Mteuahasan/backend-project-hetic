@@ -85,7 +85,7 @@
                     <div class="banner">
                       <div class="banner-content">
                           <i class="flaticon-label36"><span>19</span></i>
-                          <i class="flaticon-view28"><span>380</span></i>
+                          <i class="flaticon-comment21"><span>380</span></i>
                       </div>
                     </div>
 

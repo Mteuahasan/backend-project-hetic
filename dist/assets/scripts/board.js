@@ -33,7 +33,7 @@ var board = {
         if(xhr.response !== ''){
           document.querySelector('.likes-number').innerHTML=xhr.response;
         } else {
-          console.log('Interdit de voter sans être connecté');
+          console.log('It is forbidden to vote without being connected');
         }
       });
     });
@@ -44,7 +44,7 @@ var board = {
         if(xhr.response !== ''){
           document.querySelector('.likes-number').innerHTML=xhr.response;
         } else {
-          console.log('Interdit de voter sans être connecté');
+          console.log('It is forbidden to vote without being connected');
         }
       });
     });
