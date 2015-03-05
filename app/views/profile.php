@@ -52,7 +52,7 @@
   </section>
 
   <?php
-  include('partials/nav.php');
+  	include('partials/nav.php');
   ?>
 
   	<div id="mainContent" class="main-container">
@@ -72,7 +72,7 @@
 	          <span>Search</span>
 	          <i class="flaticon-magnifier52"></i>
 	        </a>
-	        <a href="#" id="setting">
+	        <a href="user/<?php echo $SESSION['id'] ?>/profile" id="setting">
 	          <span>Settings</span>
 	          <i class="flaticon-screwdriver26"></i>
 	        </a>
@@ -101,28 +101,6 @@
 		</div>
 	</div>
 
-
-
-<?php
-// if(isset($SESSION) && !empty($SESSION)){
-// 	echo "Salut ".$SESSION['name'];
-// }
-
-$id = $SESSION['id'];
-
-
-
-
-
-// include('partials/usersBoards.php');
-// require('partials/likedBoards.php');
-
-
-
-
-?>
-
-<div><a href="<?php echo $id ?>/profil">Your profil</a></div>
 
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
   <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>

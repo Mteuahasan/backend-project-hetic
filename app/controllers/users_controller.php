@@ -40,7 +40,7 @@ class users_controller{
   }
 
   public function getUserPage($f3, $params) {
-    $this->tpl   = 'usersPage.php';
+    $this->tpl   = 'profile.php';
     $this->userLike = $this->model->userLikes($params['id']);
     $f3->set('boardsLiked', $this->userLike);
     $this->usersBoard = $this->model->usersBoards($params['id']);
@@ -48,13 +48,13 @@ class users_controller{
   }
 
   public function getUserProfil($f3, $params) {
-    $this->tpl = 'usersProfil.php';
+    $this->tpl = 'settings.php';
     $this->userProfil = $this->model->userProfil($params['id']);
     $f3->set('users', $this->userProfil);
 
     if($f3->get('VERB')=='POST'){
       $this->model->addurls($f3->get('POST'), $params);
-      $f3->reroute('/user/'.$params['id'].'/profil');
+      $f3->reroute('/user/'.$params['id'].'/profile');
     }
   }
 

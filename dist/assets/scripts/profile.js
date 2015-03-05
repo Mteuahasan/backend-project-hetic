@@ -4,7 +4,9 @@ var liked = document.querySelector('.liked');
 var addedBoards = document.getElementsByClassName('addedBoards');
 var likedBoards = document.getElementsByClassName('likedBoards');
 
-
+for (var i = 0; i < addedBoards.length; i++) {
+	addedBoards[i].classList.add('displayAdded');
+};
 
 portfolio.addEventListener('click', clickPortfolio, false);
 liked.addEventListener('click', clickLiked, false);
