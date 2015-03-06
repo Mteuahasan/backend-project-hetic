@@ -2,6 +2,7 @@ var main = {
 
   init: function(){
     this.search();
+    this.backroundImages();
   },
   ajax: function(verb,url,datas,callback){
     var self=this;
@@ -25,7 +26,8 @@ var main = {
 
     document.getElementById('search-content').focus();
     search.addEventListener('keyup', function(e){
-      var wrapper = document.getElementById('results-container');
+      var wrapper = document.getElementById('results-wrapper');
+      console.log(wrapper);
       while (wrapper.hasChildNodes()) {
         wrapper.removeChild(wrapper.lastChild);
       }
@@ -35,6 +37,7 @@ var main = {
         data.append('ajax', true);
         self.ajax('POST', 'search', data, function(xhr){
           this.renderSearch(JSON.parse(xhr.response));
+          this.backroundImagesSearch();
         });
       };
     });
@@ -51,9 +54,8 @@ var main = {
     });
   },
   renderSearch: function(data){
-    var wrapper = document.getElementById('results-container');
+    var wrapper = document.getElementById('results-wrapper');
     for(var i=0; i<data.length; i++){
-      console.log(data[i]);
 
       var container = document.createElement("a");
       container.setAttribute('href', 'board/'+data[i].id);
@@ -102,6 +104,30 @@ var main = {
 
 
       wrapper.insertBefore(container, wrapper.firstChild);
+    }
+  },
+  backroundImages: function(){
+    var boards = document.getElementsByClassName('single-board-home');
+    for(var i=0; i < boards.length; i++){
+      var img = boards[i].getElementsByTagName('img');
+      var url = img[0].getAttribute('src');
+      boards[i].style.background = 'url('+url+')';
+      boards[i].style.backgroundSize = 'cover';
+      boards[i].style.backgroundPosition = '50%';
+      boards[i].removeChild(img[0]);
+    }
+  },
+  backroundImagesSearch: function(){
+    console.log('ok');
+    var boards = document.getElementById('results-container').getElementsByTagName('a');
+    for(var i=0; i < boards.length; i++){
+      var img = boards[i].getElementsByTagName('img');
+      var url = img[0].getAttribute('src');
+      console.log(img);
+      boards[i].style.background = 'url('+url+')';
+      boards[i].style.backgroundSize = 'cover';
+      boards[i].style.backgroundPosition = '50%';
+      boards[i].removeChild(img[0]);
     }
   }
 }

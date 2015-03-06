@@ -31,7 +31,7 @@
 
         <div class="banner">
           <span class="likes-number"><i class="flaticon-label36"></i><?php echo $board[0]->likes ? $board[0]->likes : '0' ?></span>
-          <span class="comments-number"><i class="flaticon-comment21"></i><?php echo $board[0]->likes ? $board[0]->likes : '0' ?></span>
+          <span class="comments-number"><i class="flaticon-comment21"></i><?php echo $board[0]->likes ? $board[0]->commentNumber : '0' ?></span>
           <span class="likes"><span class="plus flaticon-like29"></span><span class="minus flaticon-dont2"></span></span>
           <!-- <span class="flaticon-flag86"></span> -->
           <span class="social-share">

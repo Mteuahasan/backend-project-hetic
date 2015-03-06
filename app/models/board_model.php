@@ -52,7 +52,6 @@ class board_model{
             foreach ($data['categories'] as $category) {
               $this->dB->exec('INSERT INTO boards_has_categories VALUES (:boards_id, :categories_id)', array(':boards_id'=>$board['id'],':categories_id'=>$category));
             }
-            $this->f3->reroute('/home');
           }
           else{
             $error = "No category";
