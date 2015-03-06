@@ -87,38 +87,34 @@
 	      			<div class="settings-content container-settings-left">  
 	      				<section class="content">
 							
-							<div class="information"><?php echo $users[0]->name; ?></div>
+							<div class="information"></div>
 							<label for="username"><span>Username</span></label>
-							<input type="text" name="name">
+							<input type="text" placeholder="<?php echo $users[0]->name; ?>" name="name">
 							
-
 						</section>
 
 						<section class="content">
 							
-							<div class="information"><?php echo $users[0]->description ?></div>	
+							<div class="information"></div>	
 							<label for="description"><span>Description</span></label>
-							<input type="text" name="description">
-
-								
+							<input type="text" placeholder="<?php echo $users[0]->description ?>" name="description">
 
 						</section>  
 
 						<section class="content">
 
-							<div class="information"><?php echo $users[0]->city ?></div>
+							<div class="information"></div>
 							<label for="city"><span>Current City</span></label>
-							<input type="text" name="city">
+							<input type="text" placeholder="<?php echo $users[0]->city ?>" name="city">
 
 						</section>      			
-							
-			      					
+									      					
 					</div>
 					<div class="settings-content container-settings-right">
 						<section class="content">
-								<div class="information"><?php echo $users[0]->email ?></div>
+								<div class="information"></div>
 								<label for="mail"><span>Mail adresse</span></label>
-								<input type="text" name="mail">
+								<input type="text" placeholder="<?php echo $users[0]->email ?>" name="mail">
 			
 						</section>
 
@@ -130,29 +126,32 @@
 						</section> 
 
 						<section class="content">					
-								<div class="information"><?php echo $users[0]->website ?></div>
+								<div class="information"></div>
 								<label for="site"><span>Portefolio URL</span></label>
-								<input type="text" name="site">
+								<input type="text" placeholder="<?php echo $users[0]->website ?>" name="site">
 							
 						</section>      
 					</div>
 					<div class="settings-content container-settings-bottom">
 						<section class="bottom">
-								<div class="information"><?php echo $users[0]->url_twitter ?></div>
-								<label for="twitter"><span>Twitter</span></label>
-								<input type="text" name="twitter">							
+								<div class="information"></div>
+								<label for="twitter"><i class="flaticon-twitter44"></i></label>
+								<input type="text" placeholder="<?php echo $users[0]->url_twitter ?>" name="twitter">	
+								<div class="social"></div>						
 						</section>
 
 						<section class="bottom">
-								<div class="information"><?php echo $users[0]->url_facebook ?></div>
-								<label for="facebook"><span>Facebook</span></label>
-								<input type="text" name="facebook">	
+								<div class="information"></div>
+								<label for="facebook"><i class="flaticon-facebook51"></i></label>
+								<input type="text" placeholder="<?php echo $users[0]->url_facebook ?>" name="facebook">	
+								<div class="social"></div>	
 						</section> 
 
 						<section class="bottom">
-								<div class="information"><?php echo $users[0]->url_linkdin ?></div>
-								<label for="linkdin"><span>Linkedin</span></label>
-								<input type="text" name="linkdin">	
+								<div class="information"></div>
+								<label for="linkdin"><i class="flaticon-social123"></i></label>
+								<input type="text" placeholder="<?php echo $users[0]->url_linkdin ?>" name="linkdin">	
+								<div class="social"></div>	
 						</section> 
 					</div>
 

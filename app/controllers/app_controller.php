@@ -57,7 +57,10 @@ class app_controller{
   }
 
 
-  public function afterroute(){
+  public function afterroute($f3){
+    $this->userProfil = $this->usersModel->userProfil($f3->get('SESSION.id'));
+    $f3->set('users', $this->userProfil);
+
     if(!$this->ajax) {
       echo \View::instance()->render($this->tpl);
     } else {

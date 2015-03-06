@@ -125,6 +125,7 @@ class board_controller{
   }
 
   public function afterroute($f3){
+
     if($f3->get('AJAX')){
     } else {
       echo \View::instance()->render($this->tpl);
