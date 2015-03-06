@@ -12,9 +12,8 @@
       <ul class="menu--more">
         <li><a href="#">About us</a></li>
         <li><a href="https://www.facebook.com/StriplyComunity" target="_BLANK">Facebook</a></li>
-        <li><a href="coming-soon">About us</a></li>
-        <li><a href="https://twitter.com/StriplyFr">Twitter</a></li>
-        <li><a href="#">Google +</a></li>
+        <li><a href="https://twitter.com/StriplyFr" target="_BLANK">Twitter</a></li>
+        <li><a href="https://plus.google.com/116960483759891056026/about" target="_BLANK">Google +</a></li>
       </ul>
     </div>
     <?php if(empty($SESSION)): ?>
@@ -40,8 +39,7 @@
             <div class="profilHover">
                 <li id="feature-profile-menu">
                   <a href="user/<?php echo $SESSION['id'] ?>">
-                    <img src="<?php echo $users[0]->filepath ?>">
-                    <!-- <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>"> -->
+                    <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
                     <div class="username"><p><?php echo $users[0]->name ?></p></div>
                   </a>
                 </li>

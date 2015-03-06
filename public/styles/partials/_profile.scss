@@ -11,7 +11,8 @@ div.main-container {
 	    div.name {
 	    	margin-left: 120px;
 	    	color: white;
-	    	font-size: 24px;
+	    	font-size: 20px;
+	    	font-weight: $medium;
 	    }
 
 		img {
@@ -31,6 +32,7 @@ div.main-container {
 		div.top-content {
 			div.selection {
 				text-align: center;
+				font-size: 16px;
 
 				span {
 					padding-right: 20px;
@@ -47,10 +49,15 @@ div.main-container {
 
 				.color {
 					color: $blue;
+					text-decoration: underline;
 				}
 
 				.portfolio {
+					font-size: 16px;
 					border-right: 1px solid $black;
+				}
+				.liked {
+					font-size: 16px;
 				}
 			}
 
@@ -58,8 +65,8 @@ div.main-container {
 				width: 80%;
 				margin: auto;
 				height: 1px;
-				background-color: $black;
-				margin-top: 45px;;
+				background-color: $grey;
+				margin-top: 30px;;
 			}
 
 			section.most-liked {
