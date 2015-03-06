@@ -6,6 +6,7 @@ class users_controller{
 
   private $tpl;
   private $model;
+  private $filepath = array();
   private $ajax = NULL;
 
   function __construct(){
@@ -71,6 +72,32 @@ class users_controller{
 
     if($f3->get('VERB')=='POST'){
       $this->model->addurls($f3->get('POST'), $params);
+
+      $this->web = \Web::instance();
+        $files = $_FILES;
+        $maxsize = 5242880;
+        $canUpload = true;
+        foreach ($files as $file) {
+          if($file['size'] <= $maxsize) {
+            $files = $this->web->receive(function($file){
+              if(pathinfo($file['name'],PATHINFO_EXTENSION) == "png" || pathinfo($file['name'],PATHINFO_EXTENSION) == 'jpg' || pathinfo($file['name'],PATHINFO_EXTENSION) == 'jpeg'){
+                array_push($this->filepath, $file);
+              } else {
+                echo "Non non petit malin, il ne faut pas toucher au html ! <a href='home'>Allez reviens à l'accueil</a>";
+                die();
+              }
+              return true;
+            },true,true);
+          } else {
+            $canUpload = false;
+          }
+        }
+        if($canUpload){
+          $this->model->addImg($f3->get('POST'), $this->filepath, $params);
+        } else {
+          echo "File's max weight is 5Mo";
+        }
+
       $f3->reroute('/user/'.$params['id'].'/settings');
     }
   }

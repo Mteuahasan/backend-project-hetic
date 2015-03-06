@@ -183,6 +183,19 @@ class users_model{
       $addSite->update();
     }
 
+  public function addImg($data, $filepath, $params) {
+    $addImg=$this->getUsersMapper();
+    $addImg->load(array('id=?', $params['id']));
+
+    if(isset($filepath[0])) {
+      $addImg->filepath=$filepath[0]['name'];
+    }
+    
+    $addImg->update();
+  }
+
+
+
 
 
   /*******
