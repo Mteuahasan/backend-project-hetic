@@ -16,6 +16,7 @@ class board_controller{
 
   function __construct(){
     $this->model=new \APP\MODELS\board_model();
+    $this->usersModel=new \APP\MODELS\users_model();
   }
 
   /*******
@@ -127,6 +128,8 @@ class board_controller{
   }
 
   public function afterroute($f3){
+    $this->userProfil = $this->usersModel->userProfil($f3->get('SESSION.id'));
+    $f3->set('users', $this->userProfil);
 
     if($f3->get('AJAX')){
     } else {

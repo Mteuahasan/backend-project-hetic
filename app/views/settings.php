@@ -10,47 +10,19 @@
 	<link rel="stylesheet" type="text/css" href="./dist/assets/css/main.css">
 </head>
 <body>
+
   <!-- POP UP SEARCH -->
-  <section id="searchFilter" class="page-filters-search">
-    <div id="pageSearch" class="page-search">
-      <i id="closeSearch" class="flaticon-cancel22"></i>
-      <h1>Search anything by tiping here</h1>
-      <i class="flaticon-information32" title="Category, people or tag"></i>
-      <form action="search/" method="post" id='search-form'>
-          <input type="text" name="name" placeholder="" autocomplete="off" id="search-content"/>
-      </form>
-    </div>
-  </section>
+  <?php
+  include('partials/search-popup.php');
+  ?>
 
   <!-- POP UP CATEGORY -->
-  <section id="categoryFilter" class="page-filters-category">
-    <div id="pageCategory" class="page-category">
-      <i id="closeCategory" class="flaticon-cancel22"></i>
-      <h1>Set up a maximum of <strong>3</strong> categories</h1>
-        <form autocomplete="off">
-        <ul>
-          <li><input type="checkbox" id="cat1"><label for="cat1">Comics</label></li>
-          <li><input type="checkbox" id="cat2"><label for="cat2">Humor</label></li>
-          <li><input type="checkbox" id="cat3"><label for="cat3">Politic</label></li>
-        </ul>
-        <ul>
-          <li><input type="checkbox" id="cat4"><label for="cat4">Celebrities</label></li>
-          <li><input type="checkbox" id="cat5"><label for="cat5">Dark Humor</label></li>
-          <li><input type="checkbox" id="cat6"><label for="cat6">Gore</label></li>
-          <li><input type="checkbox" id="cat7"><label for="cat7">Sensual</label></li>
-        </ul>
-        <ul>
-          <li><input type="checkbox" id="cat8"><label for="cat8">Religious</label></li>
-          <li><input type="checkbox" id="cat9"><label for="cat9">For kids</label></li>
-          <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
-        </ul>
-      </form>  
-      <input type="submit" value="Let's go" class="btn-little">
-      <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
-    </div>
-  </section>
+  <?php
+  include('partials/categories-popup.php')
+  ?>
+
   <?php include('partials/nav.php') ?>
-	
+
 
 	<div id="mainContent" class="main-container">
 	    <section class="header-profile">
@@ -84,22 +56,24 @@
 	      	<section class="settings">
 	      		<div class="container-settings">
 	      		<form enctype="multipart/form-data" action="" method="post">
-	      			<div class="settings-content container-settings-left">  
+	      			<div class="settings-content container-settings-left">
 	      				<section class="content">
-							
-							<div class="information"></div>
+
+							<div class="information"><?php echo $users[0]->name; ?></div>
 							<label for="username"><span>Username</span></label>
-							<input type="text" placeholder="<?php echo $users[0]->name; ?>" name="name">
-							
+							<input type="text" name="name">
+
+
 						</section>
 
 						<section class="content">
-							
-							<div class="information"></div>	
-							<label for="description"><span>Description</span></label>
-							<input type="text" placeholder="<?php echo $users[0]->description ?>" name="description">
 
-						</section>  
+							<div class="information"><?php echo $users[0]->description ?></div>
+							<label for="description"><span>Description</span></label>
+							<input type="text" name="description">
+
+
+						</section>
 
 						<section class="content">
 
@@ -107,57 +81,56 @@
 							<label for="city"><span>Current City</span></label>
 							<input type="text" placeholder="<?php echo $users[0]->city ?>" name="city">
 
-						</section>      			
-									      					
+						</section>
+
 					</div>
 					<div class="settings-content container-settings-right">
 						<section class="content">
 								<div class="information"></div>
 								<label for="mail"><span>Mail adresse</span></label>
+
 								<input type="text" placeholder="<?php echo $users[0]->email ?>" name="mail">
-			
+
 						</section>
 
 						<section class="content">
 								<div class="information"></div>
 								<label for="category"><span>Catégorie of interest (3 max).</span></label>
 								<input type="text" name="categorie">
-							
-						</section> 
 
-						<section class="content">					
-								<div class="information"></div>
+						</section>
+
+						<section class="content">
+								<div class="information"><?php echo $users[0]->website ?></div>
 								<label for="site"><span>Portefolio URL</span></label>
-								<input type="text" placeholder="<?php echo $users[0]->website ?>" name="site">
-							
-						</section>      
+								<input type="text" name="site">
+
+						</section>
 					</div>
 					<div class="settings-content container-settings-bottom">
 						<section class="bottom">
-								<div class="information"></div>
-								<label for="twitter"><i class="flaticon-twitter44"></i></label>
-								<input type="text" placeholder="<?php echo $users[0]->url_twitter ?>" name="twitter">	
-								<div class="social"></div>						
+								<div class="information"><?php echo $users[0]->url_twitter ?></div>
+								<label for="twitter"><span>Twitter</span></label>
+								<input type="text" name="twitter">
 						</section>
 
 						<section class="bottom">
-								<div class="information"></div>
-								<label for="facebook"><i class="flaticon-facebook51"></i></label>
-								<input type="text" placeholder="<?php echo $users[0]->url_facebook ?>" name="facebook">	
-								<div class="social"></div>	
-						</section> 
+								<div class="information"><?php echo $users[0]->url_facebook ?></div>
+								<label for="facebook"><span>Facebook</span></label>
+								<input type="text" name="facebook">
+						</section>
 
 						<section class="bottom">
-								<div class="information"></div>
-								<label for="linkdin"><i class="flaticon-social123"></i></label>
-								<input type="text" placeholder="<?php echo $users[0]->url_linkdin ?>" name="linkdin">	
-								<div class="social"></div>	
-						</section> 
+								<div class="information"><?php echo $users[0]->url_linkdin ?></div>
+								<label for="linkdin"><span>Linkedin</span></label>
+								<input type="text" name="linkdin">
+						</section>
+
 					</div>
 
 					<div class="btn-upload-settings">
 					  <input type="file" name="userfile" class="input-file" value="Add a profil picture" accept=".png,.jpg">
-			          <span>Add a profil picture</span>  
+			          <span>Add a profil picture</span>
 			        </div>
 
 					<div class="btn--submit-form">
@@ -166,14 +139,14 @@
 			        </div>
 
 					</form
-					
+
 				</div>
 			</section>
 		  </div>
 		</div>
 	</div>
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
-  <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>	
-  <script type="text/javascript" src="dist/assets/scripts/profile.js"></script>	
+  <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>
+  <script type="text/javascript" src="dist/assets/scripts/profile.js"></script>
 </body>
 </html>
