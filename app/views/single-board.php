@@ -48,7 +48,6 @@
 
         <div class="container-imgs">
           <i class="flaticon-arrows115"></i>
-          <img src="http://lorempixel.com/1400/800">
           <?php if(!empty($board[0]->filepath)): ?>
           <i class="flaticon-arrows115"></i>
           <img src="<?php echo $board[0]->filepath; ?>" alt="<?php echo $board[0]->name ?>">

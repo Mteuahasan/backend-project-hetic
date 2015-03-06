@@ -67,9 +67,16 @@ var board = {
           var commentAuthorContainer = document.createElement("div");
           var commentAuthor = document.createTextNode(json.author);
 
+
+
           commentContentContainer.appendChild(commentContent);
+          commentContentContainer.setAttribute('class', 'content-comment');
+
           commentDateContainer.appendChild(commentDate);
+          commentDateContainer.setAttribute('class', 'date-comment');
+
           commentAuthorContainer.appendChild(commentAuthor);
+          commentAuthorContainer.setAttribute('class', 'author-comment');
 
           container.appendChild(commentAuthorContainer);
           container.appendChild(commentContentContainer);
