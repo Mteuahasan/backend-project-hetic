@@ -37,6 +37,7 @@
 
     <div class="wrapper-home-content">
       <div class="filters">
+        <a href="logout"><i class="flaticon-logout11"></i></a>
         <a href="#" id="category">
           <span>Categories</span>
           <i class="flaticon-telephone106"></i>
@@ -52,8 +53,6 @@
         <!-- MOST LIKED -->
         <section class="most-liked">
           <h2>Most liked</h2>
-          <div class="slider-btn slider-left"></div>
-          <div class="slider-btn slider-right"></div>
 
           <div class="boards-container-home">
           <?php
@@ -93,8 +92,6 @@
         <!-- MOST COMMENTED -->
         <section class="most-liked">
           <h2>Most commented</h2>
-          <div class="slider-btn slider-left"></div>
-          <div class="slider-btn slider-right"></div>
 
           <div class="boards-container-home">
             <?php
@@ -133,8 +130,6 @@
         <!-- MOST CONTROVERSIAL -->
         <section class="most-liked">
           <h2>Less liked</h2>
-          <div class="slider-btn slider-left"></div>
-          <div class="slider-btn slider-right"></div>
 
           <div class="boards-container-home">
             <?php

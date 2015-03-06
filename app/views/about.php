@@ -34,6 +34,7 @@
 
 	    <div class="wrapper-home-content">
 	      <div class="filters">
+	      	<a href="logout"><i class="flaticon-logout11"></i></a>
 	        <a href="#" id="category">
 	          <span>Categories</span>
 	          <i class="flaticon-telephone106"></i>

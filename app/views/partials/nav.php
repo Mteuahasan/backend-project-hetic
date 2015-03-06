@@ -10,9 +10,10 @@
       </ul>
       <span></span>
       <ul class="menu--more">
+        <li><a href="#">About us</a></li>
+        <li><a href="https://www.facebook.com/StriplyComunity" target="_BLANK">Facebook</a></li>
         <li><a href="coming-soon">About us</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
+        <li><a href="https://twitter.com/StriplyFr">Twitter</a></li>
         <li><a href="#">Google +</a></li>
       </ul>
     </div>
@@ -38,16 +39,17 @@
           <ul class="connected">
             <div class="profilHover">
                 <li id="feature-profile-menu">
-                  <a href="home">
-                    <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
+                  <a href="user/<?php echo $SESSION['id'] ?>">
+                    <img src="<?php echo $users[0]->filepath ?>">
+                    <!-- <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>"> -->
                     <div class="username"><p><?php echo $users[0]->name ?></p></div>
                   </a>
                 </li>
-                <li id="test" class="feature-menu-hover">
+                <!-- <li id="test" class="feature-menu-hover">
                   <a href="logout"><i class="flaticon-logout11"></i></a>
                   <span></span>
                   <a href="user/<?php echo $SESSION['id'] ?>"><p>See profile</p></a>
-                </li>
+                </li> -->
               </div>
               <li class="btn-cta">
                 <a href="new-board">

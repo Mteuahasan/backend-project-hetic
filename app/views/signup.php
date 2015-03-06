@@ -20,7 +20,7 @@
         <span class="input input--kaede">
           <input class="input__field input__field--kaede" type="text" id="input-3" name="name"/>
           <label class="input__label input__label--kaede" for="input-3">
-            <span class="input__label-content input__label-content--kaede">Pseudo</span>
+            <span class="input__label-content input__label-content--kaede">Pseudoname</span>
           </label>
         </span>
         <!-- EMAIL -->
@@ -49,7 +49,7 @@
 
         <ul class="btn-login-signup">
           <li><a href="login">Log In</a></li>
-          <li><span></span><input type="submit" value="Register"></li>
+          <li><input type="submit" value="Register"></li>
         </ul>
       </form>
     </div>

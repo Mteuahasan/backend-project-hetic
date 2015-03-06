@@ -9,13 +9,36 @@ div.wrapper-home-content{
 			i{
 				font-size: 16px;
 				color: $blue;
-				margin-right: 15px;
+				margin: 3px 15px 0 0;
+				float: left;
 			}
+		}
+		form{
+			select{
+				border: none;
+				color: $blue;
+				font-size: 18px;
+				background-color: transparent;
+				@include defaultInput;
+			}
+			input[type="submit"]{
+				color: $blue;
+				padding: 5px;
+				margin-left: 15px;
+				font-size: 12px;
+				cursor: pointer;
+				font-weight: $bold;
+				border: 2px solid $blue;
+				text-transform: uppercase;
+				background-color: transparent;
+				@include defaultInput;
+			}
+
 		}
 		h2{
 			font-size: 16px;
 			line-height: 26px;
-			border-bottom: 1px solid #333;
+			border-bottom: 1px solid $black;
 
 			span{
 				color: $blue;
