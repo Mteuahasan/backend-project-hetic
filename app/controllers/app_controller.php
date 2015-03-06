@@ -48,15 +48,6 @@ class app_controller{
 
 
   /*******
-  * Controller for the gallery page
-  *******/
-  public function gallery($f3){
-    $this->tpl = 'gallery.php';
-  }
-
-
-
-  /*******
   * Controller for the search feature
   *******/
   public function search($f3){

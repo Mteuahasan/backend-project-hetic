@@ -45,7 +45,7 @@
           <li><input type="checkbox" id="cat9"><label for="cat9">For kids</label></li>
           <li><input type="checkbox" id="cat10"><label for="cat10">Daily</label></li>
         </ul>
-      </form>  
+      </form>
       <input type="submit" value="Let's go" class="btn-little">
       <a href="#" class="btn-little"><span>Let's go</span><i class="flaticon-right11"></i></a>
     </div>
@@ -69,27 +69,45 @@
 
       <!-- GALLERY -->
       <div class="top-gallery">
-        <h1><i class="flaticon-right11"></i>I'm looking for projects which could interest me, and I want to classify them by date, most liked, most commented</h1>
+        <h1><i class="flaticon-right11"></i>
+        <form action="">
+        I'm looking for projects in
+        <select name="category" id="category-select">
+          <option value="all">All</option>
+          <option value="5">WTF</option>
+        </select> categories
+
+        , and I want to classify them by
+        <select name="sortby" id="sortby-select">
+          <option value="date">date</option>
+          <option value="commentNumber">most commented</option>
+          <option value="likes">most liked</option>
+        </select>
+        <input type="hidden" value="1" name="page">
+        <input type="submit">
+        </form></h1>
+
         <h2>Related / <span>28</span> matches found</h2>
         <p> <strong>Comics</strong> found for categories: <span>Comics, heroes, fantastic</span></p>
       </div>
 
         <div class="top-content">
         <section class="most-liked">
-            <div class="boards-container">      
-              <a href="board/"  class="single-board-home addedBoards">
+            <div class="boards-container">
+            <?php foreach ($boards as $board): ?>
+              <a href="board/<?php echo $board->id; ?>"  class="single-board-home addedBoards">
                 <div class="board-hover">
-                  <h3>Kaka</h3>     
+                  <h3><?php echo $board->name; ?></h3>
                 </div>
-                <img src="http://lorempixel.com/400/200"/>
-                    <div class="banner">
-                      <div class="banner-content">
-                          <i class="flaticon-label36"><span>19</span></i>
-                          <i class="flaticon-comment21"><span>380</span></i>
-                      </div>
-                    </div>
-
+                <img src="<?php echo $board->filepath; ?>"/>
+                <div class="banner">
+                  <div class="banner-content">
+                      <i class="flaticon-label36"><span><?php echo $board->likes; ?></span></i>
+                      <i class="flaticon-comment21"><span><?php echo $board->commentNumber; ?></span></i>
+                  </div>
+                </div>
               </a>
+            <?php endforeach ?>
         </div>
       </section>
     </div>

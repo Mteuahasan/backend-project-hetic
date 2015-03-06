@@ -18,7 +18,6 @@ class board_controller{
     $this->model=new \APP\MODELS\board_model();
   }
 
-
   /*******
   * Upload system for the image and controller for the new board page
   *******/
@@ -96,6 +95,21 @@ class board_controller{
     $response = $this->model->likes($f3->get('POST.like'), $params);
     echo $response;
   }
+
+
+
+  /*******
+  * Controller for the gallery page
+  *******/
+  public function gallery($f3){
+    $this->tpl = 'gallery.php';
+    $get = $f3->get('GET');
+    if(isset($get['category']) && isset($get['sortby']) && $get['page']){
+      $boards = $this->model->getGalleryBoards($get['category'], $get['sortby'], 20, $get['page']);
+      $f3->set('boards', $boards);
+    }
+  }
+
 
 
   /*******
