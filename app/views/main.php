@@ -15,16 +15,9 @@
 <body>
 
   <!-- POP UP SEARCH -->
-  <section id="searchFilter" class="page-filters-search">
-    <div id="pageSearch" class="page-search">
-      <i id="closeSearch" class="flaticon-cancel22"></i>
-      <h1>Search anything by tiping here</h1>
-      <i class="flaticon-information32" title="Category, people or tag"></i>
-      <form action="search/" method="post" id='search-form'>
-          <input type="text" name="name" placeholder="" autocomplete="off" id="search-content"/>
-      </form>
-    </div>
-  </section>
+  <?php
+  include('partials/search-popup.php');
+  ?>
 
   <!-- POP UP CATEGORY -->
   <?php
@@ -93,7 +86,7 @@
             ?>
 
           </div>
-          <a href="#">See all</a>
+          <a href="gallery?category=all&sortby=likes&page=1">See all</a>
         </section>
 
 
@@ -139,7 +132,7 @@
 
         <!-- MOST CONTROVERSIAL -->
         <section class="most-liked">
-          <h2>Most controversial</h2>
+          <h2>Less liked</h2>
           <div class="slider-btn slider-left"></div>
           <div class="slider-btn slider-right"></div>
 

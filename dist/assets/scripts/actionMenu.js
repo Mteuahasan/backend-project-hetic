@@ -13,7 +13,6 @@ var closeCategory = document.getElementById('closeCategory');
 
 var mainContent = document.getElementById('mainContent')
 
-
 hoverProfil.addEventListener('mouseover', mouseOver, false);
 hoverProfil.addEventListener('mouseout', mouseOut, false);
 
@@ -38,24 +37,24 @@ function mouseOut() {
 function clickSearch(e) {
 	e.preventDefault();
 	e.stopPropagation();
-	filterSearch.style.display="block";	
+	filterSearch.style.display="block";
 	pageSearch.style.display="block";
 }
 
 function searchClose() {
-	filterSearch.style.display="none";	
+	filterSearch.style.display="none";
 	pageSearch.style.display="none";
 }
 
 function clickCategory(e) {
 	e.preventDefault();
 	e.stopPropagation();
-	filterCategory.style.display="block";	
+	filterCategory.style.display="block";
 	pageCategory.style.display="block";
 }
 
 function categoryClose() {
-	filterCategory.style.display="none";	
+	filterCategory.style.display="none";
 	pageCategory.style.display="none";
 }
 

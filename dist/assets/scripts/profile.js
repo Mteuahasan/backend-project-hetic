@@ -1,6 +1,7 @@
 var portfolio = document.querySelector('.portfolio');
 var liked = document.querySelector('.liked');
 
+
 var addedBoards = document.getElementsByClassName('addedBoards');
 var likedBoards = document.getElementsByClassName('likedBoards');
 
@@ -10,6 +11,10 @@ for (var i = 0; i < addedBoards.length; i++) {
 
 portfolio.addEventListener('click', clickPortfolio, false);
 liked.addEventListener('click', clickLiked, false);
+
+
+
+
 
 function clickPortfolio() {
 	portfolio.classList.add('color');
@@ -38,5 +43,11 @@ function clickLiked() {
 	};
 
 }
+
+
+
+
+
+
 
 

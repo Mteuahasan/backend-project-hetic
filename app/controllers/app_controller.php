@@ -43,15 +43,7 @@ class app_controller{
     $f3->set('mostCommentedCategories', $this->boardsModel->getHomeCategories($this->boardsModel->getMostCommented()));
     $f3->set('mostUnlikedBoards', $this->boardsModel->getMostUnliked());
     $f3->set('mostUnlikedCategories', $this->boardsModel->getHomeCategories($this->boardsModel->getMostUnliked()));
-  }
-
-
-
-  /*******
-  * Controller for the gallery page
-  *******/
-  public function gallery($f3){
-    $this->tpl = 'gallery.php';
+    $f3->set('allCategories', $this->boardsModel->getAllCategories());
   }
 
 

@@ -49,22 +49,23 @@ class board_model{
             $board->date=date("Y-m-d H:i:s");
             $board->tags=$data['tags'];
             $board->save();
-            foreach ($data['categories'] as $categorie) {
-              $this->dB->exec('INSERT INTO boards_has_categories VALUES (:boards_id, :categories_id)', array(':boards_id'=>$board['id'],':categories_id'=>$categorie));
+            foreach ($data['categories'] as $category) {
+              $this->dB->exec('INSERT INTO boards_has_categories VALUES (:boards_id, :categories_id)', array(':boards_id'=>$board['id'],':categories_id'=>$category));
             }
             $this->f3->reroute('/user/'.$f3->get("SESSION.id").'/profile');
+
           }
           else{
-            $error = "Aucune catégorie";
+            $error = "No category";
             echo $error;
           }
         }
         else {
-          $error = 'La description doit être renseignée';
+          $error = 'Description is needed';
           echo $error;
         }
       } else {
-        $error = 'Le nom du board doit être renseigné';
+        $error = 'Comic\'s name needed';
         echo $error;
       }
     }
@@ -121,14 +122,14 @@ class board_model{
   *******/
   function getHomeCategories($boards){
     $categories = array();
-    $categorie = array();
+    $category = array();
     foreach ($boards as $board) {
       $cate = $this->getBoardCategories($board->id);
       foreach ($cate as $cat) {
-        array_push($categorie, array("categorie" => $cat->name));
+        array_push($category, array("categorie" => $cat->name));
       }
-      array_push($categories, $categorie);
-      $categorie = array();
+      array_push($categories, $category);
+      $category = array();
     }
     return $categories;
   }
@@ -183,8 +184,8 @@ class board_model{
     $categories_id = $this->getHasCategoriesMapper()->select('*', 'boards_id = "'.$id.'"');
     $request = '';
 
-    foreach($categories_id as $categorie){
-         $request = $request.'id = '.$categorie->categories_id.' OR ';
+    foreach($categories_id as $category){
+         $request = $request.'id = '.$category->categories_id.' OR ';
     }
 
     $request = substr($request, 0, -4);
@@ -267,6 +268,8 @@ class board_model{
     return $error;
   }
 
+
+
   /*******
   * $post -> data of the post
   * $params -> contain the informations about the current board
@@ -288,6 +291,8 @@ class board_model{
     echo json_encode($response);
   }
 
+
+
   /*******
   * $param -> current board's id
   * Return comments for a specific board
@@ -297,6 +302,52 @@ class board_model{
     $response = $commentsMapper->select('*', 'board_id = "'.$param.'"', array('order'=>'id DESC'));
     return $response;
   }
+
+
+
+  /*******
+  * $category -> selected category's id
+  * $sortby -> selected sort way
+  * Return comments for a specific board
+  *******/
+  function getGalleryBoards($category, $sortby, $pagination, $page){
+    $hasCategorieMapper = $this->getHasCategoriesMapper();
+    $boardsMapper = $this->getBoardsMapper();
+    $selectedCategory = $hasCategorieMapper->select('*', 'categories_id = "'.$category.'"');
+
+    if($category != 'all'){
+      $request = "";
+      foreach ($selectedCategory as $cat) {
+        $request = $request.'id = '.$cat->boards_id.' OR ';
+      }
+      $request = substr($request, 0, -4);
+      if($sortby == 'unliked'){
+        $request = $request.' ORDER BY likes ASC limit '.$pagination.' OFFSET '.($page - 1) * $pagination;
+      } else {
+        $request = $request.' ORDER BY '.$sortby.' DESC limit '.$pagination.' OFFSET '.($page - 1) * $pagination;
+      }
+      $boards = $boardsMapper->select('*', $request);
+    } else {
+      if($sortby == 'unliked'){
+        $boards = $this->getBoardsMapper()->select('*',NULL , array(
+             'group'=>NULL,
+             'order'=>'likes ASC',
+             'limit'=>$pagination,
+             'offset'=>($page-1)*$pagination
+           ));
+      } else {
+        $boards = $this->getBoardsMapper()->select('*',NULL , array(
+             'group'=>NULL,
+             'order'=>$sortby.' DESC',
+             'limit'=>$pagination,
+             'offset'=>($page-1)*$pagination
+           ));
+      }
+    }
+
+    return $boards;
+  }
+
 
 
   private function getBoardsMapper($table='boards'){
