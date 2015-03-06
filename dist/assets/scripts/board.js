@@ -24,6 +24,8 @@ var board = {
         submitComment = document.getElementsByClassName('submit-comment')[0];
     var url = document.URL.split('/');
     var board = url[url.length-1];
+    var textarea = document.getElementById('comment-content');
+    var counter = document.getElementById('counter');
 
     plus.addEventListener('click', function(){
       var data=new FormData();
@@ -84,6 +86,11 @@ var board = {
       }
       document.getElementById('comment-content').value = "";
     });
+
+    textarea.addEventListener('keyup', function(){
+      counter.innerHTML = 800 - this.value.length;
+    });
+
   }
 }
 

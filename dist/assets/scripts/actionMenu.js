@@ -1,5 +1,4 @@
 var hoverProfil = document.getElementById('feature-profile-menu');
-console.log(hoverProfil);
 var feature = document.getElementById('test');
 
 var buttonSearch = document.getElementById('search');
