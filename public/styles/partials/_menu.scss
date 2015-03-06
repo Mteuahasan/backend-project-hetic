@@ -78,7 +78,8 @@ nav {
 				position: absolute;
 				z-index: 1;
 				bottom: 95px;
-				overflow: hidden;				
+				overflow: hidden;
+				 width: 155px;				
 				background-color: $black;
 			}
 			li {
@@ -88,6 +89,7 @@ nav {
 					font-size: 14px;
 					p {
 						line-height: 20px;
+						margin-top: 10px;
 					}
 				}
 			img {

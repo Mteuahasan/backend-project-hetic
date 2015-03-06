@@ -20,7 +20,7 @@ class app_model{
       array('order'=>'id DESC'));
     $searchs = array();
     foreach ($response as $resp) {
-      $search = array('name'=>$resp->name, 'description'=>$resp->description, 'author'=>$resp->author, 'likes'=>$resp->likes, 'date'=>$resp->date, 'filepath'=>$resp->filepath, 'tags'=>$resp->tags);
+      $search = array('id'=>$resp->id,'name'=>$resp->name, 'description'=>$resp->description, 'author'=>$resp->author, 'likes'=>$resp->likes, 'date'=>$resp->date, 'filepath'=>$resp->filepath, 'tags'=>$resp->tags, 'filepath'=>$resp->filepath, 'comments'=>$resp->commentNumber);
       array_push($searchs, $search);
     }
     echo(json_encode($searchs));

@@ -59,6 +59,12 @@ class users_controller{
     $f3->set('boardsLiked', $this->userLike);
     $this->usersBoard = $this->model->usersBoards($params['id']);
     $f3->set('boardsAdded', $this->usersBoard);
+    $f3->set('id', $params['id']);
+    if(!null == $f3->get('SESSION')){
+      $f3->set('session_id', $f3->get('SESSION')['id']);
+    } else {
+      $f3->set('session_id', null);
+    }
   }
 
   /*******
@@ -66,39 +72,43 @@ class users_controller{
   *******/
 
   public function getUserSettings($f3, $params) {
-    $this->tpl = 'settings.php';
-    $this->userProfil = $this->model->userProfil($params['id']);
-    $f3->set('users', $this->userProfil);
+    if(!null == $f3->get('SESSION') && $f3->get('SESSION')['id'] == $params['id']){
+      $this->tpl = 'settings.php';
+      $this->userProfil = $this->model->userProfil($params['id']);
+      $f3->set('users', $this->userProfil);
 
-    if($f3->get('VERB')=='POST'){
-      $this->model->addurls($f3->get('POST'), $params);
+      if($f3->get('VERB')=='POST'){
+        $this->model->addurls($f3->get('POST'), $params);
 
-      $this->web = \Web::instance();
-        $files = $_FILES;
-        $maxsize = 5242880;
-        $canUpload = true;
-        foreach ($files as $file) {
-          if($file['size'] <= $maxsize) {
-            $files = $this->web->receive(function($file){
-              if(pathinfo($file['name'],PATHINFO_EXTENSION) == "png" || pathinfo($file['name'],PATHINFO_EXTENSION) == 'jpg' || pathinfo($file['name'],PATHINFO_EXTENSION) == 'jpeg'){
-                array_push($this->filepath, $file);
-              } else {
-                echo "Non non petit malin, il ne faut pas toucher au html ! <a href='home'>Allez reviens à l'accueil</a>";
-                die();
-              }
-              return true;
-            },true,true);
-          } else {
-            $canUpload = false;
+        $this->web = \Web::instance();
+          $files = $_FILES;
+          $maxsize = 5242880;
+          $canUpload = true;
+          foreach ($files as $file) {
+            if($file['size'] <= $maxsize) {
+              $files = $this->web->receive(function($file){
+                if(pathinfo($file['name'],PATHINFO_EXTENSION) == "png" || pathinfo($file['name'],PATHINFO_EXTENSION) == 'jpg' || pathinfo($file['name'],PATHINFO_EXTENSION) == 'jpeg'){
+                  array_push($this->filepath, $file);
+                } else {
+                  echo "Non non petit malin, il ne faut pas toucher au html ! <a href='home'>Allez reviens à l'accueil</a>";
+                  die();
+                }
+                return true;
+              },true,true);
+            } else {
+              $canUpload = false;
+            }
           }
-        }
-        if($canUpload){
-          $this->model->addImg($f3->get('POST'), $this->filepath, $params);
-        } else {
-          echo "File's max weight is 5Mo";
-        }
+          if($canUpload){
+            $this->model->addImg($f3->get('POST'), $this->filepath, $params);
+          } else {
+            echo "File's max weight is 5Mo";
+          }
 
-      $f3->reroute('/user/'.$params['id'].'/settings');
+        $f3->reroute('/user/'.$params['id'].'/settings');
+      }
+    } else {
+      $f3->reroute('/home');
     }
   }
 

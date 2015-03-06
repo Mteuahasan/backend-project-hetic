@@ -43,6 +43,7 @@ class app_controller{
     $f3->set('mostCommentedCategories', $this->boardsModel->getHomeCategories($this->boardsModel->getMostCommented()));
     $f3->set('mostUnlikedBoards', $this->boardsModel->getMostUnliked());
     $f3->set('mostUnlikedCategories', $this->boardsModel->getHomeCategories($this->boardsModel->getMostUnliked()));
+    $f3->set('allCategories', $this->boardsModel->getAllCategories());
   }
 
 

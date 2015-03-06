@@ -47,7 +47,9 @@ class board_controller{
           }
         }
         if($canUpload){
+
           $this->model->newBoard($f3->get('POST'), $this->filepath);
+          $f3->reroute('/user/'.$f3->get('SESSION')['id']);
         } else {
           echo "File's max weight is 5Mo";
         }

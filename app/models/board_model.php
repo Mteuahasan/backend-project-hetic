@@ -20,7 +20,7 @@ class board_model{
   * $filepath -> array with the different filepaths for the images
   * Get the fourth most liked boards for the home page
   *******/
-  function newBoard($data, $filepath){
+  function newBoard($data, $filepath, $f3){
     $session = $this->f3->get('SESSION');
     if(isset($data) && !empty($data)){
       if(!empty($data['name'])){
@@ -52,7 +52,8 @@ class board_model{
             foreach ($data['categories'] as $category) {
               $this->dB->exec('INSERT INTO boards_has_categories VALUES (:boards_id, :categories_id)', array(':boards_id'=>$board['id'],':categories_id'=>$category));
             }
-            $this->f3->reroute('/home');
+            $this->f3->reroute('/user/'.$f3->get("SESSION.id").'/profile');
+
           }
           else{
             $error = "No category";
