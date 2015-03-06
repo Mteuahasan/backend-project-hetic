@@ -126,7 +126,6 @@ nav {
 			#feature-profile-menu {
 				@include transition(.5s);
 			}
-// Ajouter la classe move à l'id feature-profile-menu au hover !
 			.move {
 				@include transform(0, -20px);
 			}
@@ -134,11 +133,6 @@ nav {
 			.right {
 				@include transform(30px, 0);
 			}
-
-// Supprimer cela quand ce sera fait...
-			// #feature-profile-menu:hover {
-			// 	@include transform(0, -30px);	
-			// }
 		}
 	}
 }

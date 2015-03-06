@@ -34,21 +34,21 @@ var signup = {
           value2 = this.value;
 
       if(value1 === value2){
-        this.style.backgroundColor = '#239421';
-        password1.style.backgroundColor = '#239421';
+        this.style.backgroundColor = '#00b3c6';
+        password1.style.backgroundColor = '#00b3c6';
       } else {
-        this.style.backgroundColor = '#c1161e';
-        password1.style.backgroundColor = '#c1161e';
+        this.style.backgroundColor = '#ff003f';
+        password1.style.backgroundColor = '#ff003f';
       }
       if(value2.length < 5){
-        this.style.backgroundColor = '#c1161e';
+        this.style.backgroundColor = '#ff003f';
       }
     });
 
     password1.addEventListener('keyup',function(){
       value = this.value
       if(value.length < 5){
-        password1.style.backgroundColor = '#c1161e';
+        password1.style.backgroundColor = '#ff003f';
       }
     });
 
@@ -59,9 +59,9 @@ var signup = {
         data.append('ajax', true);
         self.ajax('POST', 'signup/name', data, function(xhr){
           if(xhr.response === '1'){
-            name.style.backgroundColor = '#239421';
+            name.style.backgroundColor = '#00b3c6';
           } else {
-            name.style.backgroundColor = '#c1161e';
+            name.style.backgroundColor = '#ff003f';
           }
         });
       } else {
@@ -75,9 +75,9 @@ var signup = {
         data.append('ajax', true);
         self.ajax('POST', 'signup/email', data, function(xhr){
           if(xhr.response === '1' && this.validateEmail(email.value)){
-            email.style.backgroundColor = '#239421';
+            email.style.backgroundColor = '#00b3c6';
           } else {
-            email.style.backgroundColor = '#c1161e';
+            email.style.backgroundColor = '#ff003f';
           }
         });
       } else {
