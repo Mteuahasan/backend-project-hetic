@@ -179,6 +179,12 @@ class users_model{
       if(!empty($_POST['name'])) {
         $addSite->name=$data['name'];
       }
+
+      if(!empty($_POST['interest'])) {
+        $addSite->interest=$data['interest'];
+      }
+
+
     
       $addSite->update();
     }

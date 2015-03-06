@@ -88,8 +88,8 @@
                 </section>
 
                 <section class="content">
-                    <label for="category"><span>Catégorie of interest (3 max).</span></label>
-                    <div></div>
+                    <label for="category"><span>Catégorie of interest</span></label>
+                    <div><?php echo $users[0]->interest ?></div>
                 </section> 
 
                 <section class="content">         
