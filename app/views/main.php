@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <base href="<?php echo $BASE; ?>/" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" type="image/ico" href="favicon.ico" />
   <link rel="stylesheet" type="text/css" href="./dist/assets/css/main.css">
 
 </head>

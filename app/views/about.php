@@ -54,7 +54,16 @@
 	      		<span class="liked color">SETTINGS</span>
 	      	</div>
 	      	<div class="separation"></div>
+          <div class="container-about">
+            
+          <?php echo $users[0]->name ?>
+          <?php echo $users[0]->email ?>
+          <?php echo $users[0]->name ?>
+          <?php echo $users[0]->name ?>
+          <?php echo $users[0]->name ?>
 
+
+          </div>
 
 
 

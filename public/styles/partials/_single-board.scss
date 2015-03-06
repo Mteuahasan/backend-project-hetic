@@ -28,7 +28,7 @@ section.container-single-board{
       .banner{
         color: $white;
         width: 100%;
-        // position: fixed;
+        position: relative;
         padding: 15px 50px;
         background-color: $black;
         box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.3);
@@ -43,28 +43,8 @@ section.container-single-board{
         .comments-number {
           @extend .likes-number;
         }
-        .flaticon-label36, .flaticon-comment21, .flaticon-facebook51, .flaticon-twitter44, .flaticon-like29, .flaticon-dont2{
+        .flaticon-label36, .flaticon-comment21, .flaticon-facebook51, .flaticon-twitter44{
           font-size: 16px;
-        }
-        .banner:before{
-          bottom: -6px;
-          right: 0;
-          width: 0;
-          height: 0;
-          border: 3px solid;
-          border-color: #000 transparent transparent #000;
-        }
-
-        .likes{
-          position: absolute;
-          width: calc(50% - 55px);
-          text-align: center;
-          .minus, .plus {
-            cursor: pointer;
-          }
-          span{
-            margin-right: 20px;
-          }
         }
         .social-share {
           float: right;
@@ -73,10 +53,50 @@ section.container-single-board{
           }
         }
       }
+      .likes{
+          display: block;
+          margin: 0 auto;
+          width: calc(50% - 55px);
+          text-align: center;
+          .minus, .plus {
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+            top: 34px;
+          }
+          span{
+            margin-right: 20px;
+          }
+        }
+        .banner:before, .banner:after{
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            width: 0;
+            height: 0;
+            border: 9px solid;
+            @media screen and (max-width: 1000px) {
+              bottom: -14px;
+              border: 7px solid $black;
+          }
+        }
+        .banner:before{
+          border-color: $black transparent transparent $black;
+          right: 0;
+        }
+        .banner:after{
+          left: 0;
+          border-color: $black $black transparent transparent;
+        }
     }
 
     .single-strip{
       padding: 20px;
+      width: 96%;
+      margin: 0 auto;
+      margin-bottom: 30px;
       background-color: #e1e1e1;
       div.content-description{
         color: $black;
@@ -85,7 +105,7 @@ section.container-single-board{
         line-height: 14px;
         text-align: center;
         font-weight: $light;
-        padding: 75px 0 45px;
+        padding: 55px 0 45px;
       }
       .container-imgs{
         text-align: center;
@@ -134,37 +154,56 @@ section.container-single-board{
           em{
             font-size: 12px;
             font-weight: $light;
+            float: right;
+            line-height: 20px;
           }
           .btn-cta{
             border: none;
             width: 170px;
             margin: 20px 0 30px;
+            letter-spacing: 1px;
+            color: $black-light;
             background-color: $yellow;
           }
         }
       }
       .display-comments{
+        h4{
+          color: $blue;
+          font-size: 16px;
+          line-height: 26px;
+          letter-spacing: 1px;
+          border-bottom: 1px solid $grey;
+        }
+        img{
+          width: 40px;
+          height: 40px;
+          float: left;
+          margin: 15px 10px;
+          border: 1px solid $black;
+          @include border-radius(50%);
+        }
         .single-comment{
           width: 100%;
           color: $black;
-          margin: 10px auto;
-          padding-bottom: 10px;
+          padding: 20px 0 10px 60px;
           border-bottom: 1px solid $grey;
-          &:first-child{
-            border-top: 1px solid $grey;
-          }
           .author-comment{
+            color: $black;
             font-size: 16px;
             font-weight: $medium;
           }
           .content-comment{
-            font-size: 14px;
+            font-size: 15px;
             margin: 15px 0 10px;
             font-weight: $light;
           }
           .date-comment{
-            font-size: 8px;
+            font-size: 10px;
             font-weight: $thin;
+          }
+          .single-comment:first-child{
+            border-top: 1px solid $grey;
           }
         }
       }

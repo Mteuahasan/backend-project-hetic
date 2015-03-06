@@ -16,6 +16,7 @@ class board_controller{
 
   function __construct(){
     $this->model=new \APP\MODELS\board_model();
+    $this->usersModel=new \APP\MODELS\users_model();
   }
 
   /*******
@@ -47,6 +48,7 @@ class board_controller{
           }
         }
         if($canUpload){
+
           $this->model->newBoard($f3->get('POST'), $this->filepath);
           $f3->reroute('/user/'.$f3->get('SESSION')['id']);
         } else {
@@ -126,6 +128,9 @@ class board_controller{
   }
 
   public function afterroute($f3){
+    $this->userProfil = $this->usersModel->userProfil($f3->get('SESSION.id'));
+    $f3->set('users', $this->userProfil);
+
     if($f3->get('AJAX')){
     } else {
       echo \View::instance()->render($this->tpl);

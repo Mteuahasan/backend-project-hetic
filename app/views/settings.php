@@ -73,24 +73,23 @@
 							<input type="text" name="description">
 
 
-
 						</section>
 
 						<section class="content">
 
-							<div class="information"><?php echo $users[0]->city ?></div>
+							<div class="information"></div>
 							<label for="city"><span>Current City</span></label>
-							<input type="text" name="city">
+							<input type="text" placeholder="<?php echo $users[0]->city ?>" name="city">
 
 						</section>
-
 
 					</div>
 					<div class="settings-content container-settings-right">
 						<section class="content">
-								<div class="information"><?php echo $users[0]->email ?></div>
+								<div class="information"></div>
 								<label for="mail"><span>Mail adresse</span></label>
-								<input type="text" name="mail">
+
+								<input type="text" placeholder="<?php echo $users[0]->email ?>" name="mail">
 
 						</section>
 
@@ -126,6 +125,7 @@
 								<label for="linkdin"><span>Linkedin</span></label>
 								<input type="text" name="linkdin">
 						</section>
+
 					</div>
 
 					<div class="btn-upload-settings">
