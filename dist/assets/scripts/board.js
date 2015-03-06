@@ -67,8 +67,6 @@ var board = {
           var commentAuthorContainer = document.createElement("div");
           var commentAuthor = document.createTextNode(json.author);
 
-
-
           commentContentContainer.appendChild(commentContent);
           commentContentContainer.setAttribute('class', 'content-comment');
 
