@@ -27,8 +27,10 @@
 
   	<div id="mainContent" class="main-container">
 	    <section class="header-profile">
-	      <img src="./dist/assets/img/profile.jpg">
-	    </section>
+        <div class="name">Bonjour <?php echo $users[0]->name ?></div class="name">
+	      <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
+	      
+      </section>
 
 	    <div class="wrapper-home-content">
 	      <div class="filters">
@@ -52,19 +54,61 @@
 	      </div>
 	      <div id="settings-content" class="top-content">
 	      	<div class="selection">
-	      		<span class="liked color">SETTINGS</span>
+	      		<span class="liked color">ABOUT</span>
 	      	</div>
 	      	<div class="separation"></div>
-          <div class="container-about">
-            
-          <?php echo $users[0]->name ?>
-          <?php echo $users[0]->email ?>
-          <?php echo $users[0]->name ?>
-          <?php echo $users[0]->name ?>
-          <?php echo $users[0]->name ?>
+            <section class="settings">
+              <div class="container-settings">
+                <div class="settings-content container-settings-left">  
+                  <section class="content">
+                
+                  <label for="username"><span>Username</span></label>
+                  <div><?php echo $users[0]->name; ?></div>
+                  
+                  </section>
 
+                <section class="content">
+                  
+                  <label for="description"><span>Description</span></label>
+                  <div><?php echo $users[0]->description ?></div>
 
-          </div>
+                </section>  
+
+                <section class="content">
+
+                  <label for="city"><span>Current City</span></label>
+                  <div><?php echo $users[0]->city ?></div>
+                </section>            
+                                      
+              </div>
+              <div class="settings-content container-settings-right">
+                <section class="content">
+                    <label for="mail"><span>Mail adresse</span></label>
+                    <div><a href="mailto:<?php echo $users[0]->email ?>"> <?php echo $users[0]->email ?></a></div>
+                </section>
+
+                <section class="content">
+                    <label for="category"><span>Catégorie of interest (3 max).</span></label>
+                    <div></div>
+                </section> 
+
+                <section class="content">         
+                    <label for="site"><span>Portefolio URL</span></label>
+                    <div><a href="<?php echo $users[0]->website ?>"><?php echo $users[0]->website ?></a></div>
+                </section>      
+              </div>
+              <div class="container-about-bottom">
+                <section class="about">
+                    <label for="twitter"><a href="<?php echo $users[0]->url_twitter ?>"><i class="flaticon-twitter44"></i></a></label>
+                    <label for="facebook"><a href="<?php echo $users[0]->url_facebook ?>"><i class="flaticon-facebook51"></i></a></label>
+                    <label for="linkdin"><a href="<?php echo $users[0]->url_linkdin ?>"><i class="flaticon-social123"></i></a></label>
+                </section> 
+
+              </div>
+              
+            </div>
+          </section>         
+      </div>
 
 
 

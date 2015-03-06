@@ -4,17 +4,17 @@
       <ul class="menu">
         <li><a class="menu--active" href="home">Home</a></li>
         <li><a href="gallery?category=all&sortby=date&page=1">Gallery</a></li>
-        <li><a href="contests">Contests</a></li>
-        <li><a href="shows">Shows</a></li>
-        <li><a href="jobs">Jobs</a></li>
+        <li><a href="coming-soon">Contests</a></li>
+        <li><a href="coming-soon">Shows</a></li>
+        <li><a href="coming-soon">Jobs</a></li>
       </ul>
       <span></span>
       <ul class="menu--more">
         <li><a href="#">About us</a></li>
         <li><a href="https://www.facebook.com/StriplyComunity" target="_BLANK">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
+        <li><a href="coming-soon">About us</a></li>
+        <li><a href="https://twitter.com/StriplyFr">Twitter</a></li>
         <li><a href="#">Google +</a></li>
-        <li><a href="#">RSS</a></li>
       </ul>
     </div>
     <?php if(empty($SESSION)): ?>
@@ -41,6 +41,7 @@
                 <li id="feature-profile-menu">
                   <a href="user/<?php echo $SESSION['id'] ?>">
                     <img src="<?php echo $users[0]->filepath ?>">
+                    <!-- <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>"> -->
                     <div class="username"><p><?php echo $users[0]->name ?></p></div>
                   </a>
                 </li>

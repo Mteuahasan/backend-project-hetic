@@ -326,6 +326,7 @@ class board_model{
       } else {
         $request = $request.' ORDER BY '.$sortby.' DESC limit '.$pagination.' OFFSET '.($page - 1) * $pagination;
       }
+
       $boards = $boardsMapper->select('*', $request);
     } else {
       if($sortby == 'unliked'){
@@ -346,6 +347,28 @@ class board_model{
     }
 
     return $boards;
+  }
+
+
+
+  /*******
+  * $category -> selected category's id
+  * $sortby -> selected sort way
+  * Return comments for a specific board
+  *******/
+  function countBoardsGallery($category){
+    $hasCategorieMapper = $this->getHasCategoriesMapper();
+    $selectedCategory = $hasCategorieMapper->select('*', 'categories_id = "'.$category.'"');
+    if($category != 'all'){
+      $request = "";
+      foreach ($selectedCategory as $cat) {
+        $request = $request.'id = '.$cat->boards_id.' OR ';
+      }
+      $request = substr($request, 0, -4);
+      return $this->getBoardsMapper()->count($request);
+    } else {
+      return $this->getBoardsMapper()->count();
+    }
   }
 
 

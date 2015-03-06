@@ -38,7 +38,7 @@
       <!-- GALLERY -->
       <div class="top-gallery">
         <h1><i class="flaticon-right11"></i>
-        <form action="">
+        <form action="" style="display: inline-block">
         I'm looking for projects in
         <select name="category" id="category-select">
           <option value="all">which could interest me</option>
@@ -58,8 +58,19 @@
         <input type="submit" value="ok">
         </form></h1>
 
-        <h2>Related / <span>28</span> matches found</h2>
-        <p> <strong>Comics</strong> found for categories: <span>Comics, heroes, fantastic</span></p>
+        <?php
+          foreach ($allCategories as $cat){
+            if($cat->id==$_GET['category']){
+              $currentCate = $cat->name;
+            } else if ($_GET['category'] === "all") {
+              $currentCate = "all";
+            }
+          }
+
+        ?>
+
+        <h2>Related / <span><?php echo $count ?></span> matches found</h2>
+        <p> <strong>Comics</strong> found for categories: <span><?php echo $currentCate ?></span></p>
       </div>
 
         <div class="top-content">
@@ -93,6 +104,12 @@
             endforeach;
             ?>
         </div>
+        Page
+        <?php
+          for ($i=1; $i <= $pageNumber; $i++) {
+            echo "<a href='gallery?category=".$_GET['category']."&sortby=".$_GET['sortby']."&page=".$i."' style='display: inline-block;'>".$i."</a>";
+          }
+        ?>
       </section>
     </div>
 

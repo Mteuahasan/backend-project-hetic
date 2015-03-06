@@ -26,11 +26,10 @@
   ?>
 
   	<div id="mainContent" class="main-container">
-	    <section class="featured-event">
-	      <p>The contest #<strong>18</strong></p>
-	      <p>is finally launched !</p>
-	      <a href="#" class="btn-little"><span>Read more</span><i class="flaticon-right11"></i></a>
-	    </section>
+	    <section class="header-profile">
+        <div class="name">Bonjour <?php echo $users[0]->name ?></div class="name">
+        <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
+      </section>
 
 	    <div class="wrapper-home-content">
 	      <div class="filters">
