@@ -11,6 +11,7 @@ class users_controller{
 
   function __construct(){
     $this->model=new \APP\MODELS\users_model();
+    $this->boardsModel=new \APP\MODELS\board_model();
   }
 
 
@@ -59,6 +60,7 @@ class users_controller{
     $f3->set('boardsLiked', $this->userLike);
     $this->usersBoard = $this->model->usersBoards($params['id']);
     $f3->set('boardsAdded', $this->usersBoard);
+    $f3->set('allCategories', $this->boardsModel->getAllCategories());
     $f3->set('id', $params['id']);
     if(!null == $f3->get('SESSION')){
       $f3->set('session_id', $f3->get('SESSION')['id']);
@@ -76,6 +78,7 @@ class users_controller{
       $this->tpl = 'settings.php';
       $this->userProfil = $this->model->userProfil($params['id']);
       $f3->set('users', $this->userProfil);
+      $f3->set('allCategories', $this->boardsModel->getAllCategories());
 
       if($f3->get('VERB')=='POST'){
         $this->model->addurls($f3->get('POST'), $params);
@@ -112,8 +115,14 @@ class users_controller{
     }
   }
 
+
+
+  /*******
+  * Controller for the about page
+  *******/
   public function getUserAbout($f3, $params) {
     $this->tpl = 'about.php';
+    $f3->set('allCategories', $this->boardsModel->getAllCategories());
   }
 
 
