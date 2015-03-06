@@ -19,11 +19,12 @@ div.main-container {
 			width: 100px;
 			height: 100px;
 			position: absolute;
+			border: 6px solid $black-light;
 			top: 45px;
-			box-shadow: 0 0 5px 5px $black;
-			-moz-box-shadow: 0 0 5px 5px $black;
-			-webkit-box-shadow: 0 0 5px 5px $black;
-			-o-box-shadow: 0 0 5px 5px $black;
+			box-shadow: 0 0 5px 5px rgba($black, .4);
+			-moz-box-shadow: 0 0 5px 5px rgba($black, .4);
+			-webkit-box-shadow: 0 0 5px 5px rgba($black, .4);
+			-o-box-shadow: 0 0 5px 5px rgba($black, .4);
 			@include border-radius(50%);
 		}
 	}
