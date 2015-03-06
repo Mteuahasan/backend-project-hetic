@@ -35,7 +35,7 @@
 					<li><input type="submit" value="Log In"></li>
 					<li><a href="signup">Sign Up</a></li>
 				</ul>
-				<em><a href="#">Forgot password?</a></em>
+				<!-- <em><a href="#">Forgot password?</a></em> -->
 			</form>
 		</div>
 	</section>

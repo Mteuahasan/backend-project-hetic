@@ -27,9 +27,9 @@
 
   	<div id="mainContent" class="main-container">
 	    <section class="header-profile">
-        <div class="name">Bonjour <?php echo $users[0]->name ?></div class="name">
-	      <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
-	      
+        <div class="name">Bonjour <?php echo $profilUser[0]->name ?></div class="name">
+	      <img src="<?php echo (!empty($profilUser[0]->filepath)) ? $profilUser[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
+
       </section>
 
 	    <div class="wrapper-home-content">
@@ -42,11 +42,11 @@
 	          <span>Search</span>
 	          <i class="flaticon-magnifier52"></i>
 	        </a>
-	        <a href="user/<?php echo $users[0]->id ?>/settings" id="setting">
+	        <a href="user/<?php echo $profilUser[0]->id ?>/settings" id="setting">
 	          <span>Settings</span>
 	          <i class="flaticon-screwdriver26"></i>
 	        </a>
-	        <a href="user/<?php echo $users[0]->id ?>/about" id="about">
+	        <a href="user/<?php echo $profilUser[0]->id ?>/about" id="about">
 	          <span>About</span>
 	          <i class="flaticon-information32"></i>
 	        </a>
@@ -58,55 +58,55 @@
 	      	<div class="separation"></div>
             <section class="settings">
               <div class="container-settings">
-                <div class="settings-content container-settings-left">  
+                <div class="settings-content container-settings-left">
                   <section class="content">
-                
+
                   <label for="username"><span>Username</span></label>
-                  <div><?php echo $users[0]->name; ?></div>
-                  
+                  <div><?php echo $profilUser[0]->name; ?></div>
+
                   </section>
 
                 <section class="content">
-                  
-                  <label for="description"><span>Description</span></label>
-                  <div><?php echo $users[0]->description ?></div>
 
-                </section>  
+                  <label for="description"><span>Description</span></label>
+                  <div><?php echo $profilUser[0]->description ?></div>
+
+                </section>
 
                 <section class="content">
 
                   <label for="city"><span>Current City</span></label>
-                  <div><?php echo $users[0]->city ?></div>
-                </section>            
-                                      
+                  <div><?php echo $profilUser[0]->city ?></div>
+                </section>
+
               </div>
               <div class="settings-content container-settings-right">
                 <section class="content">
                     <label for="mail"><span>Mail adresse</span></label>
-                    <div><a href="mailto:<?php echo $users[0]->email ?>"> <?php echo $users[0]->email ?></a></div>
+                    <div><a href="mailto:<?php echo $profilUser[0]->email ?>"> <?php echo $profilUser[0]->email ?></a></div>
                 </section>
 
                 <section class="content">
                     <label for="category"><span>Catégorie of interest (3 max).</span></label>
                     <div></div>
-                </section> 
+                </section>
 
-                <section class="content">         
+                <section class="content">
                     <label for="site"><span>Portefolio URL</span></label>
-                    <div><a href="<?php echo $users[0]->website ?>"><?php echo $users[0]->website ?></a></div>
-                </section>      
+                    <div><a href="<?php echo $profilUser[0]->website ?>"><?php echo $profilUser[0]->website ?></a></div>
+                </section>
               </div>
               <div class="container-about-bottom">
                 <section class="about">
-                    <label for="twitter"><a href="<?php echo $users[0]->url_twitter ?>"><i class="flaticon-twitter44"></i></a></label>
-                    <label for="facebook"><a href="<?php echo $users[0]->url_facebook ?>"><i class="flaticon-facebook51"></i></a></label>
-                    <label for="linkdin"><a href="<?php echo $users[0]->url_linkdin ?>"><i class="flaticon-social123"></i></a></label>
-                </section> 
+                    <label for="twitter"><a href="<?php echo $profilUser[0]->url_twitter ?>"><i class="flaticon-twitter44"></i></a></label>
+                    <label for="facebook"><a href="<?php echo $profilUser[0]->url_facebook ?>"><i class="flaticon-facebook51"></i></a></label>
+                    <label for="linkdin"><a href="<?php echo $profilUser[0]->url_linkdin ?>"><i class="flaticon-social123"></i></a></label>
+                </section>
 
               </div>
-              
+
             </div>
-          </section>         
+          </section>
       </div>
 
 

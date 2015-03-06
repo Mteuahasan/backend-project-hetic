@@ -7,7 +7,7 @@
       	<div class="banner">
         	<div class="banner-content">
           		<i class="flaticon-label36"><span><?php echo $like['likes'] ?></span></i>
-          		<i class="flaticon-comment21"><span>380</span></i>
+          		<i class="flaticon-comment21"><span><?php echo $add->commentNumber ?></span></i>
         	</div>
       	</div>
 

@@ -67,12 +67,15 @@ section.page-filters-category {
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 1);
 
   .page-category {
+    a{
+      color: #666;
+    }
     display: none;
     text-align: center;
-    padding-top: 20%;
+    padding-top: 50px;
     h1 {
       color: $grey;
       font-size: .9em;

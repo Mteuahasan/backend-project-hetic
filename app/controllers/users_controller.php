@@ -62,6 +62,7 @@ class users_controller{
     $f3->set('boardsAdded', $this->usersBoard);
     $f3->set('allCategories', $this->boardsModel->getAllCategories());
     $f3->set('id', $params['id']);
+    $f3->set('profilUser', $this->model->userProfil($params['id']));
     if(!null == $f3->get('SESSION')){
       $f3->set('session_id', $f3->get('SESSION')['id']);
     } else {
@@ -124,7 +125,7 @@ class users_controller{
     $this->tpl = 'about.php';
     $f3->set('allCategories', $this->boardsModel->getAllCategories());
     $this->userProfil = $this->model->userProfil($params['id']);
-    $f3->set('users', $this->userProfil);
+    $f3->set('profilUser', $this->model->userProfil($params['id']));
   }
 
   /*******

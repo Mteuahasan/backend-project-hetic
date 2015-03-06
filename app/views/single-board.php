@@ -20,10 +20,10 @@
     <div class="content-single-board">
       <div class="top-informations">
         <h1><?php echo $board[0]->name ?></h1>
-        by  <span class="author"><?php echo $board[0]->author ?></span>
+        by  <span class="author"><a href="user/<?php echo $board[0]->user_id; ?>"><?php echo $board[0]->author ?></a></span>
         <span class="date"> - <?php echo $board[0]->date; ?> ago</span>
         - in <?php foreach ($boardCategories as $categorie): ?>
-          <span><a href="category/<?php echo $categorie->id; ?>/1" style="color:#00b3c6;"><?php echo $categorie->name; ?></a></span>,
+          <span><a href="gallery?category=<?php echo $categorie->id ?>&sortby=date&page=1" style="color:#00b3c6;"><?php echo $categorie->name; ?></a></span>,
         <?php endforeach; ?>
         <div class="tags">Tags:
             <span><?php echo $board[0]->tags; ?></span>,

@@ -27,8 +27,8 @@
 
   	<div id="mainContent" class="main-container">
 	    <section class="header-profile">
-        <div class="name">Bonjour <?php echo $users[0]->name ?></div class="name">
-        <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
+        <div class="name"><?php echo $profilUser[0]->name ?></div class="name">
+        <img src="<?php echo (!empty($profilUser[0]->filepath)) ? $profilUser[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
       </section>
 
 	    <div class="wrapper-home-content">

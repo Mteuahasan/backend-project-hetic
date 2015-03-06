@@ -78,7 +78,7 @@ class users_model{
     if($this->crypt->hash($data['password'], $this->f3->get('salt')) == $user['password']){
       return $user;
     } else {
-      return "Password error";
+      die('Error');
     }
   }
 
@@ -147,7 +147,7 @@ class users_model{
   public function addurls($data, $params) {
       $addSite=$this->getUsersMapper();
       $addSite->load(array('id=?', $params['id']));
-      
+
       if(!empty($_POST['site'])) {
         $addSite->website=$data['site'];
       }
@@ -179,7 +179,7 @@ class users_model{
       if(!empty($_POST['name'])) {
         $addSite->name=$data['name'];
       }
-    
+
       $addSite->update();
     }
 
@@ -190,7 +190,7 @@ class users_model{
     if(isset($filepath[0])) {
       $addImg->filepath=$filepath[0]['name'];
     }
-    
+
     $addImg->update();
   }
 

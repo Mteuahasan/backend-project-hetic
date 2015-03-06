@@ -33,7 +33,7 @@ var board = {
       self.ajax('POST', 'board/'+board+'/likes', data, function(xhr){
         console.log(xhr);
         if(xhr.response !== ''){
-          document.querySelector('.likes-number').innerHTML=xhr.response;
+          document.querySelector('.likes-number').innerHTML="<i class='flaticon-label36'></i>"+xhr.response;
         } else {
           console.log('It is forbidden to vote without being connected');
         }
@@ -44,7 +44,7 @@ var board = {
       data.append('like', -1);
       self.ajax('POST', 'board/'+board+'/likes', data, function(xhr){
         if(xhr.response !== ''){
-          document.querySelector('.likes-number').innerHTML=xhr.response;
+          document.querySelector('.likes-number').innerHTML="<i class='flaticon-label36'></i>"+xhr.response;
         } else {
           console.log('It is forbidden to vote without being connected');
         }

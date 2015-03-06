@@ -126,7 +126,7 @@
               endforeach;
               ?>
           </div>
-          <a href="#">See all</a>
+          <a href="gallery?category=all&sortby=commentNumber&page=1">See all</a>
         </section>
 
 
@@ -166,7 +166,7 @@
               endforeach;
               ?>
           </div>
-          <a href="#">See all</a>
+          <a href="gallery?category=all&sortby=unliked&page=1">See all</a>
         </section>
       </div>
     </div>
