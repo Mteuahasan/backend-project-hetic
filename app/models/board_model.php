@@ -320,15 +320,28 @@ class board_model{
         $request = $request.'id = '.$cat->boards_id.' OR ';
       }
       $request = substr($request, 0, -4);
-      $request = $request.' ORDER BY '.$sortby.' DESC limit '.$pagination.' OFFSET '.($page - 1) * $pagination;
+      if($sortby == 'unliked'){
+        $request = $request.' ORDER BY likes ASC limit '.$pagination.' OFFSET '.($page - 1) * $pagination;
+      } else {
+        $request = $request.' ORDER BY '.$sortby.' DESC limit '.$pagination.' OFFSET '.($page - 1) * $pagination;
+      }
       $boards = $boardsMapper->select('*', $request);
     } else {
-      $boards = $this->getBoardsMapper()->select('*',NULL , array(
-           'group'=>NULL,
-           'order'=>$sortby.' DESC',
-           'limit'=>$pagination,
-           'offset'=>($page-1)*$pagination
-         ));
+      if($sortby == 'unliked'){
+        $boards = $this->getBoardsMapper()->select('*',NULL , array(
+             'group'=>NULL,
+             'order'=>'likes ASC',
+             'limit'=>$pagination,
+             'offset'=>($page-1)*$pagination
+           ));
+      } else {
+        $boards = $this->getBoardsMapper()->select('*',NULL , array(
+             'group'=>NULL,
+             'order'=>$sortby.' DESC',
+             'limit'=>$pagination,
+             'offset'=>($page-1)*$pagination
+           ));
+      }
     }
 
     return $boards;

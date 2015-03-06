@@ -3,7 +3,7 @@
       <a href="home" class="logo">Striply</a>
       <ul class="menu">
         <li><a class="menu--active" href="home">Home</a></li>
-        <li><a href="gallery">Gallery</a></li>
+        <li><a href="gallery?category=all&sortby=date&page=1">Gallery</a></li>
         <li><a href="contests">Contests</a></li>
         <li><a href="shows">Shows</a></li>
         <li><a href="jobs">Jobs</a></li>

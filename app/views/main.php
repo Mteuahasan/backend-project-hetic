@@ -92,7 +92,7 @@
             ?>
 
           </div>
-          <a href="#">See all</a>
+          <a href="gallery?category=all&sortby=likes&page=1">See all</a>
         </section>
 
 
@@ -138,7 +138,7 @@
 
         <!-- MOST CONTROVERSIAL -->
         <section class="most-liked">
-          <h2>Most controversial</h2>
+          <h2>Less liked</h2>
           <div class="slider-btn slider-left"></div>
           <div class="slider-btn slider-right"></div>
 

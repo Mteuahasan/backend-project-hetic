@@ -106,7 +106,11 @@ class board_controller{
     $get = $f3->get('GET');
     if(isset($get['category']) && isset($get['sortby']) && $get['page']){
       $boards = $this->model->getGalleryBoards($get['category'], $get['sortby'], 20, $get['page']);
+      $categories = $this->model->getHomeCategories($this->model->getGalleryBoards($get['category'], $get['sortby'], 20, $get['page']));
+      $allCategories = $this->model->getAllCategories();
       $f3->set('boards', $boards);
+      $f3->set('categories', $categories);
+      $f3->set('allCategories', $allCategories);
     }
   }
 

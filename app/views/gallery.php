@@ -74,14 +74,17 @@
         I'm looking for projects in
         <select name="category" id="category-select">
           <option value="all">All</option>
-          <option value="5">WTF</option>
+          <?php foreach ($allCategories as $cat): ?>
+            <option value="<?php echo $cat->id; ?>" <?php echo $cat->id=$_GET['category'] ? 'selected':'' ?>><?php echo $cat->name; ?></option>
+          <?php endforeach ?>
         </select> categories
 
         , and I want to classify them by
         <select name="sortby" id="sortby-select">
-          <option value="date">date</option>
-          <option value="commentNumber">most commented</option>
-          <option value="likes">most liked</option>
+          <option value="date" <?php echo $_GET['sortby']=="date" ? 'selected':'' ?>>date</option>
+          <option value="commentNumber" <?php echo $_GET['sortby']=="commentNumber" ? 'selected':'' ?>>most commented</option>
+          <option value="likes" <?php echo $_GET['sortby']=="likes" ? 'selected':'' ?>>most liked</option>
+          <option value="unliked" <?php echo $_GET['sortby']=="unliked" ? 'selected':'' ?>>less liked</option>
         </select>
         <input type="hidden" value="1" name="page">
         <input type="submit">
@@ -94,20 +97,34 @@
         <div class="top-content">
         <section class="most-liked">
             <div class="boards-container">
-            <?php foreach ($boards as $board): ?>
-              <a href="board/<?php echo $board->id; ?>"  class="single-board-home addedBoards">
-                <div class="board-hover">
-                  <h3><?php echo $board->name; ?></h3>
+            <?php
+          $i = 0;
+          foreach ($boards as $board):
+          ?>
+            <!-- Single board 1 -->
+            <a href="board/<?php echo $board->id ?>" class="single-board-home">
+              <div class="board-hover">
+                <h3><?php echo $board->name ?></h3>
+                <p><?php echo $board->author ?></p>
+                <em> <i class="flaticon-right11"></i>
+                  <?php foreach ($categories[$i] as $cate): ?>
+                    <?php echo $cate['categorie']; ?>
+                  <?php endforeach; ?>
+                </em>
+              </div>
+              <!-- <img src="./dist/assets/img/landing.jpg"> -->
+              <img src="<?php echo $board->filepath ?>">
+              <div class="banner">
+                <div class="banner-content">
+                  <i class="flaticon-label36"><span><?php echo $board->likes ?></span></i>
+                  <i class="flaticon-comment21"><span><?php echo $board->commentNumber; ?></span></i>
                 </div>
-                <img src="<?php echo $board->filepath; ?>"/>
-                <div class="banner">
-                  <div class="banner-content">
-                      <i class="flaticon-label36"><span><?php echo $board->likes; ?></span></i>
-                      <i class="flaticon-comment21"><span><?php echo $board->commentNumber; ?></span></i>
-                  </div>
-                </div>
-              </a>
-            <?php endforeach ?>
+              </div>
+            </a>
+            <?php
+            $i += 1;
+            endforeach;
+            ?>
         </div>
       </section>
     </div>
