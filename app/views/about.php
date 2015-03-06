@@ -56,10 +56,8 @@
   ?>
 
   	<div id="mainContent" class="main-container">
-	    <section class="featured-event">
-	      <p>The contest #<strong>18</strong></p>
-	      <p>is finally launched !</p>
-	      <a href="#" class="btn-little"><span>Read more</span><i class="flaticon-right11"></i></a>
+	    <section class="header-profile">
+	      <img src="./dist/assets/img/profile.jpg">
 	    </section>
 
 	    <div class="wrapper-home-content">
@@ -72,44 +70,26 @@
 	          <span>Search</span>
 	          <i class="flaticon-magnifier52"></i>
 	        </a>
-	        <a href="user/<?php echo $SESSION['id'] ?>/settings" id="setting">
+	        <a href="user/<?php echo $users[0]->id ?>/settings" id="setting">
 	          <span>Settings</span>
 	          <i class="flaticon-screwdriver26"></i>
 	        </a>
-	        <a href="user/<?php echo $SESSION['id'] ?>/about" id="about">
+	        <a href="user/<?php echo $users[0]->id ?>/about" id="about">
 	          <span>About</span>
 	          <i class="flaticon-information32"></i>
 	        </a>
 	      </div>
-	      <div class="top-content">
+	      <div id="settings-content" class="top-content">
 	      	<div class="selection">
-	      		<span class="portfolio color">PORTFOLIO</span>
-	      		<span class="liked">LIKED</span>
+	      		<span class="liked color">SETTINGS</span>
 	      	</div>
 	      	<div class="separation"></div>
-	      	<section class="most-liked">
-		      	<div class="boards-container-profile">
-					<?php
-						include("partials/usersBoards.php")
-					?>
-					<?php
-						include("partials/likedBoards.php")
-					?>
-				</div>
-			</section>
-		  </div>
-		</div>
-	</div>
 
 
-  <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
+
+
+   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
   <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>
   <script type="text/javascript" src="dist/assets/scripts/profile.js"></script>
 </body>
 </html>
-
-
-
-
-
-

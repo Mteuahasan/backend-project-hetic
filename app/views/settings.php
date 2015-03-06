@@ -54,7 +54,7 @@
 
 	<div id="mainContent" class="main-container">
 	    <section class="header-profile">
-	      <img src="./dist/assets/img/profile.jpg">
+	      <img src="<?php echo $users[0]->filepath ?>">
 	    </section>
 
 	    <div class="wrapper-home-content">
@@ -67,16 +67,16 @@
 	          <span>Search</span>
 	          <i class="flaticon-magnifier52"></i>
 	        </a>
-	        <a href="user/<?php echo $SESSION['id'] ?>/profile" id="setting">
+	        <a href="user/<?php echo $users[0]->id ?>/settings" id="setting">
 	          <span>Settings</span>
 	          <i class="flaticon-screwdriver26"></i>
 	        </a>
-	        <a href="#" id="about">
+	        <a href="user/<?php echo $users[0]->id ?>/about" id="about">
 	          <span>About</span>
 	          <i class="flaticon-information32"></i>
 	        </a>
 	      </div>
-	      <div class="top-content">
+	      <div id="settings-content" class="top-content">
 	      	<div class="selection">
 	      		<span class="liked color">SETTINGS</span>
 	      	</div>
@@ -86,120 +86,93 @@
 	      		<form enctype="multipart/form-data" action="" method="post">
 	      			<div class="settings-content container-settings-left">  
 	      				<section class="content">
-							<span class="input input--hoshi">
-								<div class="information"><?php echo $users[0]->name; ?></div>
-
-								<input class="input__field input__field--hoshi" type="text" id="input-5" />
-								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-5">
-								<span class="input__label-content input__label-content--hoshi">Name</span>
-
-								</label>
-							</span>
+							
+							<div class="information"><?php echo $users[0]->name; ?></div>
+							<label for="username"><span>Username</span></label>
+							<input type="text" name="name">
+							
 
 						</section>
 
 						<section class="content">
-							<span class="input input--hoshi">
-								<div class="information"><?php echo $users[0]->email; ?></div>							
+							
+							<div class="information"><?php echo $users[0]->description ?></div>	
+							<label for="description"><span>Description</span></label>
+							<input type="text" name="description">
 
-								<input class="input__field input__field--hoshi" type="text" id="input-5" />
-								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-5">
-								<span class="input__label-content input__label-content--hoshi">Email</span>
-
-								</label>
-							</span>
+								
 
 						</section>  
 
 						<section class="content">
-							<span class="input input--hoshi">
-								<div class="information"><?php echo $users[0]->website; ?></div>
 
-								<input class="input__field input__field--hoshi" type="text" name="site" id="input-5" />
-								<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="site">
-								<span class="input__label-content input__label-content--hoshi">Website</span>
+							<div class="information"><?php echo $users[0]->city ?></div>
+							<label for="city"><span>Current City</span></label>
+							<input type="text" name="city">
 
-								</label>
-							</span>
 						</section>      			
-							<input type="submit" name="same" class="button-submit" value="web">
+							
 			      					
 					</div>
 					<div class="settings-content container-settings-right">
+						<section class="content">
+								<div class="information"><?php echo $users[0]->email ?></div>
+								<label for="mail"><span>Mail adresse</span></label>
+								<input type="text" name="mail">
+			
+						</section>
 
-					<section class="content">
-						<span class="input input--hoshi">
-							<div class="information"><?php echo $users[0]->url_twitter ?></div>
+						<section class="content">
+								<div class="information"></div>
+								<label for="category"><span>Catégorie of interest (3 max).</span></label>
+								<input type="text" name="categorie">
+							
+						</section> 
 
-							<input class="input__field input__field--hoshi" type="text" name="twitter" id="input-5" />
-							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="twitter">
-							<span class="input__label-content input__label-content--hoshi">Twitter</span>
-
-							</label>
-						</span>
-					</section>
-						<input type="submit" name="same" class="button-submit" value="twitter">
-
-					<section class="content">
-						<span class="input input--hoshi">
-							<div class="information"><?php echo $users[0]->url_facebook ?></div>
-
-							<input class="input__field input__field--hoshi" type="text" name="facebook" id="input-5" />
-							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="facebook">
-							<span class="input__label-content input__label-content--hoshi">Facebook</span>
-
-							</label>
-						</span>
-					</section> 
-						<input type="submit" name="same" class="button-submit" value="facebook">
-
-					<section class="content">
-						<span class="input input--hoshi">
-							<div class="information"><?php echo $users[0]->url_linkdin ?></div>
-
-							<input class="input__field input__field--hoshi" type="text" name="linkdin" id="input-5" />
-							<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="linkdin">
-							<span class="input__label-content input__label-content--hoshi">Linkdin</span>
-
-							</label>
-						</span>
-					</section>      
-						<input type="submit" name="same" class="button-submit" value="linkdin">	
+						<section class="content">					
+								<div class="information"><?php echo $users[0]->website ?></div>
+								<label for="site"><span>Portefolio URL</span></label>
+								<input type="text" name="site">
+							
+						</section>      
 					</div>
-					<!-- <label for="site">Website :</label><input type="text" name="site" >
-						<input type="submit" name="same" value="web">
+					<div class="settings-content container-settings-bottom">
+						<section class="bottom">
+								<div class="information"><?php echo $users[0]->url_twitter ?></div>
+								<label for="twitter"><span>Twitter</span></label>
+								<input type="text" name="twitter">							
+						</section>
 
-						<label for="twitter">Twitter :</label><input type="text" name="twitter" >
-						<input type="submit" name="same" value="twitter"> -->
+						<section class="bottom">
+								<div class="information"><?php echo $users[0]->url_facebook ?></div>
+								<label for="facebook"><span>Facebook</span></label>
+								<input type="text" name="facebook">	
+						</section> 
 
-						<!-- <label for="facebook">Facebook :</label><input type="text" name="facebook" >
-						<input type="submit" name="same" value="facebook">
+						<section class="bottom">
+								<div class="information"><?php echo $users[0]->url_linkdin ?></div>
+								<label for="linkdin"><span>Linkedin</span></label>
+								<input type="text" name="linkdin">	
+						</section> 
+					</div>
 
-						<label for="linkdin">Linkdin :</label><input type="text" name="linkdin" >
-						<input type="submit" name="same" value="linkdin"> -->
+					<div class="btn-upload-settings">
+					  <input type="file" name="userfile" class="input-file" value="Add a profil picture" accept=".png,.jpg">
+			          <span>Add a profil picture</span>  
+			        </div>
 
-					</form>
+					<div class="btn--submit-form">
+			          <input type="submit" value="Add">
+			          <i class="flaticon-right11"></i>
+			        </div>
 
-					
-
-
-						
-
-
-						<!-- <div class="btn--file-upload">
-				            <span>Add a profil picture</span>
-				            <input type="file" name="userfile2" class="input-file">
-       				    </div> -->
+					</form
 					
 				</div>
 			</section>
 		  </div>
 		</div>
 	</div>
-
-
-
-
   <script type="text/javascript" src="dist/assets/scripts/main.js"></script>
   <script type="text/javascript" src="dist/assets/scripts/actionMenu.js"></script>	
   <script type="text/javascript" src="dist/assets/scripts/profile.js"></script>	
