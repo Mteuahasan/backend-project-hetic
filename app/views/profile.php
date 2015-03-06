@@ -72,11 +72,13 @@
 	          <span>Search</span>
 	          <i class="flaticon-magnifier52"></i>
 	        </a>
-	        <a href="user/<?php echo $SESSION['id'] ?>/settings" id="setting">
-	          <span>Settings</span>
-	          <i class="flaticon-screwdriver26"></i>
-	        </a>
-	        <a href="user/<?php echo $SESSION['id'] ?>/about" id="about">
+	        <?php if($session_id == $id): ?>
+            <a href="user/<?php echo $SESSION['id'] ?>/settings" id="setting">
+  	          <span>Settings</span>
+  	          <i class="flaticon-screwdriver26"></i>
+  	        </a>
+          <?php endif; ?>
+	        <a href="user/<?php echo $id ?>/about" id="about">
 	          <span>About</span>
 	          <i class="flaticon-information32"></i>
 	        </a>

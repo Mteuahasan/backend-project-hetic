@@ -42,7 +42,7 @@
         <select name="category" id="category-select">
           <option value="all">All</option>
           <?php foreach ($allCategories as $cat): ?>
-            <option value="<?php echo $cat->id; ?>" <?php echo $cat->id=$_GET['category'] ? 'selected':'' ?>><?php echo $cat->name; ?></option>
+            <option value="<?php echo $cat->id; ?>" <?php echo $cat->id==$_GET['category'] ? 'selected':'' ?>><?php echo $cat->name; ?></option>
           <?php endforeach ?>
         </select> categories
 
