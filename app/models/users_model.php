@@ -183,11 +183,11 @@ class users_model{
       if(!empty($_POST['interest'])) {
         $addSite->interest=$data['interest'];
       }
-
-
-    
+ 
       $addSite->update();
     }
+
+
 
   public function addImg($data, $filepath, $params) {
     $addImg=$this->getUsersMapper();
