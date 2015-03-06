@@ -24,6 +24,7 @@
 	<div id="mainContent" class="main-container">
   	<div class="wrapper-home-content">
     	<div class="filters">
+        <a href="logout"><i class="flaticon-logout11"></i></a>
       	<a href="#" id="category">
         		<span>Categories</span>
         		<i class="flaticon-telephone106"></i>
@@ -40,7 +41,7 @@
         <form action="" style="display: inline-block">
         I'm looking for projects in
         <select name="category" id="category-select">
-          <option value="all">All</option>
+          <option value="all">which could interest me</option>
           <?php foreach ($allCategories as $cat): ?>
             <option value="<?php echo $cat->id; ?>" <?php echo $cat->id==$_GET['category'] ? 'selected':'' ?>><?php echo $cat->name; ?></option>
           <?php endforeach ?>
@@ -54,7 +55,7 @@
           <option value="unliked" <?php echo $_GET['sortby']=="unliked" ? 'selected':'' ?>>less liked</option>
         </select>
         <input type="hidden" value="1" name="page">
-        <input type="submit">
+        <input type="submit" value="ok">
         </form></h1>
 
         <?php
@@ -90,7 +91,6 @@
                   <?php endforeach; ?>
                 </em>
               </div>
-              <!-- <img src="./dist/assets/img/landing.jpg"> -->
               <img src="<?php echo $board->filepath ?>">
               <div class="banner">
                 <div class="banner-content">

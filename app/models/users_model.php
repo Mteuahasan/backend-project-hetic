@@ -105,9 +105,9 @@ class users_model{
       $boardLiked = $this->getBoardsMapper()->select('*', $request);
     }
 
-    if(empty($boardLiked)) {
-      echo 'You didn\'t like any boards';
-    }
+    // if(empty($boardLiked)) {
+    //   echo 'You didn\'t like any boards';
+    // }
     return $boardLiked;
   }
 
@@ -120,9 +120,9 @@ class users_model{
   public function usersBoards($id) {
     $usersBoard = $this->getBoardsMapper()->select('*', 'user_id = "'.$id.'"');
 
-    if(empty($usersBoard)) {
-      echo "you do not have added any boards";
-    }
+    // if(empty($usersBoard)) {
+    //   echo "you do not have added any boards";
+    // }
     return $usersBoard;
   }
 
@@ -180,8 +180,14 @@ class users_model{
         $addSite->name=$data['name'];
       }
 
+      if(!empty($_POST['interest'])) {
+        $addSite->interest=$data['interest'];
+      }
+
       $addSite->update();
     }
+
+
 
   public function addImg($data, $filepath, $params) {
     $addImg=$this->getUsersMapper();

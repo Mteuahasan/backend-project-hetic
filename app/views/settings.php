@@ -32,6 +32,7 @@
 
 	    <div class="wrapper-home-content">
 	      <div class="filters">
+	      	<a href="logout"><i class="flaticon-logout11"></i></a>
 	        <a href="#" id="category">
 	          <span>Categories</span>
 	          <i class="flaticon-telephone106"></i>
@@ -62,7 +63,7 @@
 
 							<div class="information"><?php echo $users[0]->name; ?></div>
 							<label for="username"><span>Username</span></label>
-							<input type="text" name="name">
+							<input type="text" placeholder="<?php echo $users[0]->name; ?>" name="name">
 
 
 						</section>
@@ -71,7 +72,7 @@
 
 							<div class="information"><?php echo $users[0]->description ?></div>
 							<label for="description"><span>Description</span></label>
-							<input type="text" name="description">
+							<input type="text" placeholder="<?php echo $users[0]->description ?>" name="description">
 
 
 						</section>
@@ -89,22 +90,21 @@
 						<section class="content">
 								<div class="information"></div>
 								<label for="mail"><span>Mail adresse</span></label>
-
 								<input type="text" placeholder="<?php echo $users[0]->email ?>" name="mail">
 
 						</section>
 
 						<section class="content">
-								<div class="information"></div>
-								<label for="category"><span>Catégorie of interest (3 max).</span></label>
-								<input type="text" name="categorie">
+								<div class="information"><?php echo $users[0]->interest ?></div>
+								<label for="interest"><span>Catégorie of interest</span></label>
+								<input type="text" placeholder="<?php echo $users[0]->interest ?>" name="interest">
 
 						</section>
 
 						<section class="content">
 								<div class="information"><?php echo $users[0]->website ?></div>
 								<label for="site"><span>Portefolio URL</span></label>
-								<input type="text" name="site">
+								<input type="text" placeholder="<?php echo $users[0]->website ?>" name="site">
 
 						</section>
 					</div>

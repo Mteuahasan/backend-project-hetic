@@ -34,6 +34,7 @@
 
 	    <div class="wrapper-home-content">
 	      <div class="filters">
+	      	<a href="logout"><i class="flaticon-logout11"></i></a>
 	        <a href="#" id="category">
 	          <span>Categories</span>
 	          <i class="flaticon-telephone106"></i>
@@ -87,8 +88,9 @@
                 </section>
 
                 <section class="content">
-                    <label for="category"><span>Catégorie of interest (3 max).</span></label>
-                    <div></div>
+
+                    <label for="category"><span>Catégorie of interest</span></label>
+                    <div><?php echo $users[0]->interest ?></div>
                 </section>
 
                 <section class="content">

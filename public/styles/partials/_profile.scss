@@ -107,7 +107,6 @@ div.main-container {
 								padding: 20px;
 								a {
 									text-decoration: none;
-									font-size: 24px;
 								}
 
 							}
@@ -139,7 +138,7 @@ div.main-container {
 
 					.settings-content {
 						float: left;
-						width: 46%;	
+						width: 46%;
 
 						span {
 						color: $blue;
@@ -150,7 +149,7 @@ div.main-container {
 						}
 
 						div.information {
-							display: none;	
+							display: none;
 						}
 
 						section.content {
@@ -164,7 +163,7 @@ div.main-container {
 								span {
 									font-size: 20px;
 								}
-							}	
+							}
 
 							input {
 								font-size: 24px;
@@ -180,12 +179,11 @@ div.main-container {
 								margin-top: 10px;
 							}
 						}
-						
+
 						section.bottom {
 							label {
 								display: block;
 								text-align: left;
-								position: absolute;
 								margin-top: 5px;
 
 								i {
@@ -194,7 +192,6 @@ div.main-container {
 							}
 
 							input {
-								background: transparent;
 								border: 0;
 								margin-left: 20px;
 								height: 30px;
@@ -209,7 +206,7 @@ div.main-container {
 								background-color: $black;
 							}
 						}
-													
+
 					}
 
 				}

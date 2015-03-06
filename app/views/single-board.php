@@ -47,23 +47,18 @@
 
         <div class="container-imgs">
           <?php if(!empty($board[0]->filepath)): ?>
-          <i class="flaticon-arrows115"></i>
           <img src="<?php echo $board[0]->filepath; ?>" alt="<?php echo $board[0]->name ?>">
           <?php endif; ?>
           <?php if(!empty($board[0]->filepath2)): ?>
-          <i class="flaticon-arrows115"></i>
           <img src="<?php echo $board[0]->filepath2; ?>" alt="<?php echo $board[0]->name ?>">
           <?php endif; ?>
           <?php if(!empty($board[0]->filepath3)): ?>
-          <i class="flaticon-arrows115"></i>
           <img src="<?php echo $board[0]->filepath3; ?>" alt="<?php echo $board[0]->name ?>">
           <?php endif; ?>
           <?php if(!empty($board[0]->filepath4)): ?>
-          <i class="flaticon-arrows115"></i>
           <img src="<?php echo $board[0]->filepath4; ?>" alt="<?php echo $board[0]->name ?>">
           <?php endif; ?>
           <?php if(!empty($board[0]->filepath5)): ?>
-          <i class="flaticon-arrows115"></i>
           <img src="<?php echo $board[0]->filepath5; ?>" alt="<?php echo $board[0]->name ?>">
           <?php endif; ?>
         </div>
