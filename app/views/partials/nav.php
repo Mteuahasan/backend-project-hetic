@@ -40,8 +40,8 @@
             <div class="profilHover">
                 <li id="feature-profile-menu">
                   <a href="home">
-                    <img src="./dist/assets/img/profile.jpg">
-                    <div class="username"><p><?php echo $SESSION['name'] ?></p></div>
+                    <img src="<?php echo $users[0]->filepath ?>">
+                    <div class="username"><p><?php echo $users[0]->name ?></p></div>
                   </a>
                 </li>
                 <li id="test" class="feature-menu-hover">

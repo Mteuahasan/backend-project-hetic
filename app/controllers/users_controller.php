@@ -114,9 +114,9 @@ class users_controller{
 
   public function getUserAbout($f3, $params) {
     $this->tpl = 'about.php';
+    $this->userProfil = $this->model->userProfil($params['id']);
+    $f3->set('users', $this->userProfil);
   }
-
-
 
   /*******
   * Logout the user
@@ -137,7 +137,6 @@ class users_controller{
   }
 
 
-
   /*******
   * Function used for checking the availability of the mail
   *******/
@@ -146,7 +145,10 @@ class users_controller{
     $response = $this->model->verifEmail($f3->get('POST.email'));
   }
 
-  public function afterroute(){
+  public function afterroute($f3){
+    $this->userProfil = $this->model->userProfil($f3->get('SESSION.id'));
+    $f3->set('users', $this->userProfil);
+
     if(!$this->ajax) {
       echo \View::instance()->render($this->tpl);
     } else if(isset($_GET)){
