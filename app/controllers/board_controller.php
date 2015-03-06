@@ -111,6 +111,10 @@ class board_controller{
       $boards = $this->model->getGalleryBoards($get['category'], $get['sortby'], 20, $get['page']);
       $categories = $this->model->getHomeCategories($this->model->getGalleryBoards($get['category'], $get['sortby'], 20, $get['page']));
       $allCategories = $this->model->getAllCategories();
+      $count = $this->model->countBoardsGallery($get['category']);
+      $pageNumber = ceil($count/20);
+      $f3->set('pageNumber', $pageNumber);
+      $f3->set('count', $count);
       $f3->set('boards', $boards);
       $f3->set('categories', $categories);
       $f3->set('allCategories', $allCategories);
