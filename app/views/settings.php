@@ -54,7 +54,8 @@
 
 	<div id="mainContent" class="main-container">
 	    <section class="header-profile">
-	      <img src="<?php echo $users[0]->filepath ?>">
+	      <div class="name">Bonjour <?php echo $users[0]->name ?></div class="name">
+	      <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
 	    </section>
 
 	    <div class="wrapper-home-content">

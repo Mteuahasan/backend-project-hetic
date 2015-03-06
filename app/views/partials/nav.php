@@ -40,7 +40,7 @@
             <div class="profilHover">
                 <li id="feature-profile-menu">
                   <a href="home">
-                    <img src="<?php echo $users[0]->filepath ?>">
+                    <img src="<?php echo (!empty($users[0]->filepath)) ? $users[0]->filepath : 'http://lorempixel.com/400/200/'; ?>">
                     <div class="username"><p><?php echo $users[0]->name ?></p></div>
                   </a>
                 </li>
