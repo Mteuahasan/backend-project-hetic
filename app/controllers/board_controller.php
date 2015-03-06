@@ -16,6 +16,7 @@ class board_controller{
 
   function __construct(){
     $this->model=new \APP\MODELS\board_model();
+    $this->usersModel=new \APP\MODELS\users_model();
   }
 
   /*******
@@ -110,6 +111,10 @@ class board_controller{
       $boards = $this->model->getGalleryBoards($get['category'], $get['sortby'], 20, $get['page']);
       $categories = $this->model->getHomeCategories($this->model->getGalleryBoards($get['category'], $get['sortby'], 20, $get['page']));
       $allCategories = $this->model->getAllCategories();
+      $count = $this->model->countBoardsGallery($get['category']);
+      $pageNumber = ceil($count/20);
+      $f3->set('pageNumber', $pageNumber);
+      $f3->set('count', $count);
       $f3->set('boards', $boards);
       $f3->set('categories', $categories);
       $f3->set('allCategories', $allCategories);
@@ -127,6 +132,8 @@ class board_controller{
   }
 
   public function afterroute($f3){
+    $this->userProfil = $this->usersModel->userProfil($f3->get('SESSION.id'));
+    $f3->set('users', $this->userProfil);
 
     if($f3->get('AJAX')){
     } else {

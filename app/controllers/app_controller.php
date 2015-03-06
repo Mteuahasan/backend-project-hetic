@@ -33,6 +33,15 @@ class app_controller{
 
 
   /*******
+  * Controller for the coming soon page
+  *******/
+  public function comingSoon($f3){
+      $this->tpl='comingsoon.html';
+  }
+
+
+
+  /*******
   * Controller for the home page
   *******/
   public function home($f3){

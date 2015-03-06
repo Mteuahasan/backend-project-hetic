@@ -13,11 +13,15 @@ var closeCategory = document.getElementById('closeCategory');
 
 var mainContent = document.getElementById('mainContent')
 
-hoverProfil.addEventListener('mouseover', mouseOver, false);
-hoverProfil.addEventListener('mouseout', mouseOut, false);
+if(!null === hoverProfil){
+	hoverProfil.addEventListener('mouseover', mouseOver, false);
+	hoverProfil.addEventListener('mouseout', mouseOut, false);
+}
 
-feature.addEventListener('mouseover', mouseOver, false);
-feature.addEventListener('mouseout', mouseOut, false);
+if(!null === feature){
+	feature.addEventListener('mouseover', mouseOver, false);
+	feature.addEventListener('mouseout', mouseOut, false);
+}
 
 buttonSearch.addEventListener('click', clickSearch, false);
 closeSearch.addEventListener('click', searchClose, false);
@@ -57,10 +61,3 @@ function categoryClose() {
 	filterCategory.style.display="none";
 	pageCategory.style.display="none";
 }
-
-
-
-
-
-
-

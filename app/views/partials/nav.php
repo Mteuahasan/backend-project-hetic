@@ -4,17 +4,16 @@
       <ul class="menu">
         <li><a class="menu--active" href="home">Home</a></li>
         <li><a href="gallery?category=all&sortby=date&page=1">Gallery</a></li>
-        <li><a href="contests">Contests</a></li>
-        <li><a href="shows">Shows</a></li>
-        <li><a href="jobs">Jobs</a></li>
+        <li><a href="coming-soon">Contests</a></li>
+        <li><a href="coming-soon">Shows</a></li>
+        <li><a href="coming-soon">Jobs</a></li>
       </ul>
       <span></span>
       <ul class="menu--more">
-        <li><a href="#">About us</a></li>
+        <li><a href="coming-soon">About us</a></li>
         <li><a href="#">Facebook</a></li>
         <li><a href="#">Twitter</a></li>
         <li><a href="#">Google +</a></li>
-        <li><a href="#">RSS</a></li>
       </ul>
     </div>
     <?php if(empty($SESSION)): ?>
