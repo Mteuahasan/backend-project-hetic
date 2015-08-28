@@ -3,7 +3,6 @@
 ## About
 
 This project is an online portfolio for comic strip artists. Produced for discovery.
-http://striply.fr
 
 ## Getting started
 
